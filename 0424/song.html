@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>五月天 [ 好好 Song About You ]</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap" rel="stylesheet">
+
+    <style>
+        header{
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 100px;
+        }
+        .item {
+            display: block;
+            width: 40%;
+            height: 100px;
+        }
+
+        h5,h2 {
+            text-align: center;
+            line-height: 5;
+        }
+
+        a {
+            margin-top: 50%;
+            text-decoration: none;
+            color: #8e44ad;
+            font-size: 20px;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Noto Sans TC', sans-serif;
+            min-height: 100vh;
+            background: linear-gradient(to top, #f9f7ff, #acbfff);
+            /*線性漸層*/
+            color: #333;
+        }
+
+
+
+        .container {
+            max-width: 960px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 16px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #8e44ad;
+            font-size: 32px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        h2 {
+            color: #9b59b6;
+            font-size: 18px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        .image-box img {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .image-box,
+        .lyrics-box {
+            flex: 1 1 400px;
+        }
+
+        .lyrics-box {
+            max-height: 180px;
+            overflow-y: auto;
+            background-color: #f2f0ff;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .lyrics-box p {
+            margin: 0;
+            font-size: 16px;
+            line-height: 1.8;
+            color: #5f3dc4;
+            animation: scrollLyrics 60s linear infinite;
+        }
+
+        @keyframes scrollLyrics {
+            0% {
+                transform: translateY(25%);
+            }
+
+            100% {
+                transform: translateY(-100%);
+            }
+        }
+
+        iframe {
+            display: block;
+            margin: 40px auto 0;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        /* @media (max-width: 768px) {
+            .content {
+                flex-direction: column;
+            }
+        } */
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="item">
+                <h5>
+                    <a href="./index.html">回首頁</a>
+                </h5>
+            </div>
+            <div class="item">
+                <h1>五月天</h1>
+                <h1>好好 Song About You</h1>
+            </div>
+            <div class="item">
+                <h2>作詞/作曲：You Guan / Xin A</h2>
+            </div>
+        </header>
+
+
+        <div class="content">
+            <div class="image-box">
+                <a href="https://www.youtube.com/watch?v=HxIct0i-CcA" target="_blank">
+                    <img src="data:image/jpeg;base64,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"
+                        alt="五月天-好好">
+                </a>
+            </div>
+
+            <div class="lyrics-box">
+                <p>
+                    想把你寫成一首歌 想養一隻貓<br>
+                    想要回到每個場景 撥慢每隻錶<br>
+                    我們在小孩和大人的轉角蓋一座城堡<br>
+                    我們好好 好到瘋掉 像找回失散多年雙胞<br>
+                    生命再長 不過煙火落下了眼角<br>
+                    世界再大 不過你我凝視的微笑<br>
+                    在所有流逝風景與人群中 你對我最好<br>
+                    一切好好 是否太好? 沒有人知道<br>
+                    你和我背著空空的書包<br>
+                    逃出名為日常的監牢<br>
+                    忘了要長大 忘了要變老<br>
+                    忘了時間有腳<br>
+                    最安靜的時刻 回憶總是最喧囂<br>
+                    最喧囂的狂歡 寂寞包圍著孤島<br>
+                    還以為馴服想念能陪伴我 像一隻家貓<br>
+                    它就窩在沙發一角 卻不肯睡著<br>
+                    你和我曾有滿滿的羽毛<br>
+                    跳著名為青春的舞蹈<br>
+                    不知道未來 不知道煩惱<br>
+                    不知那些日子會是那麼少<br>
+                    時間的電影結局才知道<br>
+                    原來大人已沒有童謠<br>
+                    最後的叮嚀 最後的擁抱<br>
+                    我們紅著眼笑<br>
+                    我們都要把自己照顧好<br>
+                    好到遺憾無法打擾<br>
+                    好好的生活 好好的變老<br>
+                    好好假裝我已經把你忘掉<br>
+                </p>
+            </div>
+        </div>
+
+        <iframe width="100%" height="315" src="https://www.youtube.com/embed/zHwKk01fx3Y?si=jo-kC-skZcPw29MJ"
+            title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+        </iframe>
+    </div>
+</body>
+
+</html>

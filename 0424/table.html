@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>合併表格
+    </title>
+    <style>
+        h3{
+            text-align: center;
+        }
+        a{
+            text-decoration: none;
+        }
+        body {
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to right, #fdfbfb, #ebedee);
+            padding: 20px;
+        }
+
+        table {
+            width: 80%;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        table,
+        tr,
+        td,
+        th {
+            border: 1px solid black;
+        }
+
+        td {
+            height: 20px;
+        }
+
+        .schooletable {
+            width: 968px;
+            border-collapse: collapse;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            background-color: #ffffff;
+            border-radius: 10px;
+            overflow: hidden;
+            /* color: #ffffff; */
+        }
+
+        /* RWD 設計 */
+        @media screen and (max-width: 768px) {
+            .schooletable {
+                width: 100%;
+                font-size: 14px;
+            }
+
+            .schooletable th,
+            .schooletable td {
+                padding: 8px;
+            }
+
+            body {
+                padding: 10px;
+            }
+
+            table {
+                width: 100%;
+            }
+
+            .schooletable-wrapper {
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            .schooletable {
+                min-width: 600px;
+            }
+        }
+
+        /* .schooletable th,
+        .schooletable td {
+            border: 1px solid #d1d1d1;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .schooletable th {
+            background-color: #a0c4ff;
+            color: #ffffff;
+            font-size: 18px;
+            text-transform: uppercase;
+        }
+
+
+        .schooletable td p {
+            margin: 5px 0;
+            font-size: 14px;
+        }
+        .schooletable td{
+            background-color: #ffc085;
+        }
+        .schooletable .bgc{
+            background-color: #faa8a8;
+        } */
+    </style>
+</head>
+
+<body>
+    <h3><a href="./index.html">回首頁</a></h3>
+    <br>
+    <div class="schooletable-wrapper">
+        <table class="schooletable">
+            <tr>
+                <th>節數</th>
+                <th>一</th>
+                <th>二</th>
+                <th>三</th>
+                <th>四</th>
+                <th>五</th>
+            </tr>
+            <tr>
+                <td class="bgc">
+                    <p>早自習</p>
+                    <p>0750~0830</p>
+                </td>
+                <td colspan="5"></td>
+                <!-- <td></td>
+            <td></td>
+            <td></td>
+            <td></td> -->
+            </tr>
+            <tr>
+                <td class="bgc">
+                    <p>第一節</p>
+                    <p>0840~0920</p>
+                </td>
+                <td rowspan="2">
+                    <p>國語</p>
+                    <p>劉XXX</p>
+                </td>
+                <td colspan="3">
+                    <p>數學</p>
+                    <p>王XX</p>
+                </td>
+                <!-- <td></td>
+            <td></td> -->
+                <td>
+                    <p>國語</p>
+                    <p>劉XXX</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="bgc">
+                    <p>第二節</p>
+                    <p>0930~1010</p>
+                </td>
+                <!-- <td></td> -->
+                <td>
+                    <p>自然</p>
+                    <p>黃XX</p>
+                </td>
+                <td>
+                    <p>音樂</p>
+                    <p>萬XX</p>
+                </td>
+                <td>
+                    <p>國語</p>
+                    <p>劉XX</p>
+                </td>
+                <td>
+                    <p>彈性</p>
+                    <p>劉XX</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="bgc">
+                    <p>第三節</p>
+                    <p>1030~1110</p>
+                </td>
+                <td>
+                    <p>上課</p>
+                    <p>王XX</p>
+                </td>
+                <td>
+                    <p>上課</p>
+                    <p>王XX</p>
+                </td>
+                <td>
+                    <p>上課</p>
+                    <p>王XX</p>
+                </td>
+                <td>
+                    <p>上課</p>
+                    <p>王XX</p>
+                </td>
+                <td rowspan="2">
+                    <p>上課</p>
+                    <p>王XX</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="bgc">
+                    <p>第四節</p>
+                    <p>1120~1200</p>
+                </td>
+                <td>
+                    <p>上課</p>
+                    <p>王XX</p>
+                </td>
+                <td>
+                    <p>上課</p>
+                    <p>王XX</p>
+                </td>
+                <td>
+                    <p>上課</p>
+                    <p>王XX</p>
+                </td>
+                <td>
+                    <p>上課</p>
+                    <p>王XX</p>
+                </td>
+                <!-- <td></td> -->
+            </tr>
+            <td class="bgc">
+                <p>午休時間</p>
+                <p>1200~1320</p>
+            </td>
+            <td colspan="5"></td>
+            <!-- <td></td>
+        <td></td>
+        <td></td>
+        <td></td> -->
+            <tr>
+                <td class="bgc">
+                    <p>第五節</p>
+                    <p>1330~1410</p>
+                </td>
+                <td>
+                    <p>上課</p>
+                    <p>王XX</p>
+                </td>
+                <td rowspan="2">
+                    <p>上課</p>
+                    <p>王XX</p>
+                </td>
+                <td rowspan="3"></td>
+                <td rowspan="3">
+                    <p>美術</p>
+                    <p>王XX</p>
+                </td>
+                <td>
+                    <p>體育</p>
+                    <p>李XX</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="bgc">
+                    <p>第六節</p>
+                    <p>1420~1500</p>
+                </td>
+                <td>
+                    <p>上課</p>
+                    <p>王XX</p>
+                </td>
+                <!-- <td></td> -->
+                <!-- <td></td> -->
+                <!-- <td></td> -->
+                <td>
+                    <p>體育</p>
+                    <p>李XX</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="bgc">
+                    <p>第七節</p>
+                    <p>1520~1600</p>
+                </td>
+                <td colspan="2">
+                    <p>彈性</p>
+                    <p>你好</p>
+                </td>
+                <!-- <td></td> -->
+                <!-- <td></td> -->
+                <!-- <td></td> -->
+                <td>
+                    <p>體育</p>
+                    <p>李XX</p>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+
+</body>
+
+</html>

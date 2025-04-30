@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>restaurant</title>
+
+    <style>
+        header {
+            background-image: url('https://images.unsplash.com/photo-1495147466023-ac5c588e2e94?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1887&q=80');
+            background-size: cover;
+            background-position: center;
+            min-height: 400px;
+        }
+
+        a {
+            font-size: 20px;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        .jumbotron {
+            display: flex;
+            padding-top: 10%;
+            align-items: center;
+        }
+
+        .bg-lighter {
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.65);
+            color: #fff;
+        }
+
+        .card {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .card-item {
+            list-style: none;
+            width: 25%;
+        }
+
+        .card-item p, a{
+            text-align: center;
+            color: lightcoral;
+        }
+
+        .card img {
+            max-width: 300px;
+            max-height: 200px;
+            display: block;
+            object-fit: cover;
+        }
+
+        @media (max-width: 768px) {
+            .card-item {
+                width: 50%;
+            }
+
+            .container {
+                max-width: 696px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .card-item {
+                width: 100%;
+            }
+
+            .container {
+                max-width: 348px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <!-- nav -->
+        <!-- restaurant name -->
+        <!-- bg -->
+        <div class="jumbotron">
+            <div class="bg-lighter p-3">
+                <h1 class="display-3">美食介紹</h1>
+                <p class="lead">全新雙享巧脆冰淇淋，一口享受雙重風味及多層次口感</p>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <ul class="card">
+            <li class="card-item">
+                <img class="card-img" src="https://i.pinimg.com/736x/60/8e/b8/608eb87239405944f3bb6bc856c878a5.jpg">
+                <div class="card-body">
+                    <p class="card-text"><a href="https://giafine100.com/%E9%96%80%E5%B8%82%E8%8F%9C%E5%96%AE/">火鍋</a>
+                    </p>
+                </div>
+            </li>
+            <li class="card-item">
+                <img class="card-img" src="https://i.pinimg.com/736x/2b/26/3d/2b263deffeb7311e4d089f9b09261688.jpg">
+                <div class="card-body">
+                    <p class="card-text"><a
+                        href="https://www.google.com/maps/place/%E9%AD%9A%E5%A4%9A%E7%94%9C%E8%BC%94%E5%A4%A7%E5%BA%97/@25.0321289,121.4338552,17z/data=!3m1!4b1!4m6!3m5!1s0x3442a7e89e9d1231:0x5b8a1de9be85db33!8m2!3d25.0321289!4d121.4338552!16s%2Fg%2F11b7wc9zry?entry=ttu&g_ep=EgoyMDI1MDQyMS4wIKXMDSoJLDEwMjExNDUzSAFQAw%3D%3D">日本料理</a>
+                    </p>
+
+                </div>
+            </li>
+            <li class="card-item">
+                <img class="card-img" src="https://i.pinimg.com/736x/99/21/6a/99216a51f1c4707037ac52ca9eea321d.jpg">
+                <div class="card-body">
+                    <p class="card-text"><a href="https://www.mvp-icecream.com.tw/index.php?ac=MenuShow1">義大利麵</a></p>
+                </div>
+            </li>
+            <li class="card-item">
+                <img class="card-img" src="https://i.pinimg.com/736x/03/84/c9/0384c92b1c180ffe9b5d31be94f01817.jpg">
+                <div class="card-body">
+                    <p class="card-text"><a href="https://maps.app.goo.gl/nRL7v34WD3rDrWN86">拉麵</a></p>
+                </div>
+            </li>
+            <li class="card-item">
+                <img class="card-img" src="https://i.pinimg.com/736x/00/97/10/00971080efbcb5b59db992329c2f7bb4.jpg">
+                <div class="card-body">
+                    <p class="card-text">
+                        <a href="https://minuit.com.tw/?gad_source=1&gbraid=0AAAAADLBTOvziZqVFXRnxqMHuxx8bRphK&gclid=CjwKCAjwwqfABhBcEiwAZJjC3t3RSVR4I71kQWjEmupkSprSSYKxIch2Tnk7M6NYwroHGHqGuxnpCBoCU5YQAvD_BwE">甜點</a>
+                    </p>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <footer>
+
+    </footer>
+</body>
+
+</html>

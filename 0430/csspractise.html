@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS練習</title>
+    <style>
+        body {
+            width: 960px;
+            margin: 50px auto;
+
+        }
+
+        table,
+        tr,
+        td {
+            /* border: 3px dotted #58B2DC; */
+            font-family: "Lucida Handwriting", "Brush Script MT", cursive;
+            font-weight: bolder;
+            font-size: 28px;
+            border: 1px solid #fff;
+        }
+
+        table {
+            width: 80%;
+            border-collapse: collapse;
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        td {
+            height: 70px;
+        }
+
+        #btn1,
+        #btn5,
+        #btn9 {
+            color: #F8C3CD;
+        }
+
+        .btn {
+            color: #A5DEE4;
+            background-color: #e48e9f;
+        }
+
+        #table2 {
+            /* background-color: #000; */
+            color: #fff;
+            border-collapse: collapse;
+        }
+
+        .box {
+            position: relative;
+            padding: 30px;
+            text-align: center;
+            font-family: "Arial", sans-serif;
+            font-weight: normal;
+            overflow: hidden;
+            padding: 5% 20px;
+            height: 260px;
+            width: 440px;
+        }
+
+        /* 半透明大寫字母背景 */
+        .box::before {
+            content: attr(data-letter);
+            /* 透過屬性塞進來的字母 */
+            content: attr(data-letter);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            /* 置中 */
+            font-size: 100px;
+            color: rgba(0, 0, 0, 0.05);
+            /* 更淡更優雅 */
+            font-weight: bold;
+            z-index: 0;
+            pointer-events: none;
+            white-space: nowrap;
+        }
+
+        /* 讓文字浮在字母之上 */
+        .box p {
+            position: relative;
+            z-index: 1;
+            margin: 5px 0;
+        }
+        .box ul li{
+            font-size: 18px;
+            text-align: left;
+        }
+
+        #box11,
+        #box21 {
+            text-align: left;
+        }
+
+        #box12,
+        #box22 {
+            text-align: right;
+        }
+
+        #box11 {
+            background-color: #86C166;
+        }
+
+        #box12 {
+            background-color: #FFB11B;
+        }
+
+        #box21 {
+            background-color: #0089A7;
+        }
+
+        #box22 {
+            background-color: #CB4042;
+        }
+
+    </style>
+
+</head>
+
+<body>
+    <table>
+        <tr>
+            <td id="btn1" class="btn">1</td>
+            <td id="btn2" class="btn">2</td>
+            <td id="btn3" class="btn">3</td>
+        </tr>
+        <tr>
+            <td id="btn4" class="btn">4</td>
+            <td id="btn5" class="btn">5</td>
+            <td id="btn6" class="btn">6</td>
+        </tr>
+        <tr>
+            <td id="btn7" class="btn">7</td>
+            <td id="btn8" class="btn">8</td>
+            <td id="btn9" class="btn">9</td>
+        </tr>
+    </table>
+
+    <hr>
+    <table id="table2">
+        <tr>
+            <td>
+                <div id="box11" class="box" data-letter="S">
+                    <p>優勢</p>
+                    <p>Strengths</p>
+                    <ul>
+                        <li>熟悉 HTML/CSS/JavaScript 與現代框架（如 React、Vue）</li>
+                        <li>具備良好 UI/UX 敏感度與前端設計思維</li>
+                        <li>與設計師、後端工程師協作能力強</li>
+                        <li>技術變動快，學習曲線陡但能快速成長</li>
+                    </ul>
+                </div>
+            </td>
+            <td>
+                <div id="box12" class="box" data-letter="W">
+                    <p>劣勢</p>
+                    <p>Weaknesses</p>
+                    <ul>
+                        <li>技術更新頻繁，需不斷學習以保持競爭力</li>
+                        <li>專案中容易被視為「視覺實作」角色而非主導開發</li>
+                        <li>不同瀏覽器、裝置兼容性問題造成額外工作量</li>
+                        <li>與後端或資安等系統層理解可能較弱</li>
+                    </ul>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div id="box21" class="box" data-letter="O">
+                    <p>機會</p>
+                    <p>Opportunities</p>
+                    <ul>
+                        <li>Web 技術進化（PWA、WebAssembly、AI 前端工具）帶來新可能</li>
+                        <li>遠端工作、自由接案的彈性越來越高</li>
+                        <li> 移動裝置與 WebApp 趨勢穩定成長</li>
+                        <li>有機會跨足產品設計、互動動畫、UX 領域</li>
+                    </ul>
+                </div>
+            </td>
+            <td>
+                <div id="box22" class="box" data-letter="T">
+                    <p>威脅</p>
+                    <p>Threats</p>
+                    <ul>
+                        <li>前端框架推陳出新，造成技術棄用壓力</li>
+                        <li>AI 工具（如 GitHub Copilot）正在自動化部分程式撰寫</li>
+                        <li>職場競爭激烈，作品與面試表現變得更關鍵</li>
+                        <li> 工程師市場供需快速波動，有外包取代風險</li>
+                    </ul>
+                </div>
+            </td>
+        </tr>
+    </table>
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC&display=swap" rel="stylesheet">
+
+    <title>HR Forms</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Noto Serif TC', "Microsoft JhengHei", "PingFang TC", serif;
+            /* background: linear-gradient(to bottom, #fdfcfb, #f395d4); */
+            background: url(https://i.pinimg.com/736x/15/24/21/15242110c256bc8146d9ee2527e44ee6.jpg);
+            background-size: cover;
+            /* 讓圖片填滿整個畫面 */
+            color: #994639;
+            padding: 2em;
+            box-sizing: border-box;
+        }
+
+        header {
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            padding-top: 30px;
+            padding-bottom: 30px;
+            text-align: center;
+        }
+
+        h2 {
+            background: rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(12px);
+            padding-top: 10px;
+            padding-bottom: 10px;
+            border-radius: 20px;
+            width: 300px;
+            margin: 15px auto;
+            text-align: center;           
+        }
+
+        .item {
+            display: block;
+            width: 40%;
+            height: 100px;
+        }
+
+        h5{
+            text-align: center;
+            line-height: 3;
+        }
+
+        a {
+            text-decoration: none;
+            color: #994639;
+            font-size: 20px;
+        }
+
+        form {
+            margin: 0 auto;
+            padding: 2em;
+            background: rgba(255, 255, 255, 0.25);
+            /*半透明*/
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.3);
+            backdrop-filter: blur(12px);
+            /*毛玻璃*/
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            /*陰影*/
+            max-width: 700px;
+        }
+
+        h3 {
+            border-bottom: 2px solid #994639;
+            padding-bottom: 0.5em;
+            margin-bottom: 1em;
+        }
+
+        p {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5em;
+            flex-wrap: wrap;
+            font-size: 18px;
+
+        }
+
+        label {
+            width: 120px;
+            font-weight: bold;
+            color: #994639;
+            margin-right: 1em;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="date"] {
+            color: #994639;
+            flex: 1;
+            padding: 0.6em 1em;
+            border: 1px solid #f7a9c4;
+            border-radius: 8px;
+            background-color: rgba(255, 255, 255, 0.9);
+            transition: border 0.3s;
+            font-size: 18px;
+        }
+
+        s input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="date"]:focus {
+            border-color: #ff4b5a;
+            outline: none;
+            color: #994639;
+        }
+
+
+
+
+        input[type="radio"],
+        input[type="checkbox"] {
+            margin-left: 10px;
+            margin-right: 5px;
+        }
+
+        input[type="radio"]+label,
+        input[type="checkbox"]+label {
+            margin-right: 10px;
+        }
+
+        select {
+            appearance: none;
+            /* 移除原生箭頭 */
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            background-color: rgba(255, 255, 255, 0.9);
+            border: 1px solid #f7a9c4;
+            border-radius: 8px;
+            padding: 0.6em 2.5em 0.6em 1em;
+            font-size: 1em;
+            color: #8E354A;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg fill='%23f75e91' viewBox='0 0 24 24' width='24' height='24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 0.75em center;
+            background-size: 1em;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        select:hover {
+            background-color: #fff0f6;
+            /* 淡粉色背景 hover 效果 */
+        }
+
+        select:focus {
+            outline: none;
+            border-color: #ff4b5a;
+            box-shadow: 0 0 0 3px rgba(255, 75, 90, 0.3);
+            /* 粉色光暈 */
+        }
+
+        textarea {
+            width: 100%;
+            max-width: 100%;
+            min-height: 150px;
+            padding: 1em;
+            font-size: 1em;
+            border: 1px solid #f8a9c2;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.4);
+            /* 毛玻璃背景 */
+            color: #994639;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(8px);
+            resize: vertical;
+            /* 允許垂直拉伸 */
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        textarea:focus {
+            outline: none;
+            border-color: #f75e91;
+            box-shadow: 0 0 0 4px rgba(247, 94, 145, 0.2);
+            background: rgba(255, 255, 255, 0.6);
+        }
+
+        /* 按鈕樣式 */
+        button {
+            padding: 0.5em 1.5em;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .btn-primary {
+            background-color: #994639;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #ff4b5a;
+        }
+
+        .btn-secondary {
+            background-color: #f0f0f0;
+            color: #333;
+        }
+
+        .btn-secondary:hover {
+            background-color: #e0e0e0;
+        }
+
+        @media (max-width: 600px) {
+            label {
+                width: 100%;
+                margin-bottom: 0.5em;
+            }
+
+            p {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            input[type="text"],
+            input[type="email"],
+            input[type="date"] {
+                width: 80%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="item">
+            <h5>
+                <a href="./index.html">回首頁</a>
+            </h5>
+        </div>
+        <div class="item">
+            <h2>應徵履歷表單</h2>
+        </div>
+        <div class="item"></div>
+
+
+    </header>
+
+    <form action="">
+        <h3>基本資料</h3>
+        <p>
+            <!-- for id -->
+            <!-- id 身分證唯一值 選擇 -->
+            <!-- name 後端接收的column key -->
+            <!-- value 後端接收的column vaule -->
+            <!-- 未來 id neme 資料庫(db)coulmn 可以取一樣比較方便 -->
+            <label for="name">姓名:</label>
+            <input type="text" name="name" id="name">
+        </p>
+        <p>
+            <label for="name">姓別:</label>
+            <!-- radio name一樣才有單選效果 -->
+            <input type="radio" name="gender" id="men">男
+            <input type="radio" name="gender" id="women">女
+        </p>
+        <p>
+            <label for="name">生日:</label>
+            <input type="date" name="birthday" id="birthday">
+        </p>
+        <p>
+            <label for="name">電子郵件:</label>
+            <input type="email" name="email" id="email">
+        </p>
+        <p>
+            <!-- name名字取一樣 加上[]-->
+            <!-- []array陣列 love = [html, css, js] -->
+            <label for="">語言</label>
+            <input type="checkbox" name="love[]" id="html" value="html">
+            <label for="html">html</label>
+            <input type="checkbox" name="love[]" id="css" value="css">
+            <label for="css">css</label>
+            <input type="checkbox" name="love[]" id="js" value="js">
+            <label for="js">js</label>
+        </p>
+
+        <p>
+            <label for="name">地址:</label>
+            <select name="address" id="address">
+                <option value="" disabled selected>請選擇</option>
+                <option value="新北市">新北市</option>
+                <option value="台北市">台北市</option>
+                <option value="桃園市">桃園市</option>
+            </select>
+        </p>
+
+        <p>
+            <label for="name">備註：</label>
+            <textarea name="remark" id="remark" cols="30" rows="10">
+            </textarea>
+        </p>
+        <p>
+            <button class="btn-primary" type="submit">送出</button>
+            <button class="btn-secondary" type="reset">清除</button>
+        </p>
+        <p>
+
+        </p>
+        <p>
+            <!-- 隱藏資料 -->
+            <!-- <button type="hidden" name="vip" value="VVVVIP" value="hidden data"></button> -->
+        </p>
+    </form>
+
+</body>
+
+</html>
