@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS練習</title>
+    <style>
+        .brown{
+            color: brown;
+        }
+        .brown > div{
+            background-color: #000;
+            color: yellow;
+        }
+        .brown > div > div{
+            color: #fff;
+        }
+        .blue{
+            color: blue;
+        }
+        .blue > div{
+            /* background-color: #000; */
+            color: rgb(0, 247, 255);
+        }
+        .blue > div >div{
+            color: #97cafa;
+        }
+        .green{
+            color: green;
+        }
+        .green > div{
+            /* background-color: #000; */
+            color: rgb(72, 224, 118);
+        }
+        .green > div >div{
+            color: #a7e69f;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="brown">
+        雷丘
+        <div class="">
+            &nbsp;&nbsp;&nbsp;&nbsp;皮卡丘
+            <div class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;皮丘</div>
+        </div>
+    </div>
+    <div class="blue">
+        水箭龜
+        <div class="">
+            &nbsp;&nbsp;&nbsp;&nbsp;卡咪龜
+            <div class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;傑尼龜</div>
+        </div>      
+    </div>
+    <div class="green">
+        妙蛙花
+        <div class="">
+            &nbsp;&nbsp;&nbsp;&nbsp;妙蛙草
+            <div class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;妙蛙種子</div>
+        </div>  
+    </div>
+</body>
+</html>
