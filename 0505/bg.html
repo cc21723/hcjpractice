@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>海賊王</title>
+    <style>
+        body {
+            margin: 0;
+            background-color: #e5d1aa;
+            display: flex;
+            justify-content: center;
+        }
+
+        .stack {
+            margin-top: 100px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            /* 圖片之間的間距 */
+        }
+
+
+        /* 每隔一張偏右，創造交錯感 */
+        .stack .box:nth-child(even) {
+            transform: translateX(20px);
+        }
+
+        .stack .box:nth-child(odd) {
+            transform: translateX(-20px);
+        }
+
+        /* Hover 時，合併原本位移 + 放大 */
+        .stack .box:nth-child(even):hover {
+            transform: translateX(20px) scale(1.05);
+        }
+
+        .stack .box:nth-child(odd):hover {
+            transform: translateX(-20px) scale(1.05);
+        }
+
+        .box {
+            width: 300px;
+            height: 60px;
+            background-image: url(https://i.pinimg.com/736x/c0/e2/0d/c0e20d9a296a77458a0fb525588e9097.jpg);
+            background-position-x: -44px;
+            background-color: #fcfcfcda;
+            background-size: 400px;
+            background-repeat: no-repeat;
+            transition: transform 0.3s ease;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+        }
+
+        /* 名字文字樣式 */
+        .label {
+            position: absolute;
+            bottom: 5px;
+            right: 10px;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 2px 6px;
+            font-size: 14px;
+            font-family: "微軟正黑體", sans-serif;
+            color: #333;
+            border-radius: 4px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        /* 滑過時顯示名字 */
+        .box:hover .label {
+            opacity: 1;
+        }
+
+        .box1 {
+            background-position-y: -6px;
+        }
+
+        .box2 {
+            background-position-y: -72px;
+        }
+
+        .box3 {
+            background-position-y: -150px;
+        }
+
+        .box4 {
+            background-position-y: -222px;
+        }
+
+        .box5 {
+            background-position-y: -296px;
+        }
+
+        .box6 {
+            background-position-y: -365px;
+        }
+
+        .box7 {
+            background-position-y: -433px;
+        }
+
+        .box8 {
+            background-position-y: -508px;
+        }
+
+        .box9 {
+            background-position-y: -576px;
+        }
+
+        .box10 {
+            background-position-y: -646px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="stack">
+        <div class="box box1"><span class="label">魯夫</span></div>
+        <div class="box box2"><span class="label">索隆</span></div>
+        <div class="box box3"><span class="label">甚平</span></div>
+        <div class="box box4"><span class="label">香吉士</span></div>
+        <div class="box box5"><span class="label">布魯克</span></div>
+        <div class="box box6"><span class="label">羅賓</span></div>
+        <div class="box box7"><span class="label">佛朗基</span></div>
+        <div class="box box8"><span class="label">喬巴</span></div>
+        <div class="box box9"><span class="label">娜美</span></div>
+        <div class="box box10"><span class="label">騙人布</span></div>
+    </div>
+
+
+
+
+</body>
+
+</html>
