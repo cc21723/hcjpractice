@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Img practise</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Patrick Hand', cursive;
+            /* background-image: url(https://i.pinimg.com/736x/44/c7/39/44c73980972b6fc70c4c1e76c2f1bc13.jpg);
+            background-repeat: no-repeat;
+            background-position: center; */
+            display: flex;
+            flex-direction: column;
+            /* 垂直排列 */
+            align-items: center;
+            /* 水平置中 */
+            justify-content: center;
+            /* 垂直置中 */
+            min-height: 100vh;
+
+        }
+
+        header {
+            width: 90%;
+            max-width: 960px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            color: #E16B8C;
+        }
+
+        .container {
+            background-color: #ffffff5e;
+        }
+
+        .pic {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .pic img {
+            width: 150px;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .pic img:hover {
+            transform: scale(1.05);
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <h1>電影</h1>
+    </header>
+    <div class="container">
+        <div class="card">
+            <div class="pic">
+                <img src="https://i.pinimg.com/736x/51/1d/98/511d986ed38c241df837636256a90a58.jpg" alt="名偵探柯南：引爆摩天樓">
+                <img src="https://upload.wikimedia.org/wikipedia/zh/d/d9/Conan_2.jpg" alt="名偵探柯南：第14號獵物">
+                <img src="https://upload.wikimedia.org/wikipedia/zh/2/23/Conan3.jpg" alt="名偵探柯南：世紀末的魔術師">
+                <img src="https://upload.wikimedia.org/wikipedia/zh/4/4b/Conan_4.jpg" alt="名偵探柯南：瞳孔中的暗殺者">
+                <img src="https://upload.wikimedia.org/wikipedia/zh/thumb/0/0a/Conan_5.jpg/250px-Conan_5.jpg" alt="名偵探柯南：往天國的倒數計時">
+                <img src="https://upload.wikimedia.org/wikipedia/zh/5/5c/Conan_6.jpg" alt="名偵探柯南：貝克街的亡靈">
+                <img src="https://upload.wikimedia.org/wikipedia/zh/thumb/9/94/Conan_7.jpg/250px-Conan_7.jpg" alt="名偵探柯南：迷宮的十字路">
+                <img src="https://upload.wikimedia.org/wikipedia/zh/thumb/7/7c/Conan_8.jpg/250px-Conan_8.jpg" alt="名偵探柯南：銀翼的奇術師">
+                <img src="https://upload.wikimedia.org/wikipedia/zh/thumb/9/98/Conan_9.jpg/250px-Conan_9.jpg" alt="名偵探柯南：水平線上的陰謀">
+                <img src="https://upload.wikimedia.org/wikipedia/zh/thumb/f/f2/Conan_10.jpg/250px-Conan_10.jpg" alt="名偵探柯南：偵探們的鎮魂歌">
+                <img src="https://upload.wikimedia.org/wikipedia/zh/thumb/e/e7/Conan_11.jpg/250px-Conan_11.jpg" alt="名偵探柯南：紺碧之棺">
+                <img src="https://upload.wikimedia.org/wikipedia/zh/thumb/6/6b/Conan_12.jpg/250px-Conan_12.jpg" alt=" 名偵探柯南：戰慄的樂譜">
+                <img src="https://upload.wikimedia.org/wikipedia/zh/thumb/1/1a/Conan_13.jpg/250px-Conan_13.jpg" alt="名偵探柯南：漆黑的追跡者">
+                <img src="https://upload.wikimedia.org/wikipedia/zh/thumb/d/d2/Conan_14.jpg/250px-Conan_14.jpg" alt="名偵探柯南：天空的劫難船">
+                <img src="https://upload.wikimedia.org/wikipedia/zh/3/36/Detective_Conan_Movie_15_Poster.jpg" alt="名偵探柯南：沉默的15分鐘">
+                <img src="https://upload.wikimedia.org/wikipedia/zh/8/88/Detective_Conan_Movie_16_Poster.jpg" alt="名偵探柯南：第11位前鋒">
+                <img src="https://upload.wikimedia.org/wikipedia/zh/6/65/Img_lineup.jpg" alt="名偵探柯南：絕海的偵探">
+                <img src="https://upload.wikimedia.org/wikipedia/zh/3/3d/DetectiveConanmovie18.png" alt="名偵探柯南：異次元的狙擊手">
+                <img src="https://upload.wikimedia.org/wikipedia/zh/thumb/1/11/Detective_Conan_the_movie_19.jpg/250px-Detective_Conan_the_movie_19.jpg" alt="名偵探柯南：業火的向日葵">
+                <img src="https://upload.wikimedia.org/wikipedia/zh/thumb/7/78/Detective_Conan_the_movie_20.jpg/250px-Detective_Conan_the_movie_20.jpg" alt="名偵探柯南：純黑的惡夢">
+                <img src="https://upload.wikimedia.org/wikipedia/zh/thumb/6/6c/M21%28%E6%B5%B7%E5%A0%B1%29.jpg/250px-M21%28%E6%B5%B7%E5%A0%B1%29.jpg" alt="名偵探柯南：唐紅的戀歌">
+                <img src="https://upload.wikimedia.org/wikipedia/zh/thumb/c/c0/Detective_Conan_Zero_the_Enforcer_Poster.jpg/250px-Detective_Conan_Zero_the_Enforcer_Poster.jpg" alt="名偵探柯南：零的執行人">
+                <img src="https://upload.wikimedia.org/wikipedia/zh/thumb/f/fe/Detective-Conan-Movie-23_Poster.jpeg/250px-Detective-Conan-Movie-23_Poster.jpeg" alt="名偵探柯南：紺青之拳">
+                <img src="https://upload.wikimedia.org/wikipedia/zh/thumb/1/15/Conan_Movie_24_Poster.jpg/250px-Conan_Movie_24_Poster.jpg" alt="名偵探柯南：緋色的彈丸">
+                <img src="https://upload.wikimedia.org/wikipedia/zh/9/9c/Conan_Movie_25_Poster.jpg" alt="名偵探柯南：萬聖節的新娘">
+                <img src="https://upload.wikimedia.org/wikipedia/zh/thumb/9/9a/Conan_Movie_26_Poster.jpg/250px-Conan_Movie_26_Poster.jpg" alt="名偵探柯南：黑鐵的魚影">
+                <img src="https://upload.wikimedia.org/wikipedia/zh/thumb/7/7d/Conan_Movie_27_Poster.jpg/250px-Conan_Movie_27_Poster.jpg" alt="名偵探柯南：100萬美元的五稜星">
+                <img src="https://upload.wikimedia.org/wikipedia/zh/thumb/3/30/Conan_Movie_28_Poster.jpg/250px-Conan_Movie_28_Poster.jpg" alt="名偵探柯南：獨眼的殘像">
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

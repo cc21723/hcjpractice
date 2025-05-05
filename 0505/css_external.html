@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>External練習</title>
+    <!-- external 外部CSS -->
+    <!-- 快捷鍵 link:css tab -->
+    <!-- 專案多 需共用CSS -->
+    <link rel="stylesheet" href="./style.css">
+
+    <!-- internal 內部CSS 寫在head -->
+    <!-- 只有單一專案 CSS不共用 -->
+    <style>
+        body {
+            color: rgb(226, 199, 126);
+        }
+
+        .lorem {
+            color: skyblue;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>測試</h1>
+    <!-- inline CSS 行內CSS -->
+    <!-- 少用 -->
+    <div class="lorem" style="color: red;">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas ab doloribus a facere nostrum. Odit quos ipsam
+        quibusdam error ab architecto reiciendis dolor dignissimos, quasi itaque magnam sit veniam aspernatur?
+    </div>
+    <br>
+    <div>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias magni veritatis harum, doloremque ducimus
+        aperiam? Est voluptate nobis voluptates provident voluptatum quibusdam vitae sapiente commodi odio amet, tempora
+        soluta corporis.
+    </div>
+    <br>
+    <div class="lorem">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero nemo amet, tempora aut repellendus officia
+        voluptatem odit minus quibusdam eius magni repellat corrupti laudantium quasi officiis quae ab, reprehenderit
+        illum?
+    </div>
+      <table>
+        <!-- php 與 html 分開 -->
+        <thead>
+          <tr>
+            <th>Key</th>
+            <th>Value</th>
+          </tr>
+        </thead>
+        <tbody>
+          <?php foreach ($variable as $key => $value): ?>
+            <tr>
+              <td><?= $key ?></td>
+              <td><?= $value ?></td>
+            </tr>
+          <?php endforeach; ?>
+        </tbody>
+      </table>
+</body>
+
+</html>
