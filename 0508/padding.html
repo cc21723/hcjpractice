@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>padding</title>
+    <style>
+        
+        *{
+            /*讓盒元素在推擠時不會變形*/
+            box-sizing: border-box;
+        }
+        div{
+            
+            border: 3px solid black;
+        }
+        .box1 {
+            width: 500px;
+            height: 500px;
+            background-color: #FFBA84;
+            margin: 10px auto;
+            padding: 20px;
+        }
+
+        .box2 {
+            width: 150px;
+            height: 150px;
+            background-color: #83d7f1;
+            /* margin-top: 50px; */
+            margin-bottom: 30px;
+            /*padding會讓外盒子變大*/
+            padding: 10px;
+        }
+
+        .box3 {
+            width: 150px;
+            height: 150px;
+            background-color: #f1e083;
+            
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1">
+        <div class="box2">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestiae, quidem?
+        </div>
+        <div class="box3">
+
+        </div>
+    </div>
+</body>
+
+</html>

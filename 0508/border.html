@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Border</title>
+    <style>
+        table,
+        tr,
+        td {
+            height: 500px;
+            /* border: 1px solid black; */
+        }
+
+        table {
+            width: 80%;
+            border-collapse: collapse;
+            margin: auto;
+        }
+
+        .box {
+            width: 300px;
+            height: 300px;
+            background: #DB4D6D;
+            margin: auto;
+            text-align: center;
+            padding: 10px;
+            color: aliceblue;
+
+        }
+
+
+
+        /*vertical-align 高度 只能用在table*/
+        #table2 td {
+            width: auto;
+            height: 300px;
+            vertical-align: middle;
+            text-align: center;
+            background-color: #FFBA84;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position-y: center;
+        }
+
+        .box1 {
+            /* vertical-align: text-bottom; */
+            vertical-align: top;
+        }
+
+        .box2 {
+            vertical-align: middle;
+
+        }
+
+        .box3 {
+            vertical-align: bottom;
+        }
+
+        .bgi1 {
+            background-size: contain;
+            background-image: url(https://i.pinimg.com/736x/f9/57/5b/f9575b5235fd40203c63070910dd647c.jpg);
+
+        }
+
+        .bgi2 {
+            background-size: contain;
+            background-image: url(https://i.pinimg.com/736x/21/e5/2a/21e52ae62cb1b4dc6ebc4a43112d0103.jpg);
+        }
+
+        .bgi3 {
+            background-size: contain;
+            background-image: url(https://i.pinimg.com/736x/77/b8/1e/77b81e11b750be6290977d921be98fdd.jpg);
+        }
+
+        .img1 {
+            background-image: url(https://i.pinimg.com/736x/2a/87/14/2a8714b88c3df7aaa0a562ad37cb58e5.jpg);
+        }
+
+        .img2 {
+            background-image: url(https://i.pinimg.com/736x/15/8b/6f/158b6fd3922159f9a68d8bd8ac661f76.jpg);
+        }
+
+        .img3 {
+            background-image: url(https://i.pinimg.com/736x/91/e7/88/91e788d4acfc509470afe22030b5b250.jpg);
+        }
+    </style>
+</head>
+
+<body>
+    <h1>table</h1>
+    <table>
+        <tr>
+            <td class="box1">
+                <div class="box bgi1">
+                    貓貓
+                </div>
+            </td>
+            <td class="box2">
+                <div class="box bgi2">
+                    真的
+                </div>
+            </td>
+            <td class="box3">
+                <div class="box bgi3">
+                    超可愛
+                </div>
+            </td>
+        </tr>
+    </table>
+    <h1>table2</h1>
+    <table id="table2">
+        <tr>
+            <td class="img1">
+                
+            </td>
+            <td class="img2">
+                
+            </td>
+            <td class="img3">
+                
+            </td>
+        </tr>
+    </table>
+</body>
+
+</html>

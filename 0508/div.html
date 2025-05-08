@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Beautiful Page</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            width: 100%;
+            scroll-behavior: smooth;
+        }
+
+        .nav {
+            height: 60px;
+            background-color: #dd8af7;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar-menu {
+            display: flex;
+            gap: 20px;
+        }
+
+        .btn {
+            padding: 8px 20px;
+            font-size: 18px;
+            background-color: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .btn:hover {
+            background-color: #f7d1ff;
+            transform: scale(1.05);
+        }
+
+        .btn a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .container {
+            height: 80vh;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: #fff;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+        }
+
+        #container1 {
+            background-image: url(https://i.pinimg.com/736x/d8/4f/6c/d84f6cec1c747f5da1502fb9703f40e7.jpg);
+        }
+
+        #container2 {
+            background-image: url(https://i.pinimg.com/736x/97/44/15/974415b327d9c01cacee780b32906583.jpg);
+        }
+
+        /* 回上方 */
+        #backToTop {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            padding: 10px 16px;
+            font-size: 16px;
+            background-color: #dd8af7;
+            color: white;
+            text-decoration: none;
+            border-radius: 50%;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            z-index: 999;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        #backToTop:hover {
+            background-color: #c261e2;
+            transform: scale(1.1);
+        }
+
+        footer {
+            height: 30vh;
+            background-image: url(https://i.pinimg.com/736x/a2/e4/58/a2e45893f4db02178dc71d18f64b3841.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #fff;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+        }
+    </style>
+</head>
+
+<body>
+    <a id="top"></a>
+    <div class="nav">
+        <div class="navbar-menu">
+            <div class="btn"><a href="#container1">Container 1</a></div>
+            <div class="btn"><a href="#container2">Container 2</a></div>
+            <div class="btn"><a href="#footer">Footer</a></div>
+        </div>
+    </div>
+
+    <div id="container1" class="container">
+        Container 1
+    </div>
+
+    <div id="container2" class="container">
+        Container 2
+    </div>
+
+    <a href="#top" id="backToTop">↑ Top</a>
+
+    <footer id="footer">
+        © 2025 Footer Section
+    </footer>
+
+
+</body>
+
+</html>

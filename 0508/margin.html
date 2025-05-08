@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>margin</title>
+    <style>
+        .box {
+            height: 300px;
+            width: 200px;
+            background-color: #FFBA84;
+            margin-top: 50px;
+            margin-left: 50%;
+            background-size: cover;
+        }
+
+        /*兩個物件互推時margin會選擇大的數字推*/
+        .box1 {
+            background-image: url(https://i.pinimg.com/736x/9a/3e/03/9a3e036890e45dc5282fd5530d6a8771.jpg);
+            margin-bottom: 50px;
+        }
+
+        .box2 {
+            background-image: url(https://i.pinimg.com/736x/0f/37/83/0f3783a61a8a4daada86bab93740145f.jpg);
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box box1">
+
+    </div>
+    <div class="box box2">
+
+    </div>
+
+</body>
+
+</html>
