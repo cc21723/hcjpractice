@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Float Layout</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin-left: -1px;
+            margin-top: -1px;
+        }
+
+        .box {
+            width: 100%;
+            height: 25vh;
+            background-color: lightblue;
+        }
+
+        table {
+            width: 100%;
+        }
+
+        .bg-pink {
+            background-color: lightcoral;
+        }
+
+        .bg-blue {
+            background-color: skyblue;
+        }
+
+        .w-25 {
+            width: 24.5%;
+        }
+
+        .w-33 {
+            width: 33%;
+        }
+
+        .container3::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        .float-left {
+            float: left;
+        }
+
+        .float-right {
+            float: right;
+        }
+
+
+        .inline-block {
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box">box</div>
+    </div>
+
+    <div class="container2">
+        <table>
+            <tr>
+                <td>
+                    <div class="box bg-blue">table</div>
+                </td>
+                <td>
+                    <div class="box bg-pink">table</div>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="container3">
+        <div class="box float-left w-33">float</div>
+        <div class="box float-left w-33 bg-pink">float</div>
+        <div class="box float-right w-33 bg-blue">float</div>
+    </div>
+
+    <div class="container4">
+        <div class="box inline-block w-25">inline-block</div>
+        <div class="box inline-block w-25 bg-pink">inline-block</div>
+        <div class="box inline-block w-25 bg-blue">inline-block</div>
+        <div class="box inline-block w-25">inline-block</div>
+    </div>
+</body>
+
+</html>
