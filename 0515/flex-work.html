@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex-work</title>
+    <style>
+        body {
+            width: 90%;
+            margin: 0 auto;
+            font-family: "Segoe UI", sans-serif;
+            background-color: #f5f0e3;
+            /* 溫柔米白背景 */
+        }
+
+        /* navbar start */
+        .navbar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            background-color: #789262;
+            /* 古典藥草綠 */
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 8px 16px;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        /* navbar end */
+
+        /* 回上方 */
+        #backToTop {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            padding: 10px 16px;
+            font-size: 16px;
+            background-color: #a38fa3;
+            /* 藤紫 */
+            color: white;
+            text-decoration: none;
+            border-radius: 50%;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            z-index: 999;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        #backToTop:hover {
+            background-color: #8c748d;
+            transform: scale(1.1);
+        }
+
+        /* container start */
+        .container {
+            display: flex;
+            align-items: center;
+            height: 350px;
+            background-color: #d7d3c8;
+            /* 淺茶色背景，用來柔和畫面 */
+            border: 1px solid #3e3e3e;
+        }
+
+        .flex-start {
+            justify-content: flex-start;
+        }
+
+        .flex-end {
+            justify-content: flex-end;
+        }
+
+        .center {
+            justify-content: center;
+        }
+
+        .space-around {
+            justify-content: space-around;
+        }
+
+        .space-between {
+            justify-content: space-between;
+        }
+
+        .space-evenly {
+            justify-content: space-evenly;
+        }
+
+        /* container end */
+
+        /* img */
+        img {
+            width: 18%;
+        }
+
+        /* img end */
+
+        /* footer start */
+        footer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #3e3e3e;
+            /* 墨色底 */
+            color: #f5f0e3;
+            padding: 20px 0;
+        }
+
+        /* footer end */
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <a href="#flex-start">flex-start</a>
+        <a href="#flex-end">flex-end</a>
+        <a href="#center">center</a>
+        <a href="#space-around">space-around</a>
+        <a href="#space-between">space-between</a>
+        <a href="#space-evenly">space-evenly</a>
+        <a href="#footer">Footer</a>
+    </nav>
+
+    <div id="flex-start" class="container flex-start">
+        <img src="https://i.pinimg.com/736x/d3/bf/10/d3bf10e0c4b89911a090b2c80f4dff17.jpg" alt="">
+    </div>
+    <div id="flex-end" class="container flex-end">
+        <img src="https://i.pinimg.com/736x/f2/bf/2e/f2bf2ec6bd32a2d784ae40160c54685d.jpg" alt="">
+    </div>
+    <div id="center" class="container center">
+        <img src="https://i.pinimg.com/736x/10/dc/0e/10dc0e440f154118c9387ac6983fbd7d.jpg" alt="">
+        <img src="https://i.pinimg.com/736x/2a/a5/82/2aa582aec9001f463ddde3d2c42ead56.jpg" alt="">
+    </div>
+    <div id="space-around" class="container space-around">
+        <img src="https://i.pinimg.com/736x/71/d8/cb/71d8cba5f6f9c5e207b6a0cd8f4b7201.jpg" alt="">
+        <img src="https://i.pinimg.com/736x/21/ad/63/21ad6360dd95e3b24ae493ff0ad3583b.jpg" alt="">
+        <img src="https://i.pinimg.com/736x/81/bf/08/81bf08d6a1baef5fd9c1dfdaae6753e8.jpg" alt="">
+    </div>
+    <div id="space-between" class="container space-between">
+        <img src="https://i.pinimg.com/736x/d0/24/90/d02490a89474d3e664ee1e4afd3b080a.jpg" alt="">
+        <img src="https://i.pinimg.com/736x/dc/e8/80/dce8801b10233a6916ff3918d9ff84a0.jpg" alt="">
+        <img src="https://i.pinimg.com/736x/bc/f5/f0/bcf5f02f4edfe5c860d2db5115efd826.jpg" alt="">
+        <img src="https://i.pinimg.com/736x/29/38/e3/2938e3b0942a7add180c9289c1797b96.jpg" alt="">
+    </div>
+    <div id="space-evenly" class="container space-evenly">
+        <img src="https://i.pinimg.com/736x/83/64/35/8364353b7f18e5f03ed32574aa55d1d0.jpg" alt="">
+        <img src="https://i.pinimg.com/736x/20/35/ec/2035ec54683202370293fe3e863d57e8.jpg" alt="">
+        <img src="https://i.pinimg.com/736x/57/74/0e/57740e17d1b241a12259163d1230690b.jpg" alt="">
+        <img src="https://i.pinimg.com/736x/3d/c1/36/3dc1367d1ba58e0bea07e4b005239d06.jpg" alt="">
+        <img src="https://i.pinimg.com/736x/63/be/b4/63beb4dc3c9fd0a1c2a6327959bb9ffa.jpg" alt="">
+    </div>
+    <a href="#top" id="backToTop">↑ Top</a>
+
+    <footer id="footer">
+        © 2025 Footer Section
+
+    </footer>
+
+</body>
+
+</html>

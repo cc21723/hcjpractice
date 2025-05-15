@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <title>置中的導覽列</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", sans-serif;
+      background-color: #f8f8f8;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: center; /* 水平置中 */
+      align-items: center;     /* 垂直置中 */
+      gap: 40px;               /* 項目之間的間距 */
+      background-color: #E16B8C;
+      padding: 15px 0;
+    }
+
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      padding: 8px 16px;
+      border-radius: 8px;
+      transition: background-color 0.3s ease;
+    }
+
+    .navbar a:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="#">首頁</a>
+    <a href="#">關於我們</a>
+    <a href="#">服務項目</a>
+    <a href="#">聯絡方式</a>
+  </nav>
+
+</body>
+</html>

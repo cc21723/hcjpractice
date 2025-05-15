@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex-box</title>
+    <style>
+        .flex-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            /* flex-direction: column-reverse; */
+            /* flex-wrap: wrap; */
+            background-color: skyblue;
+
+        }
+
+        .flex-container>div {
+            background-color: #f1f1f1;
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+            text-align: center;
+            line-height: 75px;
+            font-size: 30px;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 220px;
+            margin: 10px auto;
+            border: 1px solid #000000;
+            padding: 8px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+        }
+
+        .one {
+            background-color: #0a5fa3;
+            order: 3;
+        }
+
+        .two {
+            background-color: #1dba8d;
+            order: 1;
+        }
+
+        .three {
+            background-color: #e5c131;
+            order: 2;
+        }
+
+        .four {
+            background-color: #e74614;
+            order: 4;
+        }
+
+
+        .container1, .container2, .container3,.container4 {
+            display: flex;
+            height: 200px;
+            background-color: skyblue;
+            border: 1px solid #aaa;
+        }
+        
+        .flex-box {
+            width: 100px;
+            height: 100px;
+        }
+        .container1{
+            /* 水平置中 */
+            justify-content: center;
+            /* 垂直置中 */
+            align-items: center;
+        }
+        .container2 {
+            /*首尾對齊，中間平均分配空格*/
+            justify-content:space-between;
+            /*垂直靠下*/
+            align-items:end;
+            /* background-color: rgb(77, 186, 230); */
+        }
+        .container3{
+            /*每個項目前後有一半空格*/
+            justify-content: space-around;
+
+            align-items:stretch;
+        }
+        .container4{
+            /* 所有空格完全平均 */
+            justify-content: space-evenly;
+
+            align-items: flex-start;
+        }
+        
+        /* .w-50{
+            width: 50%;
+        }
+        .w-33{
+            width: 33%;
+        }
+        .w-25{
+            width: 25%;
+        } */
+
+    </style>
+</head>
+
+<body>
+    <h1>Flexible Boxes</h1>
+
+    <div class="flex-container">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+    </div>
+
+    <div class="container">
+        <div class="box one"> 1 </div>
+        <div class="box two"> 2 </div>
+        <div class="box three"> 3 </div>
+        <div class="box four"> 4 </div>
+    </div>
+
+    <div class="container1">
+        <div class="flex-box one"></div>
+    </div>
+    <div class="container2">
+        <div class="flex-box one w-50 "></div>
+        <div class="flex-box two w-50 "></div>
+    </div>
+    <div class="container3">
+        <div class="flex-box one w-33"></div>
+        <div class="flex-box two w-33"></div>
+        <div class="flex-box three w-33"></div>
+    </div>
+    <div class="container4">
+        <div class="flex-box one w-25"></div>
+        <div class="flex-box two w-25"></div>
+        <div class="flex-box three w-25"></div>
+        <div class="flex-box four w-25"></div>
+    </div>
+
+</body>
+
+</html>

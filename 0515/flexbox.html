@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flexbox</title>
+    <style>
+        body {
+            margin: 0 auto;
+            font-family: "Segoe UI", sans-serif;
+            background-color: #f8f8f8;
+            width: 90%;
+        }
+
+        /* navbar start */
+        .navbar {
+            display: flex;
+            justify-content: center;
+            /* 水平置中 */
+            align-items: center;
+            /* 垂直置中 */
+            gap: 40px;
+            /* 項目之間的間距 */
+            background-color: #E16B8C;
+            padding: 15px 0;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 8px 16px;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        /* navbar end */
+
+        /* container start */
+        .container {
+            height: 50vh;
+            background-color: lightpink;
+            display: flex;
+            justify-content: space-between;
+            /* align-items: flex-start; */
+
+        }
+
+        .container-column {
+            display: flex;
+            flex-direction: column;
+            /* 主軸置中 */
+            justify-content: flex-start;
+            /* 次軸置中 */
+            align-items: center;
+            width: 30%;
+            height: 500px;
+            background-color: lightsalmon;
+            margin: 0 auto;
+        }
+
+        .item {
+            width: 200px;
+            height: 50px;
+            background-color: lightcyan;
+            display: flex;
+            /* 新增 */
+            justify-content: center;
+            /* 水平置中 */
+            align-items: center;
+            /* 垂直置中 */
+        }
+
+        .w-20 {
+            width: 20%;
+        }
+
+        .w-70 {
+            width: 70%;
+            background-color: lightgreen;
+        }
+
+        /* container end */
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <a href="#">首頁</a>
+        <a href="#">關於我們</a>
+        <a href="#">服務項目</a>
+        <a href="#">聯絡方式</a>
+    </nav>
+
+    <div class="container">
+
+        <div class="container-column w-20">
+            <div class="item">關於我們</div>
+            <div class="item">服務項目</div>
+            <div class="item">聯絡方式</div>
+        </div>
+        <div class="container-column w-70">
+
+        </div>
+    </div>
+
+</body>
+
+</html>
