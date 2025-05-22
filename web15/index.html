@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>國立科技高中-校園社團介紹網</title>
+    <style>
+        * {
+            clear: both;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 1024px;
+            max-height: 768px;
+            margin: 0 auto;
+            font-family: DFKai-sb, "Helvetica Neue", Helvetica, sans-serif;
+        }
+
+        header {
+            height: 65px;
+        }
+
+        .top {
+            width: 1000px;
+            height: 65px;
+            margin: 0 auto;
+        }
+
+        .top img {
+            width: 994px;
+            height: 65px;
+        }
+
+        .container {
+            width: 1024px;
+            height: 703px;
+            display: flex;
+        }
+
+        .left {
+            width: 215px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            margin: 0 auto;
+        }
+
+        .menu {
+            text-align: center;
+            font-weight: 500;
+            margin: 0 auto;
+        }
+
+        .menu p {
+            font-size: 24px;
+            text-decoration: underline;
+            text-align: center;
+            color: #FF00FF;
+        }
+
+        .menu ul {
+            padding: 0;
+            margin: 0 auto;
+        }
+
+        .menu ul li {
+            list-style: none;
+            display: block;
+            text-align: center;
+            width: 200px;
+            height: 35px;
+            padding: 5px;
+            margin-bottom: 5px;
+            background-image: url(./image/menu1.png);
+            background-size: cover;
+            color: #000;
+            font-size: 16px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        .menu ul li:hover {
+            background-image: url(./image/menu2.png);
+        }
+
+
+        .update {
+            height: 25px;
+            text-align: center;
+        }
+
+        .right {
+            width: calc(1024px - 215px);
+            margin: 0 auto;
+        }
+
+        .marquee {
+            height: 29px;
+            color: #0000FF;
+            padding-top: 4px;
+        }
+
+        .content {
+            width: 770px;
+            height: calc(768px - 65px - 29px - 20px);
+            margin: 0 auto;
+            background-image: url(./image/0101.jpg);
+        }
+
+        iframe{
+            width: 100%;
+            height: 100%;
+        }
+        footer {
+            height: 20px;
+            text-align: center;
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- header -->
+    <header>
+        <!-- main -->
+        <!-- top -->
+        <div class="top">
+            <img src="./image/logo.png" alt="">
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="left">
+            <!-- left -->
+            <!-- menu -->
+            <div class="menu">
+                <p>社團介紹</p>
+                <ul>
+                    <li><a href="guitar_hisory.html" target="mainFrame">吉他社</a></li>
+                    <li><a target="mainFrame">熱舞社</a></li>
+                    <li><a target="mainFrame">棒球社</a></li>
+                    <li><a target="mainFrame">羽球社</a></li>
+                    <li><a target="mainFrame">足球社</a></li>
+                    <li><a target="mainFrame">童軍社</a></li>
+                </ul>
+
+            </div>
+
+            <!-- update -->
+            <div class="update">
+                最近更新日期：yyyy/mm/dd
+            </div>
+        </div>
+
+        <div class="right">
+            <!-- marquee -->
+            <div class="marquee">
+                <marquee behavior="" direction="">歡迎光臨校園社團介紹網，參觀後請支持社團活動並熱烈參與</marquee>
+            </div>
+
+            <!-- content -->
+            <div class="content">
+                <!-- 讓其他連結用 target="mainFrame" -->
+                <iframe name="mainFrame" src="main.html" frameborder="0"></iframe>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- footer -->
+    <footer>
+        網頁設計及維護：15Snow
+    </footer>
+
+
+
+
+</body>
+
+</html>
