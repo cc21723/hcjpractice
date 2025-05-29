@@ -1,68 +1,60 @@
-* {
-    box-sizing: border-box;
-}
+/* style.css */
 
 body {
     margin: 0;
-    padding: 0;
-    font-family: 'Patrick Hand', cursive;
-    background-color: #fff0f5;
+    font-family: 'Quicksand', sans-serif;
+    background: linear-gradient(to bottom right, #fef6f9, #e3f4f3);
+    color: #5c4b51;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    height: 100vh;
 }
 
 .container {
-    width: 90%;
-    max-width: 960px;
-    background-color: #fff;
-    border-radius: 16px;
-    padding: 30px 20px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-    border: 4px dashed #E16B8C;
-    text-align: center;
-}
-
-h1 {
-    color: #E16B8C;
-    font-size: 2.5em;
-    margin-bottom: 30px;
+    background-color: #fff9f5;
+    padding: 2rem 3rem;
+    border-radius: 25px;
+    box-shadow: 0 0 20px rgba(200, 150, 180, 0.2);
 }
 
 ul {
     list-style: none;
     padding: 0;
+    margin: 0;
     display: flex;
     flex-wrap: wrap;
+    /* ✅ 允許自動換行 */
+    gap: 1rem;
     justify-content: center;
-    gap: 20px;
+    /* 置中排列 */
 }
 
 li a {
     display: inline-block;
-    padding: 15px 25px;
-    background-color: #E16B8C;
-    color: white;
+    padding: 0.8rem 1.5rem;
+    text-align: center;
+    background-color: #fce4ec;
+    color: #5c4b51;
     text-decoration: none;
-    border-radius: 12px;
-    font-size: 1.2em;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 0.2s ease, background-color 0.3s ease;
+    font-size: 1.1rem;
+    border-radius: 20px;
+    box-shadow: 2px 2px 8px rgba(216, 167, 177, 0.3);
+    transition: all 0.3s ease;
+    min-width: 120px;
+    /* ✅ 統一寬度較好看，可依需要調整 */
 }
 
 li a:hover {
-    background-color: #c05574;
-    transform: scale(1.05);
+    background-color: #eec9d2;
+    transform: scale(1.03);
 }
 
-@media (max-width: 600px) {
-    h1 {
-        font-size: 2em;
-    }
-
-    li a {
-        font-size: 1em;
-        padding: 12px 20px;
-    }
+hr {
+    border: none;
+    border-top: 3px dashed #d8a7b1;
+    /* 柔和粉紅色虛線 */
+    margin: 2rem auto;
+    width: 80%;
+    opacity: 0.8;
 }

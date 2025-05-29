@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>計算機</title>
+    <style>
+        .container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        hr {
+            border: none;
+            border-top: 3px dashed #d8a7b1;
+            /* 柔和粉紅色虛線 */
+            margin: 2rem auto;
+            width: 80%;
+            opacity: 0.8;
+        }
+
+        #num1,
+        #num2,
+        select {
+            padding: 0.6rem 1rem;
+            border: 2px solid #d8c2e0;
+            border-radius: 10px;
+            background-color: #ffffffdd;
+            font-size: 1rem;
+            width: 100px;
+            text-align: center;
+            box-shadow: 2px 2px 6px rgba(200, 180, 210, 0.3);
+        }
+
+        #num1,
+        #num2 {
+            width: 200px;
+            /* ✅ 加大寬度 */
+
+        }
+
+        .tac {
+            text-align: center;
+        }
+
+        #myBtn {
+            width: 80%;
+            background-color: #d8a7b1;
+            color: #fff;
+            border: none;
+            padding: 0.8rem 2rem;
+            border-radius: 25px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 2px 2px 6px rgba(216, 167, 177, 0.4);
+            /* 確保不會被 flex 影響 */
+            display: inline-block;
+            text-align: center;
+        }
+
+        #myBtn:hover {
+            background-color: #c6899a;
+            transform: scale(1.05);
+        }
+
+        #resultP {
+            margin-top: 2rem;
+            font-size: 1.2rem;
+            background-color: #ffffffcc;
+            padding: 1rem;
+            border-radius: 15px;
+            width: fit-content;
+            margin-left: auto;
+            margin-right: auto;
+            box-shadow: 0 0 10px rgba(174, 134, 152, 0.1);
+        }
+
+        a {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            text-align: center;
+            background-color: #fce4ec;
+            color: #5c4b51;
+            text-decoration: none;
+            font-size: 1.1rem;
+            border-radius: 20px;
+            box-shadow: 2px 2px 8px rgba(216, 167, 177, 0.3);
+            transition: all 0.3s ease;
+            min-width: 120px;
+            /* ✅ 統一寬度較好看，可依需要調整 */
+        }
+
+        li a:hover {
+            background-color: #eec9d2;
+            transform: scale(1.03);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <p>
+            <input type="number" name="" id="num1">
+        </p>
+        <select id="opt">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+        </select>
+        <p>
+            <input type="number" name="" id="num2">
+        </p>
+    </div>
+
+
+    <p class="tac">
+        <button type="button" id="myBtn">送出</button>
+    </p>
+    <hr>
+
+    <p id="resultP">
+        num1 opt num2 = ?
+    </p>
+
+    <hr>
+    <div class="tac">
+        <a href="../index.html">返回首頁</a>
+    </div>
+
+
+    <script>
+        // 1.bind
+        let num1 = document.getElementById('num1');
+        let num2 = document.getElementById('num2');
+        let opt = document.getElementById('opt');
+        let myBtn = document.getElementById('myBtn');
+        let resultP = document.getElementById('resultP');
+
+        // 2.action
+        myBtn.addEventListener('click', function () {
+
+            // 抓num1值
+            // let myValue1 = document.getElementById('num1').value;
+            let myValue1 = Number(num1.value);
+            console.log('myValue1 = ', myValue1);
+
+            // 抓num2值
+            // let myValue2 = document.getElementById('num2').value;
+            let myValue2 = Number(num2.value);
+            console.log('myValue2 = ', myValue2);
+
+
+            // 抓opt值
+            let optValue = opt.value;
+
+            switch (optValue) {
+                case '+':
+                    result = myValue1 + myValue2;
+                    break;
+                case '-':
+                    result = myValue1 - myValue2;
+                    break;
+                case '*':
+                    result = myValue1 * myValue2;
+                    break;
+                case '/':
+                    result = myValue2 !== 0 ? myValue1 / myValue2 : '不能除以0';
+                    break;
+                default:
+                    break;
+            }
+
+            // result
+            console.log('result = ', result);
+
+
+            // result to resultP
+            resultP.innerText = `${myValue1}  ${optValue}  ${myValue2} = ${result}`;
+
+
+        })
+
+
+    </script>
+</body>
+
+</html>

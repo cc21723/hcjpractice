@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javaScript</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #fff9fb;
+            font-family: 'Segoe UI', sans-serif;
+            color: #5c4b51;
+        }
+
+        .container {
+            max-width: 1024px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* 盒子樣式 */
+        .box {
+            width: 300px;
+            height: 300px;
+            background-color: #fce4ec;
+            /* 粉色盒子 */
+            border-radius: 20px;
+            box-shadow: 0 4px 15px rgba(216, 167, 177, 0.3);
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            margin: 0 auto;
+        }
+
+        /* 切換背景顏色用 */
+        .bg-blue {
+            background-color: #cce7f6;
+        }
+
+        .bg-pink {
+            background-color: #fce4ec;
+        }
+
+        /* 虛線分隔線 */
+        hr {
+            border: none;
+            border-top: 3px dashed #d8a7b1;
+            margin: 2rem auto;
+            width: 80%;
+            opacity: 0.8;
+        }
+
+        /* 文字置中用 */
+        .tac {
+            text-align: center;
+        }
+
+        /* 按鈕與連結美化 */
+        a,
+        #myBtn {
+            border: none;
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            text-align: center;
+            background-color: #fce4ec;
+            color: #5c4b51;
+            text-decoration: none;
+            font-size: 1.1rem;
+            border-radius: 25px;
+            box-shadow: 2px 2px 8px rgba(216, 167, 177, 0.3);
+            transition: all 0.3s ease;
+            min-width: 140px;
+            margin: 0.5rem;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        /* 滑過效果 */
+        a:hover,
+        #myBtn:hover {
+            background-color: #f8bbd0;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="tac">
+            <div class="box bg-pink">
+    
+            </div>
+            <p>
+                <button type="button" id="myBtn">myBtn</button>
+            </p>
+        </div>
+        <hr>
+        <div class="tac">
+            <a href="../index.html">返回首頁</a>
+        </div>
+    </div>
+
+
+    <script>
+        // 1.bind
+        // id
+        // let box = document.getElementById('box');
+
+        //class
+        let box = document.querySelector('.box');
+        let myBtn = document.getElementById('myBtn');
+        console.log('box', box);
+        console.log('myBtn', myBtn);
+
+        // 2.action
+        myBtn.addEventListener('click', function () {
+            console.log('myBtn ok');
+            // box.style.backgroundColor = 'lightblue';
+            box.setAttribute('class', 'box bg-blue');
+        })
+
+
+    </script>
+</body>
+
+</html>
