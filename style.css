@@ -1,25 +1,26 @@
-/* style.css */
-
 body {
-    margin: 20px auto;
+    margin: 20px 10px;
     font-family: 'Quicksand', sans-serif;
-    background: linear-gradient(to bottom right, #fef6f9, #e3f4f3);
-    color: #5c4b51;
+    background: linear-gradient(to bottom right, #fdfbfa, #f8e9f0);
+    color: #5f4b66;
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
     align-items: center;
     height: 100vh;
     gap: 2rem;
 }
 
 .container {
-    padding-top: 10px;
     background-color: #fff9f5;
     padding: 2rem 3rem;
     border-radius: 25px;
-    box-shadow: 0 0 20px rgba(200, 150, 180, 0.2);
+    box-shadow: 0 0 20px rgba(190, 150, 200, 0.15);
+    transition: transform 0.3s ease;
 }
+
+/* .container:hover {
+    transform: scale(1.01);
+} */
 
 ul {
     list-style: none;
@@ -27,36 +28,32 @@ ul {
     margin: 0;
     display: flex;
     flex-wrap: wrap;
-    /* ✅ 允許自動換行 */
     gap: 1rem;
     justify-content: center;
-    /* 置中排列 */
 }
 
 li a {
     display: inline-block;
     padding: 0.8rem 1.5rem;
     text-align: center;
-    background-color: #fce4ec;
-    color: #5c4b51;
+    background-color: #f8e9f0;
+    color: #5f4b66;
     text-decoration: none;
     font-size: 1.1rem;
     border-radius: 20px;
-    box-shadow: 2px 2px 8px rgba(216, 167, 177, 0.3);
+    box-shadow: 2px 2px 8px rgba(190, 150, 200, 0.2);
     transition: all 0.3s ease;
     min-width: 120px;
-    /* ✅ 統一寬度較好看，可依需要調整 */
 }
 
 li a:hover {
-    background-color: #eec9d2;
-    transform: scale(1.03);
+    background-color: #e8d9f1;
+    transform: scale(1.05);
 }
 
 hr {
     border: none;
-    border-top: 3px dashed #d8a7b1;
-    /* 柔和粉紅色虛線 */
+    border-top: 3px dashed #d8c7d6;
     margin: 2rem auto;
     width: 80%;
     opacity: 0.8;
