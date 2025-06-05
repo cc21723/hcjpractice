@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOM</title>
+</head>
+<body>
+    <button type="button" id="myBtn">myBtn</button>
+    <script>
+        console.log('window', window);
+        console.log('document', window.document);
+
+        let myBtn = document.getElementById('myBtn');
+
+        myBtn.addEventListener('click',function () {
+            console.log('myBtn', myBtn);
+            alert('ok');
+        })
+    </script>
+</body>
+</html>

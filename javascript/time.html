@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOM</title>
+    <style>
+        .box {
+            width: 300px;
+            height: 300px;
+            background-color: lightblue;
+        }
+
+        .container {
+            margin-top: 30px;
+        }
+
+        .bg-pink {
+            background-color: lightpink;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <button type="button" id="myBtn">myBtn</button>
+    </div>
+    <div class="container">
+        <div class="box" id="myBox">
+
+        </div>
+    </div>
+    <script>
+        let myBtn = document.getElementById('myBtn');
+        let box = document.querySelector('.box');
+
+        //點擊按鈕變色
+        // myBtn.addEventListener('click',function () {
+        //     console.log('myBtn', myBtn);
+        //     box.setAttribute('class', 'box bg-pink');
+        // })
+
+        //過三秒變色
+
+        // window.setTimeout(function time3000(){
+        //     box.setAttribute('class', 'box bg-pink');
+        // },3000);
+
+        //點擊按鈕後3秒變色
+        // myBtn.addEventListener('click', function () {
+        //     setTimeout(function () {
+        //         box.setAttribute('class', 'box bg-pink');
+        //     }, 3000);
+        // });
+
+        //點擊按鈕後1秒變一次色 循環
+
+        myBtn.addEventListener('click', function () {
+
+            setInterval(function () {
+                box.setAttribute('class', 'box bg-pink');
+                setTimeout(function () {
+                    box.setAttribute('class', 'box');
+                }, 1000);
+
+            }, 3000);
+            // 每 1000 毫秒變色一次
+
+        });
+
+
+        //增加一個按鈕 暫停Interval
+    </script>
+</body>
+
+</html>
