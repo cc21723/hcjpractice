@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="myBtn" type="button">myBtn</button>
+    <script>
+
+        // 懶人包
+        // 1.不要auto
+        // 2.不要var (舊的)
+        // 3.起手全部都用let
+        // 4.綁定element const
+
+        // 1.bind
+        // const 綁定 element
+        // element 裡面attr 都可以更動
+        // - 儘量使用 `let` 和 `const`，避免使用 `var`。
+        // - 當你不會改變變數內容時，用 `const`。
+        // - 需要改變變數內容時，用 `let`。
+        const myBtn = document.getElementById('myBtn');
+        myBtn.innerText = '12345';
+        console.log('myBtn', myBtn);
+
+        const bonus = 10;
+
+
+        // 2.action
+
+        // let const
+        // let 宣告變數
+
+        console.log('name', name);
+
+    </script>
+</body>
+
+</html>

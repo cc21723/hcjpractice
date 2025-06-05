@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        //isArray 判斷是否為陣列
+        //是 array method的一種 只能用在array
+
+        let myArr = [1,2,3];
+        console.log('myArr',myArr);  // [1, 2, 3]
+        console.log('myArr typeof', typeof(myArr)); //"object"
+        
+        let result = Array.isArray(myArr);  //判斷變數是否為陣列
+        console.log('result', result);  // true
+        
+        myArr.forEach(element => {
+            console.log('element', element);
+        });
+
+        myArr.forEach((value, key)=> {
+            console.log('key', key);
+            console.log('value', value);
+            
+        });
+
+        let myObj = {
+            's1': 'A',
+            's2': 'B',
+            's3': 'C'
+        }
+        
+        console.log('myObj', myObj); // {s1: "A", s2: "B", s3: "C"}
+        console.log('myObj typeof', typeof(myObj)); //"object"
+
+        let resultObj = Array.isArray(myObj);
+        console.log('resultObj', resultObj);  // false
+        
+        
+
+
+    </script>
+</body>
+</html>
