@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>飲品訂購表</title>
+    <!-- 載入JQ -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', '微軟正黑體', sans-serif;
+            background: linear-gradient(to right, #fef6f9, #e6f7f4);
+            color: #4b3b40;
+            padding: 30px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2rem;
+            color: #a05f73;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 90%;
+            max-width: 800px;
+            margin: auto;
+            border-collapse: collapse;
+            background-color: #fff9f5;
+            box-shadow: 0 4px 15px rgba(190, 150, 170, 0.2);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        th,
+        td {
+            border: 1px solid #e8cdd6;
+            padding: 10px 12px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #fce4ec;
+            color: #5c4b51;
+        }
+
+        tr:nth-child(even) td {
+            background-color: #fdf5f8;
+        }
+
+        input[type="number"] {
+            width: 60px;
+            padding: 6px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            text-align: center;
+            background-color: #fffefc;
+            box-shadow: inset 0 1px 3px rgba(200, 170, 180, 0.1);
+        }
+
+        tr:last-child td {
+            background-color: #fff0f5;
+            font-weight: bold;
+            font-size: 1.1em;
+            color: #a05f73;
+        }
+
+        img {
+            width: 150px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>貓貓訂購表</h1>
+    <table>
+        <tr>
+            <th>項目</th>
+            <th>品項</th>
+            <th>圖片</th>
+            <th>單價</th>
+            <th>數量</th>
+            <th width="20%">總計</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>厭惡貓貓</td>
+            <td><img src="https://i.pinimg.com/736x/09/32/1f/09321f02e3591b87ee18a3cdec675629.jpg" alt=""></td>
+            <td>200</td>
+            <td><input data-price="200" class="quantity" type="number" value="0"></td>
+            <td class="subtotal"></td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>威脅貓貓</td>
+            <td><img src="https://i.pinimg.com/736x/15/8b/6f/158b6fd3922159f9a68d8bd8ac661f76.jpg" alt=""></td>
+            <td>250</td>
+            <td><input data-price="250" class="quantity" type="number" value="0"></td>
+            <td class="subtotal"></td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>生氣貓貓</td>
+            <td><img src="https://i.pinimg.com/736x/91/e7/88/91e788d4acfc509470afe22030b5b250.jpg" alt=""></td>
+            <td>150</td>
+            <td><input data-price="150" class="quantity" type="number" value="0"></td>
+            <td class="subtotal"></td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>傷心貓貓</td>
+            <td><img src="https://i.pinimg.com/736x/a6/e5/e5/a6e5e56504876d206b9876d6c579d7ec.jpg" alt=""></td>
+            <td>150</td>
+            <td><input data-price="150" class="quantity" type="number" value="0"></td>
+            <td class="subtotal"></td>
+        </tr>
+        <tr>
+            <td>合計</td>
+            <td class="totalAmount" colspan="5"></td>
+        </tr>
+    </table>
+
+    <script>
+        $(document).ready(function () {
+
+            const quantity = $('.quantity'); //數量
+            const subtotal = $('.subtotal'); // 小計
+            const totalAmount = $('.totalAmount');
+
+            quantity.change(function () {
+
+                let temCount = Number($(this).val());
+                let tmpPrice = Number($(this).attr('data-price'));
+
+                console.log('temCount', temCount);
+
+                // 找到對應的該列小計欄位
+                let sub = temCount * tmpPrice;
+                console.log('sub', sub);
+
+                // const row = $(this).closest('tr');
+                // row.find('.subtotal').text(sub);
+
+                //找tr class 找到對應的那一列
+                // parent() 往上找一層
+                // find() 往下找 一定要找到
+                let tmpTr = $(this).parent().parent();
+                let tmpTotal = tmpTr.find('.subtotal');
+                console.log('tmpTr', tmpTr);
+                console.log('tmpTotal', tmpTotal);
+                tmpTotal.text(sub);
+
+                // 重新計算總金額
+                let total = 0;
+                $('.subtotal').each(function () {
+                    total += Number($(this).text()) || 0;
+                });
+
+                // 如果超過500打8折
+                if (total >= 500) {
+                    total *= 0.8;
+                }
+
+                $('.totalAmount').text(Math.round(total));
+            });
+
+
+
+
+
+            // 當數量欄位有變化時執行
+            // $('input[type="number"]').on('input', function () {
+
+            // const row = $(this).closest('tr'); // 找到當前輸入欄位所在的列
+            //parseInt 整數 // .eq(index) 是抓取第幾個 td，索引從 0 開始。
+            // const price = parseInt(row.find('td').eq(3).text()); // 單價
+            // const quantity = parseInt($(this).val()) || 0; // 數量，轉成數字
+            // const subtotal = price * quantity; // 小計
+            // let total = 0;
+
+            // // 更新小計欄
+            // row.find('td').eq(5).text(subtotal);
+
+            // // 更新合計
+            // $('table tr').each(function () { 
+            //     const sub = parseInt($(this).find('td').eq(5).text()) || 0;
+            //     total += sub;
+            //  })
+
+            // // 金額超過500打8折
+            // if (total >= 500) {
+            //     console.log('total', total);
+            //     total *= 0.8;
+            //     console.log('打8折total', total);
+            // }
+            // // 更新合計列
+            // $('table tr:last-child td').eq(1).text(total);
+
+            // });
+        });
+    </script>
+</body>
+
+</html>

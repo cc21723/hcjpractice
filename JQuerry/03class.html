@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 載入JQ -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <style>
+        body {
+            font-family: '標楷體', cursive;
+            background: linear-gradient(to right bottom, #fef6f9, #e3f4f3);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        h1 {
+            font-size: 2rem;
+            color: #5c4b51;
+            margin-bottom: 20px;
+        }
+
+
+        .btns {
+            margin-bottom: 20px;
+        }
+
+        button {
+            font-family: 'Patrick Hand', cursive;
+            font-size: 1.2rem;
+            padding: 10px 20px;
+            margin: 0 10px;
+            /* background: linear-gradient(to bottom, #ffe0ea, #fbd4d4); */
+            color: #5c4b51;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            box-shadow: 2px 2px 8px rgba(200, 150, 180, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            /* background: #fcd2d7; */
+            transform: scale(1.05);
+        }
+
+        .box {
+            width: 300px;
+            height: 300px;
+            background: #eee;
+            border-radius: 20px;
+            box-shadow: 0 0 15px rgba(180, 180, 180, 0.2);
+            transition: background 0.5s ease;
+        }
+
+        .bg-blue {
+            background: #d0ebff;
+        }
+
+        .bg-red {
+            background: #ffc9c9;
+        }
+
+        .bg-green {
+            background: #d3f9d8;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="btns">
+        <button type="button" id="redBtn" data-color="red" class="btn bg-red">紅</button>
+        <button type="button" id="blueBtn" data-color="blue" class="btn bg-blue">藍</button>
+        <button type="button" id="greenBtn" data-color="green" class="btn bg-green">綠</button>
+    </div>
+
+
+    <div class="box">
+
+    </div>
+</body>
+
+
+<script>
+
+    $(document).ready(function () {
+        const box = $('.box');
+
+
+        // const redBtn = $('#redBtn');
+        // const blueBtn = $('#blueBtn');
+        // const greenBtn = $('#greenBtn');
+        const btn = $('.btn');
+        //用 class
+
+
+        // 每個按鈕各自綁定 `click()`，不易擴充。
+        // 這段註解掉的程式碼可以被簡化成下面的寫法。
+        // redBtn.click(function () {
+
+        //     let tmpColor = red.data('color');
+        //     let tmpColor = $(this).attr('data-color');
+        //     box.attr('class', `box bg-${tmpColor}`);
+        // });
+        // blueBtn.click(function () {
+        //     let tmpColor = $(this).attr('data-color');
+        //     box.attr('class', `box bg-${tmpColor}`);
+        // });
+        // greenBtn.click(function () {
+        //     let tmpColor = $(this).attr('data-color');
+        //     box.attr('class', `box bg-${tmpColor}`);
+        // });
+
+        btn.click(function () {
+
+            // let tmpColor = red.data('color');
+            //抓html 按鈕中的 data-color 的值
+            let tmpColor = $(this).attr('data-color');
+
+            //同等於 box.removeClass().addClass(`box bg-${tmpColor}`);
+            box.attr('class', `box bg-${tmpColor}`);
+
+        });
+
+
+    });
+
+
+
+
+
+
+
+</script>
+
+</html>
