@@ -107,12 +107,14 @@
 </head>
 
 <body>
-    <!-- 複利計算
+    <!-- 
+    複利計算
     單筆投入 10萬
     年化投報率 8%
     年限10年
     顯示每一年多少錢(小數點兩位) 
-    公式 每年多8% 本利和*(1+8%/100) -->
+    公式 每年多8% 本利和*(1+8%/100) 
+    -->
 
     <h1>複利計算</h1>
     <form id="compoundForm">
@@ -166,18 +168,24 @@
             // 找到表格中的 <tbody> 元素
             const tableBody = $('#resultTable tbody');
             tableBody.empty(); // 每次按下計算按鈕前，先清空舊的計算結果
-
-           //逐年計算複利
+            let formattedAmount = 0;
+            
+            //逐年計算複利
             for (let i = 1; i <= years; i++) {
-                amount *= (1 + rate); // 每年本利和 = 去年本利和 × (1 + 年利率)
-                const formattedAmount = (amount / 10000).toFixed(2); // 換算回「萬元」並保留小數點兩位
+                if (i == 1) {
+                     formattedAmount = (amount / 10000);
+                } else {
+                    amount *= (1 + rate); // 每年本利和 = 去年本利和 × (1 + 年利率)
+                     formattedAmount = (amount / 10000).toFixed(2); // 換算回「萬元」並保留小數點兩位
+                }
+
 
                 // 建立新的表格列（包含年份與金額）
                 const row = `<tr><td>${i}</td><td>${formattedAmount}</td></tr>`;
-                
+
                 tableBody.append(row);  // 把這一列加到 <tbody> 裡
             };
-        
+
         };
     </script>
 </body>
