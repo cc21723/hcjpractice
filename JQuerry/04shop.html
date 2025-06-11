@@ -71,6 +71,12 @@
         img {
             width: 150px;
         }
+
+        .discountMsg {
+            color: #d63384;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
     </style>
 </head>
 
@@ -117,6 +123,7 @@
             <td><input data-price="150" class="quantity" type="number" value="0"></td>
             <td class="subtotal"></td>
         </tr>
+        <div class="discountMsg"></div>
         <tr>
             <td>合計</td>
             <td class="totalAmount" colspan="5"></td>
@@ -128,7 +135,7 @@
 
             const quantity = $('.quantity'); //數量
             const subtotal = $('.subtotal'); // 小計
-            const totalAmount = $('.totalAmount');
+            const totalAmount = $('.totalAmount'); ///總計
 
             quantity.change(function () {
 
@@ -144,7 +151,7 @@
                 // const row = $(this).closest('tr');
                 // row.find('.subtotal').text(sub);
 
-                //找tr class 找到對應的那一列
+                // 找tr class 找到對應的那一列
                 // parent() 往上找一層
                 // find() 往下找 一定要找到
                 let tmpTr = $(this).parent().parent();
@@ -153,6 +160,15 @@
                 console.log('tmpTotal', tmpTotal);
                 tmpTotal.text(sub);
 
+                //json data / jq objs
+                // $.each(tmpTotal, function (key, value) { 
+                //      console.log('key',key);
+                //      console.log('value',value);
+                //      let tmpValue = Number((value).text());
+                //     console.log('tmpValue',tmpValue);
+                // });            
+
+                //json data / jq objs
                 // 重新計算總金額
                 let total = 0;
                 $('.subtotal').each(function () {
@@ -162,20 +178,19 @@
                 // 如果超過500打8折
                 if (total >= 500) {
                     total *= 0.8;
+                    $('.discountMsg').text('已達500元，享8折優惠！');
+                } else {
+                    $('.discountMsg').text(''); // 沒有折扣就清除訊息
                 }
 
                 $('.totalAmount').text(Math.round(total));
             });
 
-
-
-
-
             // 當數量欄位有變化時執行
             // $('input[type="number"]').on('input', function () {
 
             // const row = $(this).closest('tr'); // 找到當前輸入欄位所在的列
-            //parseInt 整數 // .eq(index) 是抓取第幾個 td，索引從 0 開始。
+            // parseInt 整數 // .eq(index) 是抓取第幾個 td，索引從 0 開始。
             // const price = parseInt(row.find('td').eq(3).text()); // 單價
             // const quantity = parseInt($(this).val()) || 0; // 數量，轉成數字
             // const subtotal = price * quantity; // 小計

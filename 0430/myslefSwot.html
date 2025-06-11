@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的swot</title>
+    <style>
+        body {
+            width: 960px;
+            margin: 50px auto;
+
+        }
+
+        table,
+        tr,
+        td {
+            /* border: 3px dotted #58B2DC; */
+            font-family: "Lucida Handwriting", "Brush Script MT", cursive;
+            font-weight: bolder;
+            font-size: 28px;
+            border: 1px solid #fff;
+        }
+
+        table {
+            width: 80%;
+            border-collapse: collapse;
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        td {
+            height: 70px;
+        }
+
+        #btn1,
+        #btn5,
+        #btn9 {
+            color: #F8C3CD;
+        }
+
+        .btn {
+            color: #A5DEE4;
+            background-color: #e48e9f;
+        }
+
+        #table2 {
+            /* background-color: #000; */
+            color: #fff;
+            border-collapse: collapse;
+        }
+
+        .box {
+            position: relative;
+            padding: 30px;
+            text-align: center;
+            font-family: "Arial", sans-serif;
+            font-weight: normal;
+            overflow: hidden;
+            padding: 5% 20px;
+            height: 260px;
+            width: 440px;
+        }
+
+        /* 半透明大寫字母背景 */
+        .box::before {
+            content: attr(data-letter);
+            /* 透過屬性塞進來的字母 */
+            content: attr(data-letter);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            /* 置中 */
+            font-size: 100px;
+            color: rgba(0, 0, 0, 0.05);
+            /* 更淡更優雅 */
+            font-weight: bold;
+            z-index: 0;
+            pointer-events: none;
+            white-space: nowrap;
+        }
+
+        /* 讓文字浮在字母之上 */
+        .box p {
+            position: relative;
+            z-index: 1;
+            margin: 5px 0;
+            /* vertical-align: center; */
+        }
+        .box ul li{
+            font-size: 18px;
+            text-align: left;
+        }
+
+        #box11,
+        #box21 {
+            text-align: left;
+        }
+
+        #box12,
+        #box22 {
+            text-align: right;
+        }
+
+        #box11 {
+            background-color: #86C166;
+        }
+
+        #box12 {
+            background-color: #FFB11B;
+        }
+
+        #box21 {
+            background-color: #0089A7;
+        }
+
+        #box22 {
+            background-color: #CB4042;
+        }
+
+    </style>
+
+</head>
+
+<body>
+    <table id="table2">
+        <tr>
+    <td>
+        <div id="box11" class="box" data-letter="S">
+            <p>優勢</p>
+            <p>Strengths</p>
+            <ul>
+                <li>理想主義、堅守內在價值觀與信念</li>
+                <li>富有同理心，能與他人建立深層連結</li>
+                <li>具創造力，擅長寫作、藝術與表達內心世界</li>
+                <li>獨立思考，內在驅動力強</li>
+                <li>對人忠誠且溫暖，是深情可靠的夥伴</li>
+            </ul>
+        </div>
+    </td>
+    <td>
+        <div id="box12" class="box" data-letter="W">
+            <p>劣勢</p>
+            <p>Weaknesses</p>
+            <ul>
+                <li>容易理想化他人或情境，導致失望</li>
+                <li>自我懷疑與過度反思，易陷入情緒低潮</li>
+                <li>逃避衝突，不擅長直接表達不滿</li>
+                <li>行動力較弱，容易拖延或躊躇不前</li>
+                <li>過於敏感，容易被負面情緒或批評影響</li>
+            </ul>
+        </div>
+    </td>
+</tr>
+<tr>
+    <td>
+        <div id="box21" class="box" data-letter="O">
+            <p>機會</p>
+            <p>Opportunities</p>
+            <ul>
+                <li>心理健康與情感價值日益受到重視，適合從事助人工作</li>
+                <li>自媒體與創作平台提供表達自我與分享故事的空間</li>
+                <li>文化產業與教育領域重視情感連結與創造力</li>
+                <li>職場越來越重視軟實力與同理溝通</li>
+            </ul>
+        </div>
+    </td>
+    <td>
+        <div id="box22" class="box" data-letter="T">
+            <p>威脅</p>
+            <p>Threats</p>
+            <ul>
+                <li>職場與社會現實導向，可能壓抑理想與熱情</li>
+                <li>缺乏主動爭取，易被動錯失發展機會</li>
+                <li>情緒易受干擾，若缺乏支持系統恐影響心理健康</li>
+                <li>內向性格與高度自我要求可能導致壓力過大</li>
+            </ul>
+        </div>
+    </td>
+</tr>
+
+    </table>
+
+
+
+
+</body>
+
+</html>

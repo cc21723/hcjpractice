@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>複利計算</title>
+    <style>
+        body {
+            font-family: "Segoe UI", sans-serif;
+            background: linear-gradient(to bottom right, #fef6fa, #e0f7fa);
+            min-height: 960px;
+            color: #4a4a4a;
+            margin: 0;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            color: #6a4e77;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        form {
+            background: #ffffffcc;
+            padding: 1.5rem 2rem;
+            border-radius: 16px;
+            box-shadow: 0 5px 15px rgba(120, 100, 140, 0.15);
+            margin-bottom: 2rem;
+            width: 100%;
+            max-width: 500px;
+        }
+
+        fieldset {
+            border: none;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        label {
+            font-weight: bold;
+            color: #555;
+        }
+
+        input[type="number"] {
+            padding: 0.5rem;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 1rem;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #ba8eb2;
+            color: white;
+            border: none;
+            padding: 0.7rem 1.2rem;
+            border-radius: 10px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #a56f9b;
+        }
+
+        table {
+            width: 100%;
+            max-width: 500px;
+            border-collapse: collapse;
+            box-shadow: 0 0 10px rgba(100, 80, 120, 0.1);
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        caption {
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: #5c4b66;
+        }
+
+        th,
+        td {
+            padding: 0.75rem;
+            text-align: center;
+            border-bottom: 1px solid #e0d5eb;
+        }
+
+        th {
+            background-color: #f2eaf6;
+            color: #5e4b6f;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #faf6fc;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 複利計算
+    單筆投入 10萬
+    年化投報率 8%
+    年限10年
+    顯示每一年多少錢(小數點兩位) 
+    公式 每年多8% 本利和*(1+8%/100) -->
+
+    <h1>複利計算</h1>
+    <form id="compoundForm">
+        <fieldset>
+            <label>單筆投入：</label>
+            <input type="number" id="principal" value="10"> 萬
+            <label>年化報酬率：</label>
+            <input type="number" id="rate" value="8"> %
+            <label>年限：</label>
+            <input type="number" id="years" value="10"> 年
+        </fieldset>
+        <!-- 用onclick 就不需要用 $(document).ready(function ()) -->
+        <!-- <button type="button">開始計算</button> -->
+        <button type="button" onclick="calculate()">開始計算</button>
+    </form>
+
+    <table id="resultTable">
+        <caption>每年複利結果</caption>
+        <thead>
+            <tr>
+                <th>年份</th>
+                <th>本利和（萬元）</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+
+    <!-- 載入jquery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script>
+        // $(document).ready(function () {
+        //     // 這裡可以綁定事件，但因為用了 onclick 就不需要這段
+        // $("#compoundForm button").on("click", function () {
+        // calculate();
+        // });
+
+        //計算
+        function calculate() {
+            //抓輸入的值 $('值')
+            const principal = parseFloat($('#principal').val()) * 10000; //投入金額  單位從「萬」轉為「元」
+            const rate = parseFloat($('#rate').val()) / 100; //利率  將百分比轉為小數
+            const years = parseInt($('#years').val()); //年限 
+
+            let amount = principal; // 計算初始本利和（從本金開始）
+
+            // 找到表格中的 <tbody> 元素
+            const tableBody = $('#resultTable tbody');
+            tableBody.empty(); // 每次按下計算按鈕前，先清空舊的計算結果
+
+           //逐年計算複利
+            for (let i = 1; i <= years; i++) {
+                amount *= (1 + rate); // 每年本利和 = 去年本利和 × (1 + 年利率)
+                const formattedAmount = (amount / 10000).toFixed(2); // 換算回「萬元」並保留小數點兩位
+
+                // 建立新的表格列（包含年份與金額）
+                const row = `<tr><td>${i}</td><td>${formattedAmount}</td></tr>`;
+                
+                tableBody.append(row);  // 把這一列加到 <tbody> 裡
+            };
+        
+        };
+    </script>
+</body>
+
+</html>
