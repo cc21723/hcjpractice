@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fade</title>
+</head>
+<body>
+    
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fade</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <style>
+        .box{
+            height: 300px;
+            width: 300px;
+            background-color: lightblue;
+        }
+    </style>
+</head>
+<body>
+    <div class="box" id="myBox"></div>
+    <br>
+    <button type="button" id="fadeInBtn">fadeInBtn</button>
+    <button type="button" id="fadeOutBtn">fadeOutBtn</button>
+    <button type="button" id="fadeToggleBtn">fadeToggleBtn</button>
+
+
+    
+    <script>
+        $(document).ready(function () {
+            const myBox = $('#myBox');
+            const fadeInBtn = $('#fadeInBtn');
+            const fadeOutBtn = $('#fadeOutBtn');
+            const fadeToggleBtn = $('#fadeToggleBtn');
+
+            fadeInBtn.click(function (e) { 
+               myBox.fadeIn(1000);
+            });
+            fadeOutBtn.click(function (e) { 
+               myBox.fadeOut(1000);
+            });
+            //自動判斷東西狀態是隱藏還是顯示 會自動切換
+            fadeToggleBtn.click(function (e) { 
+               myBox.fadeToggle();
+            });
+        });
+    </script>
+</body>
+</html>

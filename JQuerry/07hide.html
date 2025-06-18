@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hidden</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <style>
+        .box{
+            height: 300px;
+            width: 300px;
+            background-color: lightblue;
+        }
+    </style>
+</head>
+<body>
+    <div class="box" id="myBox"></div>
+    <br>
+    <button type="button" id="hideBtn">hideBtn</button>
+    <button type="button" id="showBtn">showBtn</button>
+    <button type="button" id="toggleBtn">toggleBtn</button>
+
+
+    
+    <script>
+        $(document).ready(function () {
+            const myBox = $('#myBox');
+            const hideBtn = $('#hideBtn');
+            const showBtn = $('#showBtn');
+            const toggleBtn = $('#toggleBtn');
+
+            hideBtn.click(function (e) { 
+               myBox.hide();
+            });
+            showBtn.click(function (e) { 
+               myBox.show();
+            });
+            //自動判斷東西狀態是隱藏還是顯示 會自動切換
+            toggleBtn.click(function (e) { 
+               myBox.toggle();
+            });
+        });
+    </script>
+</body>
+</html>
