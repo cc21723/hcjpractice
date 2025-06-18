@@ -1,39 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fade</title>
 </head>
+
 <body>
-    
+
 </body>
-</html><!DOCTYPE html>
+
+</html>
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fade</title>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
         integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <style>
-        .box{
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #f9f7fc;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        button {
+            background-color: #8a6da8;
+            color: white;
+            border: none;
+            padding: 0.6rem 1.2rem;
+            margin: 0.5rem;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #7a5d99;
+        }
+
+        .box {
             height: 300px;
             width: 300px;
             background-color: lightblue;
+            margin: 0 auto;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(100, 150, 200, 0.2);
         }
     </style>
 </head>
+
 <body>
     <div class="box" id="myBox"></div>
     <br>
-    <button type="button" id="fadeInBtn">fadeInBtn</button>
-    <button type="button" id="fadeOutBtn">fadeOutBtn</button>
-    <button type="button" id="fadeToggleBtn">fadeToggleBtn</button>
+    <button type="button" id="fadeInBtn">fadeIn()</button>
+    <button type="button" id="fadeOutBtn">fadeOut()</button>
+    <button type="button" id="fadeToggleBtn">fadeToggle()</button>
 
 
-    
+
     <script>
         $(document).ready(function () {
             const myBox = $('#myBox');
@@ -41,17 +74,18 @@
             const fadeOutBtn = $('#fadeOutBtn');
             const fadeToggleBtn = $('#fadeToggleBtn');
 
-            fadeInBtn.click(function (e) { 
-               myBox.fadeIn(1000);
+            fadeInBtn.click(function (e) {
+                myBox.fadeIn(1000);
             });
-            fadeOutBtn.click(function (e) { 
-               myBox.fadeOut(1000);
+            fadeOutBtn.click(function (e) {
+                myBox.fadeOut(1000);
             });
             //自動判斷東西狀態是隱藏還是顯示 會自動切換
-            fadeToggleBtn.click(function (e) { 
-               myBox.fadeToggle();
+            fadeToggleBtn.click(function (e) {
+                myBox.fadeToggle();
             });
         });
     </script>
 </body>
+
 </html>

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,22 +9,49 @@
         integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <style>
-        .box{
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #f9f7fc;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        button {
+            background-color: #8a6da8;
+            color: white;
+            border: none;
+            padding: 0.6rem 1.2rem;
+            margin: 0.5rem;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #7a5d99;
+        }
+
+        .box {
             height: 300px;
             width: 300px;
             background-color: lightblue;
+            margin: 0 auto;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(100, 150, 200, 0.2);
         }
     </style>
 </head>
+
 <body>
     <div class="box" id="myBox"></div>
     <br>
-    <button type="button" id="hideBtn">hideBtn</button>
-    <button type="button" id="showBtn">showBtn</button>
-    <button type="button" id="toggleBtn">toggleBtn</button>
+    <button type="button" id="hideBtn">hide()</button>
+    <button type="button" id="showBtn">show()</button>
+    <button type="button" id="toggleBtn">toggle()</button>
 
 
-    
+
     <script>
         $(document).ready(function () {
             const myBox = $('#myBox');
@@ -31,17 +59,18 @@
             const showBtn = $('#showBtn');
             const toggleBtn = $('#toggleBtn');
 
-            hideBtn.click(function (e) { 
-               myBox.hide();
+            hideBtn.click(function (e) {
+                myBox.hide();
             });
-            showBtn.click(function (e) { 
-               myBox.show();
+            showBtn.click(function (e) {
+                myBox.show();
             });
             //自動判斷東西狀態是隱藏還是顯示 會自動切換
-            toggleBtn.click(function (e) { 
-               myBox.toggle();
+            toggleBtn.click(function (e) {
+                myBox.toggle();
             });
         });
     </script>
 </body>
+
 </html>

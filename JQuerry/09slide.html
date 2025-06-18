@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slide</title>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f3f3f3;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .box {
+            height: 100px;
+            width: 300px;
+            background-color: lightblue;
+            margin: 1rem auto;
+            border-radius: 10px;
+            line-height: 100px;
+            font-weight: bold;
+        }
+
+        .box2 {
+            height: 300px;
+            width: 300px;
+            background-color: lightpink;
+            margin: 1rem auto;
+            border-radius: 10px;
+        }
+
+        button {
+            margin: 0.5rem;
+            padding: 0.6rem 1.2rem;
+            background-color: #a674b2;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #945ca1;
+        }
+    </style>
+</head>
+<body>
+    <div class="box" id="myBox">點我滑動 Box2</div>
+    <div class="box2" id="myBox2"></div>
+
+    <button type="button" id="slideUpBtn">slideUp()</button>
+    <button type="button" id="slideDownBtn">slideDown()</button>
+    <button type="button" id="slideToggleBtn">slideToggle()</button>
+
+    <script>
+        $(document).ready(function () {
+
+            const myBox = $('#myBox');
+            const myBox2 = $('#myBox2');
+
+            $('#slideUpBtn').click(function () { 
+                myBox2.slideUp(1000);
+            });
+
+            $('#slideDownBtn').click(function () { 
+                myBox2.slideDown(1000);
+            });
+
+            $('#slideToggleBtn').click(function () { 
+                myBox2.slideToggle(1000);
+            });
+
+            myBox.click(function () { 
+                myBox2.slideToggle(1000);
+            });
+        });
+    </script>
+</body>
+</html>
