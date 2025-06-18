@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            width: 80%;
+            height: 90vh;
+            background-color: lightblue;
+            margin: auto;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .bg-pink {
+            background-color: lightpink;
+        }
+
+        button {
+            width: 120px;
+        }
+
+        table {
+            margin: auto;
+            margin-top: 10px;
+            width: 80%;
+            background-color: lightgray;
+            border-collapse: collapse;
+        }
+
+        table,
+        tr,
+        th,
+        td {
+            border: 1px solid black;
+        }
+
+        th,
+        td {
+            width: 50%;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <h3>複利計算</h3>
+        <hr>
+        <p>
+            投入(萬) &nbsp;&nbsp;&nbsp;<input type="text" name="" id="money" value="100">
+        </p>
+        <p>
+            投報(%) &nbsp;&nbsp;&nbsp;<input type="text" name="" id="rate" value="8">
+        </p>
+        <p>
+            年限(年) &nbsp;&nbsp;&nbsp;<input type="text" name="" id="year" value="10">
+        </p>
+        <p>
+            <button type="button" id="myBtn">送出</button>
+        </p>
+
+    </div>
+
+    <div class="container bg-pink">
+        <h3>試算結果</h3>
+        <hr>
+        <table id="myTable">
+            <tr>
+                <th>年</th>
+                <th>金額</th>
+            </tr>
+        </table>
+    </div>
+
+    <!-- 載入jquery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script>
+        $(document).ready(function () {
+            // 1.bind
+            const money = $('#money');
+            const rate = $('#rate');
+            const year = $('#year');
+            const myBtn = $('#myBtn');
+            const myTable = $('#myTable');
+            
+
+            // 2.action
+
+            myBtn.click(function () {
+                console.log('myBtn', myBtn);
+                let moneyValue = Number(money.val());
+                let rateValue = Number(rate.val());
+                let yearValue = Number(year.val());
+                let data = [];
+                console.log('moneyValue', moneyValue);
+                console.log('rateValue', rateValue);
+                console.log('yearValue', yearValue);
+
+                let tmpTableHead = `
+                    <tr>
+                        <th>年</th>
+                        <th>金額</th>
+                    </tr>
+                `
+                myTable.text('');
+                myTable.append(tmpTableHead);
+
+                
+                // 1.get data                
+                // 2.data to html table
+
+                // [{},{}] 10年 10obj
+                // for year 10
+                // for (let i = 1; i <= yearValue; i++) {
+                //     console.log(`第${i}年`);
+                //     let tmpYear = i;
+                //     let tmpMoney = moneyValue;
+                //     let tmpObj = {
+                //         'id': i,
+                //         'year': tmpYear,
+                //         'money': tmpMoney
+                //     }
+                //     console.log('tmpObj', tmpObj);
+                //     data.push(tmpObj);
+                // }
+                // // 1.get data                
+                // console.log('data', data);
+
+                // 2.data to html table
+                // foreach
+
+                let sum = 0;
+
+                for (let i = 0; i <= yearValue; i++) {
+                    // 1.第1年 money
+                    // 2.第2年 money*1.08
+                    // 3.第3年 money*1.08 * 1.08
+
+                    // 1.第1年 sum = money
+                    // 2.第2年 sum = sum *1.08
+
+                    // 1.第1年 sum = money
+                    // 2.第2年 sum = sum *1.08
+                    // if 1
+                    // else
+                    // 投報率計算
+                    let tmpObj = {};
+                    if (i == 0) {
+                        // 1.第1年 sum = money
+                        sum = moneyValue;
+                        let tmpYear = i;
+                        let tmpMoney = moneyValue;
+                        tmpObj = {
+                            'id': i,
+                            'year': tmpYear,
+                            'money': tmpMoney
+                        }
+                    } else {
+                        // 2.第n年 sum = sum *1.08
+                        // 8  0.08
+                        let tmpRate = (1 + (rateValue/100));
+                        sum = (sum * tmpRate).toFixed(2);
+                        let tmpYear = i;
+                        let tmpMoney = sum;
+                        tmpObj = {
+                            'id': i,
+                            'year': tmpYear,
+                            'money': tmpMoney
+                        }
+                    }
+
+
+                    data.push(tmpObj);
+                }
+                console.log('data', data);
+
+                let tmpResult = ``;
+
+                $.each(data, function (key, value) {
+                    console.log('key', key);
+                    console.log('value', value);
+                    tmpResult += `
+                        <tr>
+                            <td>${value.year}</td>
+                            <td>${value.money}</td>
+                        </tr>
+                    `;
+                });
+
+                console.log('tmpResult', tmpResult)
+
+                myTable.append(tmpResult);
+            });
+
+        });
+    </script>
+</body>
+
+</html>

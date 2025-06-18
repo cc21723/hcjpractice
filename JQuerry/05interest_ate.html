@@ -162,7 +162,7 @@
             const principal = parseFloat($('#principal').val()) * 10000; //投入金額  單位從「萬」轉為「元」
             const rate = parseFloat($('#rate').val()) / 100; //利率  將百分比轉為小數
             const years = parseInt($('#years').val()); //年限 
-
+            
             let amount = principal; // 計算初始本利和（從本金開始）
 
             // 找到表格中的 <tbody> 元素
@@ -171,8 +171,8 @@
             let formattedAmount = 0;
             
             //逐年計算複利
-            for (let i = 1; i <= years; i++) {
-                if (i == 1) {
+            for (let i = 0; i <= years; i++) {
+                if (i == 0) {
                      formattedAmount = (amount / 10000);
                 } else {
                     amount *= (1 + rate); // 每年本利和 = 去年本利和 × (1 + 年利率)
