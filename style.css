@@ -1,60 +1,80 @@
 body {
-    margin: 20px 10px;
-    font-family: 'Quicksand', sans-serif;
-    background: linear-gradient(to bottom right, #fdfbfa, #f8e9f0);
-    color: #5f4b66;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 100vh;
-    gap: 2rem;
+  font-family: '標楷體', "Microsoft JhengHei", serif;
+  background-color: #FFF8FA;
+  color: #5D4C86;
+  margin: 0;
+  padding: 0;
 }
 
-.container {
-    background-color: #fff9f5;
-    padding: 2rem 3rem;
-    border-radius: 25px;
-    box-shadow: 0 0 20px rgba(190, 150, 200, 0.15);
-    transition: transform 0.3s ease;
+h1 {
+  text-align: center;
+  font-size: 2.5em;
+  padding: 30px 0 10px;
+  color: #A06AB4;
+  text-shadow: 1px 1px #fce4ec;
 }
 
-/* .container:hover {
-    transform: scale(1.01);
-} */
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
+}
 
+
+h2 {
+  font-size: 1.3em;
+  color: #C88FD7;
+  margin-top: 0;
+  text-align: center;
+}
+
+/* 列表與連結 */
 ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    justify-content: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-li a {
-    display: inline-block;
-    padding: 0.8rem 1.5rem;
-    text-align: center;
-    background-color: #f8e9f0;
-    color: #5f4b66;
-    text-decoration: none;
-    font-size: 1.1rem;
-    border-radius: 20px;
-    box-shadow: 2px 2px 8px rgba(190, 150, 200, 0.2);
-    transition: all 0.3s ease;
-    min-width: 120px;
+li {
+  margin: 10px 0;
+  text-align: center;
 }
 
-li a:hover {
-    background-color: #e8d9f1;
-    transform: scale(1.05);
+a {
+  text-decoration: none;
+  color: #A06AB4;
+  font-weight: bold;
+  transition: color 0.2s ease;
 }
 
-hr {
-    border: none;
-    border-top: 3px dashed #d8c7d6;
-    margin: 2rem auto;
-    width: 80%;
-    opacity: 0.8;
+a:hover {
+  color: #D78CB6;
+}
+
+/* 美化連結成為可愛按鈕 */
+ul li {
+  display: flex;
+  justify-content: center;
+}
+
+ul li a {
+  display: block;
+  width: 220px; /* ✅ 固定按鈕寬度 */
+  padding: 10px 16px;
+  background-color: #fce4ec;
+  color: #A06AB4;
+  text-align: left; /* ✅ 文字靠左 */
+  text-decoration: none;
+  border-radius: 12px;
+  font-weight: bold;
+  box-shadow: 0 2px 4px rgba(174, 133, 172, 0.2);
+  transition: background-color 0.2s, color 0.2s, transform 0.2s;
+}
+
+ul li a:hover {
+  background-color: #f8bbd0;
+  color: #fff;
+  transform: scale(1.03);
 }
