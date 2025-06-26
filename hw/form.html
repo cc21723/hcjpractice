@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>角色卡建立表單</title>
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #FFF0F5;
+      font-family: 'Segoe UI', '微軟正黑體', sans-serif;
+      color: #5E4B56;
+    }
+
+    .card-container {
+      background-color: #ffffff;
+      border-radius: 20px;
+      padding: 30px;
+      margin: 40px auto;
+      max-width: 800px;
+      box-shadow: 0 8px 20px rgba(225, 107, 140, 0.2);
+    }
+
+    h2 {
+      color: #E16B8C;
+      border-bottom: 2px solid #EFCFE3;
+      padding-bottom: 10px;
+      margin-bottom: 30px;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    label {
+      font-weight: 500;
+    }
+
+    .form-control,
+    .form-select {
+      border-radius: 12px;
+      border: 1px solid #f3c9d4;
+    }
+
+    .form-check-input {
+      border-color: #E16B8C;
+    }
+
+    .form-check-label {
+      margin-right: 15px;
+    }
+
+    .btn-submit {
+      background-color: #E16B8C;
+      color: white;
+      font-weight: bold;
+      padding: 10px 25px;
+      border-radius: 20px;
+      border: none;
+      box-shadow: 0 4px 10px rgba(225, 107, 140, 0.4);
+      transition: background-color 0.3s;
+    }
+
+    .btn-submit:hover {
+      background-color: #d05f7d;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container card-container">
+    <h2>🧪 冒險者角色卡建立</h2>
+    <form>
+
+      <div class="row mb-3">
+        <div class="col-md-6">
+          <label for="name" class="form-label">角色名稱</label>
+          <input type="text" class="form-control" id="name" placeholder="請輸入角色名稱">
+        </div>
+        <div class="col-md-6">
+          <label for="birth" class="form-label">誕生日</label>
+          <input type="date" class="form-control" id="birth">
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">性別</label><br>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="gender" id="male">
+          <label class="form-check-label" for="male">男 👦</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="gender" id="female">
+          <label class="form-check-label" for="female">女 🌸</label>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="attribute" class="form-label">主要屬性</label>
+        <select class="form-select" id="attribute">
+          <option selected disabled>請選擇</option>
+          <option>火 🔥</option>
+          <option>水 💧</option>
+          <option>風 🌪</option>
+          <option>光 🌞</option>
+          <option>闇 🌙</option>
+        </select>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">擅長藥劑類型</label><br>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" id="heal">
+          <label class="form-check-label" for="heal">回復系</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" id="attack">
+          <label class="form-check-label" for="attack">攻擊系</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" id="cure">
+          <label class="form-check-label" for="cure">解毒系</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" id="boost">
+          <label class="form-check-label" for="boost">強化系</label>
+        </div>
+      </div>
+
+      <div class="row mb-3">
+        <div class="col-md-6">
+          <label for="level" class="form-label">冒險者等級</label>
+          <input type="number" class="form-control" id="level" placeholder="例如：1 ~ 99">
+        </div>
+        <div class="col-md-6">
+          <label for="email" class="form-label">聯絡魔法信箱</label>
+          <input type="email" class="form-control" id="email" placeholder="e.g. example@magicmail.com">
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="intro" class="form-label">冒險者備註／自我介紹</label>
+        <textarea class="form-control" id="intro" rows="4" placeholder="請寫下你的冒險故事..."></textarea>
+      </div>
+
+      <div class="text-end">
+        <button type="submit" class="btn btn-submit">建立角色卡 ✨</button>
+      </div>
+    </form>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
