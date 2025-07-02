@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Underwater Album · Bootstrap</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(to bottom, #001f3f 0%, #003366 50%, #001a33 100%);
+      font-family: 'Poppins', sans-serif;
+      color: #e0f7fa;
+    }
+
+    .navbar,
+    footer {
+      background-color: #001a33;
+    }
+
+    .navbar .navbar-brand,
+    .navbar a,
+    footer {
+      color: #ffffff !important;
+    }
+
+    .btn-primary {
+      background: linear-gradient(to right, #00bcd4, #006b8f);
+      border: none;
+    }
+
+    .btn-primary:hover {
+      background: #005f73;
+    }
+
+    .btn-secondary {
+      background-color: #004d61;
+      color: #e0f7fa;
+      border: 1px solid #00acc1;
+    }
+
+    .btn-secondary:hover {
+      background-color: #007b8f;
+      color: #ffffff;
+    }
+
+    .card {
+      border-radius: 1rem;
+      background-color: #002f4b;
+      border: 1px solid #006b8f;
+      box-shadow: 0 4px 12px rgba(0, 200, 255, 0.1);
+      color: #cceff5;
+    }
+
+    .card-text {
+      color: #b2ebf2;
+    }
+
+    .card img {
+      border-top-left-radius: 1rem;
+      border-top-right-radius: 1rem;
+      height: 225px;
+      object-fit: cover;
+    }
+
+    footer a {
+      color: #80deea;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="navbar navbar-dark shadow-sm">
+      <div class="container">
+        <a href="#" class="navbar-brand d-flex align-items-center">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor"
+            stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="me-2" viewBox="0 0 24 24">
+            <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
+            <circle cx="12" cy="13" r="4"></circle>
+          </svg>
+          <strong>Underwater Album</strong>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="py-5 text-center container">
+      <div class="row py-lg-5">
+        <div class="col-lg-6 col-md-8 mx-auto">
+          <h1 class="fw-light">Explore the Deep Sea</h1>
+          <p class="lead text-light">A photo collection capturing the tranquil beauty and vibrant life of the ocean's
+            mysterious depths.</p>
+          <p>
+            <a href="#" class="btn btn-primary my-2">Dive In</a>
+            <a href="#" class="btn btn-secondary my-2">Contact</a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <div class="album py-5">
+      <div class="container">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
+          <!-- Card 1 -->
+          <div class="col">
+            <div class="card shadow-sm">
+              <img src="https://images.unsplash.com/photo-1508624217470-5ef0f947d8be?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fE9jZWFufGVufDB8fDB8fHww" class="card-img-top" alt="Sea Turtle">
+              <div class="card-body">
+                <p class="card-text">A graceful sea turtle drifting peacefully through the deep blue ocean.</p>
+              </div>
+            </div>
+          </div>
+          <!-- Card 2 -->
+          <div class="col">
+            <div class="card shadow-sm">
+              <img src="https://media.istockphoto.com/id/1355902841/photo/blue-water-wave-abstract-or-natural-bubble-texture-gel-soap-background-photography.jpg?s=2048x2048&w=is&k=20&c=_HRvno1rH4HxMP8hO9gW1YmBlAs5FxwVzUPsB58xFHE=" class="card-img-top" alt="Coral Reef">
+              <div class="card-body">
+                <p class="card-text">A colorful coral reef buzzing with tiny marine life under clear waters.</p>
+              </div>
+            </div>
+          </div>
+          <!-- Card 3 -->
+          <div class="col">
+            <div class="card shadow-sm">
+              <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8T2NlYW58ZW58MHx8MHx8fDA%3D" class="card-img-top" alt="Octopus">
+              <div class="card-body">
+                <p class="card-text">An intelligent octopus exploring the ocean floor in its natural habitat.</p>
+              </div>
+            </div>
+          </div>
+          <!-- Card 4 -->
+          <div class="col">
+            <div class="card shadow-sm">
+              <img src="https://images.unsplash.com/photo-1508624217470-5ef0f947d8be?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fE9jZWFufGVufDB8fDB8fHww" class="card-img-top" alt="Jellyfish">
+              <div class="card-body">
+                <p class="card-text">Ethereal jellyfish glowing like lanterns in the deep sea darkness.</p>
+              </div>
+            </div>
+          </div>
+          <!-- Card 5 -->
+          <div class="col">
+            <div class="card shadow-sm">
+              <img src="https://media.istockphoto.com/id/1355902841/photo/blue-water-wave-abstract-or-natural-bubble-texture-gel-soap-background-photography.jpg?s=2048x2048&w=is&k=20&c=_HRvno1rH4HxMP8hO9gW1YmBlAs5FxwVzUPsB58xFHE=" class="card-img-top" alt="Shark">
+              <div class="card-body">
+                <p class="card-text">A majestic shark cruising through the open waters, powerful and calm.</p>
+              </div>
+            </div>
+          </div>
+          <!-- Card 6 -->
+          <div class="col">
+            <div class="card shadow-sm">
+              <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8T2NlYW58ZW58MHx8MHx8fDA%3D" class="card-img-top" alt="Diver">
+              <div class="card-body">
+                <p class="card-text">A diver capturing rare underwater beauty in this silent blue world.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="text-body-secondary py-5">
+    <div class="container">
+      <p class="float-end mb-1"><a href="#">Back to top</a></p>
+      <p class="mb-1">Underwater Album is &copy; Bootstrap, styled with 🐠 by you!</p>
+      <p class="mb-0">Explore more on <a href="https://unsplash.com">Unsplash</a> or learn about <a
+          href="https://getbootstrap.com">Bootstrap</a>.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
