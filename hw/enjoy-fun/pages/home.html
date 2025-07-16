@@ -1,0 +1,199 @@
+<style>
+    /* 主標題 */
+    h1 {
+        color: #2C7FB8;
+        font-weight: bold;
+        margin-bottom: 1rem;
+    }
+
+    /* 區塊標題 */
+    h2,
+    h5 {
+        color: #2C7FB8;
+        font-weight: bold;
+        margin-top: 1.5rem;
+    }
+
+    /* 圖片統一樣式 */
+    img {
+        width: 100%;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    /* 輪播區塊 */
+    .carousel-inner {
+        height: 100%;
+    }
+
+    .carousel-img {
+        height: 300px;
+        object-fit: cover;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    }
+
+
+    /* 卡片樣式 */
+    .card {
+        background-color: #F9FCFF;
+        border-radius: 16px;
+        box-shadow: 0 6px 18px rgba(76, 175, 240, 0.12);
+        margin-bottom: 2rem;
+    }
+
+    /* 最新消息區塊 */
+    .container .row {
+        margin-top: 2rem;
+        padding: 1rem;
+        background-color: #F9FCFF;
+        border-radius: 16px;
+        box-shadow: 0 4px 12px rgba(76, 175, 240, 0.08);
+    }
+
+    /* 最新消息連結 */
+    .news-link {
+        color: #2C7FB8;
+        font-weight: bold;
+        text-decoration: none;
+    }
+
+    .news-link:hover {
+        color: #1A6DB4;
+        text-decoration: underline;
+    }
+
+    /* RWD */
+    @media (max-width: 768px) {
+        h1 {
+            font-size: 1.5rem;
+        }
+
+        .container .row {
+            flex-direction: column;
+        }
+    }
+</style>
+
+<!-- 輪播 -->
+<!-- 輪播區塊（橫幅精簡版） -->
+<div class="container">
+    <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel"
+        style="max-height:300px; overflow:hidden;">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="https://i.pinimg.com/736x/28/b8/92/28b892965caa0dc1df40760b258e03be.jpg"
+                    class="d-block w-100 carousel-img" alt="澎湖 跨海大橋">
+            </div>
+            <div class="carousel-item">
+                <img src="https://i.pinimg.com/736x/5c/d7/c3/5cd7c343c841f0001e5d5482cae016ba.jpg"
+                    class="d-block w-100 carousel-img" alt="澎湖 大菓葉柱狀玄武岩">
+            </div>
+            <div class="carousel-item">
+                <img src="https://i.pinimg.com/1200x/4e/60/6b/4e606bb788c4ac5f270bf10f7b73ab92.jpg"
+                    class="d-block w-100 carousel-img" alt="雙心石滬">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</div>
+
+<div class="container mt-3">
+    <h1 class="text-center">🏝️ 澎湖民宿 - 享玩民宿 🐚</h1>
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <h5 class="card-title">🌅 關於我們</h5>
+            <p class="card-text">
+                沉浸在海島生活的節奏裡，享玩民宿將澎湖的自然風光與溫暖人情融入空間設計。
+                每個房型都以海灘、貝殼、夕陽等澎湖意象命名，讓你在休憩的時刻也能感受在地風情。
+            </p>
+
+            <h5 class="card-title mt-4">🏡 我們的特色</h5>
+            <ul>
+                <li>地理位置絕佳，步行即可到達市區景點</li>
+                <li>房內設計簡約舒適，附有現代化設備</li>
+                <li>免費早餐，現做在地風味料理</li>
+                <li>提供旅遊資訊與行程協助，讓你玩得更深入</li>
+            </ul>
+
+            <p class="mt-3">
+                🌺 無論是悠閒地躺在露臺看海，或是騎著機車探索島嶼角落，「享玩民宿」都將是你最安心的後盾。
+            </p>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="container">
+    <h1 class="text-center">最新消息</h1>
+    <div class="row">
+        <div class="col-12 col-sm-6">
+            <img src="https://i.pinimg.com/1200x/cf/34/b8/cf34b831e4bee400b95a44b038d15ecd.jpg" alt="2025澎湖國際花火節">
+        </div>
+        <div class="col-12 col-sm-6 align-middle">
+            <h2>2025澎湖國際海上花火節</h2>
+            <p>期待著2025澎湖花火節的到來！活動期間從5月5日一直持續到7月29日，五月到六月的每週一和週四(6/30除外)，以及七月份的每週二，晚上9:00都會有精彩的煙火表演</p>
+            <a class="news-link" href="firework">更多資訊</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 col-sm-7">
+            <h2>奎壁山踏浪-摩西分海潮汐表</h2>
+            <p>在澎湖的奎壁山，您將體驗到一場神秘的冒險。這裡的景象彷彿重現了聖經中摩西分紅海的神蹟。每當退潮時，一條礫石踏浪步道會在本島與對面的赤嶼之間慢慢顯現出來。</p>
+            <p>每日的分海時間會隨著潮汐的變化而有所不同，我們會即時公告摩西分海的潮汐時間，讓您不錯過這場大自然的奇景。 </p>
+            <p>此外，奎壁山也是觀賞日出的絕佳地點，許多人會選擇在日出之際，同時感受分海的奇景，享受大自然的美麗。</p>
+            <p>讓我們一起踏上這場神秘的冒險吧！</p>
+            <a class="news-link" href="mosestide">更多資訊</a>
+        </div>
+        <div class="col-12 col-sm">
+            <img src="https://www.skysunnybnb.com/images/Scene/%E5%A5%8E%E5%A3%81%E5%B1%B1/001b.jpg" alt="澎湖摩西分海">
+        </div>
+
+    </div>
+</div>
+
+<div class="container">
+    <div class="container mt-4">
+        <h2 class="text-center mb-4">🏠 精選房型一覽</h2>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
+            <div class="col">
+                <div class="card h-100 shadow-sm">
+                    <img src="https://i.pinimg.com/736x/a5/8b/2a/a58b2afebd567cf182dea8c30589302e.jpg"
+                        class="card-img-top" alt="藍海風晴四人房">
+                    <div class="card-body">
+                        <h6 class="card-title">藍海四人房</h6>
+                        <p class="card-text">清新藍白配色，彷彿住進澎湖的天空裡。</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100 shadow-sm">
+                    <img src="https://i.pinimg.com/1200x/17/17/5f/17175f2ac39f984ec82af90e28983098.jpg"
+                        class="card-img-top" alt="雙人房">
+                    <div class="card-body">
+                        <h6 class="card-title">夢砌雙人房</h6>
+                        <p class="card-text">粉嫩童趣風格，適合情侶或閨蜜入住。</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100 shadow-sm">
+                    <img src="https://i.pinimg.com/1200x/79/64/57/796457d9a3ed085670820e9bb80a2c8b.jpg"
+                        class="card-img-top" alt="夕陽雙人房">
+                    <div class="card-body">
+                        <h6 class="card-title">夕陽四人房</h6>
+                        <p class="card-text">柔和光線灑落，享受澎湖的傍晚靜謐。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

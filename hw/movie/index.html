@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 載入bs5 css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.7/css/bootstrap.min.css"
+        integrity="sha512-fw7f+TcMjTb7bpbLJZlP8g2Y4XcCyFZW8uy8HsRZsH/SwbMw0plKHFHr99DN3l04VsYNwvzicUX/6qurvIxbxw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <script src="./data/data.js"></script>
+    <style>
+        body {
+            background-color: #0a1c2e;
+            /* 深藍背景，強烈推理感 */
+            font-family: "Segoe UI", "Noto Sans TC", sans-serif;
+            color: #fff;
+        }
+
+        .title {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: #ff304f;
+            /* 柯南紅，強烈主角感 */
+            margin-bottom: 0.5rem;
+        }
+
+        .year {
+            font-size: 1rem;
+            color: #6fb1fc;
+            /* 淺藍點綴年份 */
+            margin-bottom: 0.5rem;
+        }
+
+        .characters {
+            font-size: 0.9rem;
+            color: #e0e0e0;
+            font-style: italic;
+            margin-bottom: 0.75rem;
+            white-space: pre-line;
+        }
+
+        .summary {
+            font-size: 0.95rem;
+            color: #ffffff;
+            line-height: 1.5;
+        }
+
+        .movie-poster {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            object-fit: cover;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .box {
+            background-color: #112a45;
+            border: 1px solid #2b4f77;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 0 12px rgba(255, 48, 79, 0.2);
+            /* 紅色光暈，暗示危機感 */
+            transition: all 0.3s ease;
+            min-height: 320px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .box:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 0 20px rgba(255, 48, 79, 0.4);
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="row myRow">
+            <!-- <div class="col-12 col-sm-4 mt-3">
+                <div class="box">
+                    
+                </div>
+            </div> -->
+        </div>
+
+    </div>
+
+
+
+    <!-- 載入bs5 js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.7/js/bootstrap.bundle.min.js"
+        integrity="sha512-Tc0i+vRogmX4NN7tuLbQfBxa8JkfUSAxSFVzmU31nVdHyiHElPPy2cWfFacmCJKw0VqovrzKhdd2TSTMdAxp2g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- 載入jquery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+
+        $(document).ready(function () {
+            console.log('data', data);
+
+            const myRow = $(".myRow");
+            data.forEach(function (value, key) {
+                console.log(key);
+                console.log(value);
+
+                let tmpText = `
+                    <div class="col-12 col-sm-6 col-lg-4 mt-3">
+                        <div class="box">
+                             <img src="${value.image}" alt="${value.title}" class="movie-poster">
+                            <p class="title">${value.title}</p>
+                            <p class="year">${value.year}</p>
+                            <p class="characters">${value.characters}</p>
+                            <p class="summary">${value.summary}</p>
+                        </div>
+                    </div>
+                `;
+
+                myRow.append(tmpText);
+            });
+
+        });
+
+
+
+    </script>
+</body>
+
+</html>

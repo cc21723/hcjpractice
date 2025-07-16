@@ -1,0 +1,51 @@
+<style>
+  /* 滑鼠移上 dropdown 項目自動展開 */
+.nav-item.dropdown:hover .dropdown-menu {
+  display: block;
+}
+</style>
+<nav class="navbar navbar-expand-lg custom-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">🌊 享玩民宿</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+      aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link px-3" href="about">🏠 民宿簡介</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link px-3" href="room">🛏️ 房型介紹</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link px-3" href="location">📍 民宿位置</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link px-3" href="view">🏖️ 附近景點</a>
+          
+            
+          <!-- <ul class="dropdown-menu">
+            <li><a class="dropdown-item nav-link" href="fenggui">🌬️ 風櫃洞</a></li>
+            <li><a class="dropdown-item nav-link" href="shetou">🪨 蛇頭山</a></li>
+            <li><a class="dropdown-item nav-link" href="suogang">🗼 鎖港鎮風塔</a></li>
+          </ul> -->
+
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle px-3" href="#" id="navbarDropdown2" role="button" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            🚢 澎湖交通
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item nav-link" href="fly">✈️ 搭飛機來澎湖</a></li>
+            <li><a class="dropdown-item nav-link" href="boat">⛴️ 搭船來澎湖</a></li>
+          </ul>
+
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

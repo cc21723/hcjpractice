@@ -1,0 +1,206 @@
+/* 全站字型與背景設定 */
+body {
+    font-family: 'Noto Sans TC', sans-serif;
+    background: linear-gradient(to bottom, #BEE9F7 0%, #FFFFFF 100%);
+    color: #444;
+    margin: 0;
+    padding: 0;
+}
+
+/* 標題樣式 */
+h1, h2, h3, h4, h5 {
+    color: #2C7FB8;
+    font-weight: bold;
+}
+h6 {
+    color: #5CA9E9;
+    font-weight: bold;
+}
+
+/* 超連結樣式 */
+a {
+    text-decoration: none;
+    color: #4FA9E6;
+    transition: 0.2s ease-in-out;
+}
+a:hover {
+    color: #2C7FB8;
+}
+
+/* 導覽列設計 */
+.navbar,
+.custom-navbar {
+    /* background-color: rgba(255, 255, 255, 0.95); */
+    /* border-bottom: 2px solid #BEE9F7; */
+    /* box-shadow: 0 2px 8px rgba(76, 175, 240, 0.12); */
+    /* border-radius: 0 0 16px 16px; */
+    padding: 0.5rem 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    margin: 0;
+}
+
+.navbar-brand {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #2C7FB8;
+}
+.nav-link {
+    color: #2C7FB8 !important;
+    font-weight: 500;
+}
+.nav-link:hover {
+    color: #4FA9E6 !important;
+    background-color: rgba(190, 233, 247, 0.3);
+    border-radius: 8px;
+}
+
+/* 下拉選單 */
+.dropdown-menu {
+    background-color: #F0FAFF;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+}
+.dropdown-item {
+    color: #0077b6;
+}
+.dropdown-item:hover {
+    background-color: #E0F7FF;
+    color: #2C7FB8;
+}
+
+/* 輪播區塊 */
+.carousel-inner img {
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* 主要內容 */
+main.container {
+    padding: 2rem 1rem;
+}
+
+/* 卡片樣式 */
+.card {
+    background-color: #F9FCFF;
+    border-radius: 16px;
+    box-shadow: 0 6px 18px rgba(76, 175, 240, 0.12);
+    margin-bottom: 2rem;
+}
+
+/* 區塊標題樣式 */
+.section-title, h5 {
+    border-left: 5px solid #4FA9E6;
+    padding-left: 0.75rem;
+    margin-top: 2rem;
+}
+
+/* 清單樣式 */
+ul, ol {
+    padding-left: 1.2rem;
+    line-height: 1.8;
+    color: #444;
+}
+ul li::marker, ol li::marker {
+    color: #4FA9E6;
+}
+
+/* 最新消息連結 */
+.news-link {
+    color: #2C7FB8;
+    font-weight: bold;
+}
+.news-link:hover {
+    color: #1A6DB4;
+    text-decoration: underline;
+}
+/*民宿地點樣式*/
+section h4 {
+  color: #2C7FB8;
+  border-left: 5px solid #BEE9F7;
+  padding-left: 0.5rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+ul {
+  padding-left: 1.2rem;
+  line-height: 1.8;
+}
+
+iframe {
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+
+/*飛機航班卡片樣式*/
+.flight-card {
+  background-color: #F9FCFF;
+  border-radius: 16px;
+  border: 1px solid #D0ECF5;
+  box-shadow: 0 4px 12px rgba(76, 175, 240, 0.1);
+}
+
+.flight-card ul {
+  list-style-type: '✈️ ';
+  padding-left: 1rem;
+  margin-top: 1rem;
+  color: #444;
+}
+
+.flight-card ul li {
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
+}
+
+.flight-card .card-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #2C7FB8;
+}
+
+/*船班卡片樣式*/
+.ferry-card {
+  background-color: #F9FCFF;
+  border-radius: 16px;
+  border: 1px solid #D0ECF5;
+  box-shadow: 0 4px 12px rgba(76, 175, 240, 0.1);
+  max-width: 500px; /* ✅ 控制卡片寬度 */
+  margin: 0 auto;    /* ✅ 置中 */
+}
+
+
+.ferry-card .card-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #2C7FB8;
+}
+
+.ferry-card p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #444;
+}
+
+
+/* 頁尾設計 */
+.footer {
+    background: #4FA9E6;
+    color: #fff;
+    text-align: center;
+    padding: 1.5rem;
+    font-size: 0.9rem;
+}
+
+/* 響應式設計 */
+@media (max-width: 768px) {
+    .navbar-brand {
+        font-size: 1.3rem;
+    }
+    main.container {
+        padding: 1rem;
+    }
+}
