@@ -17,6 +17,7 @@
             /* 深藍背景，強烈推理感 */
             font-family: "Segoe UI", "Noto Sans TC", sans-serif;
             color: #fff;
+            box-sizing: border-box;
         }
 
         .title {
@@ -50,8 +51,8 @@
 
         .movie-poster {
             width: 100%;
-            max-width: 250px;
-            height: auto;
+            width: auto;
+            min-height: 550px;
             display: block;
             margin: 0 auto 15px;
             border-radius: 8px;
@@ -68,16 +69,18 @@
             box-shadow: 0 0 12px rgba(255, 48, 79, 0.2);
             /* 紅色光暈，暗示危機感 */
             transition: all 0.3s ease;
-            min-height: 320px;
+            min-height: 550px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            width: 430px;
         }
 
         .box:hover {
             transform: translateY(-6px);
             box-shadow: 0 0 20px rgba(255, 48, 79, 0.4);
         }
+
     </style>
 
 </head>
@@ -116,7 +119,7 @@
                 console.log(value);
 
                 let tmpText = `
-                    <div class="col-12 col-sm-6 col-lg-4 mt-3">
+                    <div class="col-sm-12 col-lg-6 col-xxl-4 mt-3">
                         <div class="box">
                              <img src="${value.image}" alt="${value.title}" class="movie-poster">
                             <p class="title">${value.title}</p>
