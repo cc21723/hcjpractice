@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>藥師少女-抓貓貓</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.7/css/bootstrap.min.css" />
+  <style>
+    body {
+      background-color: #fffaf4;
+      font-family: '微軟正黑體', sans-serif;
+    }
+    .game-area {
+      position: relative;
+      height: 60vh;
+      border: 2px dashed #d3bfae;
+      border-radius: 10px;
+      overflow: hidden;
+      background-image: url('./images/herbgarden_bg.jpg'); /* 可更換成療癒背景圖 */
+      background-size: cover;
+      background-position: center;
+    }
+    .cat {
+      position: absolute;
+      width: 80px;
+      cursor: pointer;
+      transition: left 0.3s, top 0.3s;
+    }
+    .score-board {
+      font-size: 1.5rem;
+      color: #4a2c2a;
+    }
+    .side-img {
+      width: 100%;
+      height: 60vh;
+      object-fit: contain;
+    }
+    .btn-custom {
+      width: 40%;
+    }
+  </style>
+</head>
+<body>
+  <div class="container mt-4">
+    <div class="row text-center">
+      <h2>🌿 貓貓追逐 🌿</h2>
+      <p class="score-board">你抓到的小貓：<span id="score">0</span> 隻</p>
+    </div>
+    <div class="row mb-3 text-center">
+      <div class="col">
+        <button id="startBtn" class="btn btn-success btn-custom me-3">開始遊戲</button>
+        <button id="stopBtn" class="btn btn-danger btn-custom">停止遊戲</button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-2 text-center">
+        <img src="https://i.pinimg.com/736x/e1/ad/38/e1ad38d83bd8a44093a279ccecacf888.jpg" alt="藥師少女左側" class="side-img">
+      </div>
+      <div class="col-8 game-area" id="gameArea">
+        <img src="https://i.pinimg.com/736x/25/c3/ad/25c3adeeb8c4480ea51caba1fb1badc8.jpg" alt="小貓" class="cat" id="cat" style="left:100px; top:100px;">
+      </div>
+      <div class="col-2 text-center">
+        <img src="https://i.pinimg.com/736x/4d/fa/fa/4dfafa291a265cf498c2bfe67df5700d.jpg" alt="藥師少女右側" class="side-img">
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      let score = 0;
+      let moving = false;
+      let interval;
+
+      function moveCat() {
+        const area = $("#gameArea");
+        const cat = $("#cat");
+
+        const maxLeft = area.width() - cat.width();
+        const maxTop = area.height() - cat.height();
+
+        const randomLeft = Math.floor(Math.random() * maxLeft);
+        const randomTop = Math.floor(Math.random() * maxTop);
+
+        cat.css({ left: randomLeft + "px", top: randomTop + "px" });
+      }
+
+      $("#cat").on("click", function () {
+        if (moving) {
+          score++;
+          $("#score").text(score);
+          moveCat();
+        }
+      });
+
+      $("#startBtn").on("click", function () {
+        if (!moving) {
+          moving = true;
+          score = 0;
+          $("#score").text(score);
+          interval = setInterval(moveCat, 1000);
+        }
+      });
+
+      $("#stopBtn").on("click", function () {
+        moving = false;
+        clearInterval(interval);
+      });
+    });
+  </script>
+</body>
+</html>
