@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>藥師少女-抓貓貓</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" />
+  <style>
+    body {
+      background-color: #fffaf4;
+      font-family: '微軟正黑體', sans-serif;
+    }
+    .game-area {
+      position: relative;
+      height: 60vh;
+      border: 2px dashed #d3bfae;
+      border-radius: 10px;
+      overflow: hidden;
+      background-image: url('./images/herbgarden_bg.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+    .cat {
+      position: absolute;
+      width: 80px;
+      cursor: pointer;
+      transition: left 0.3s, top 0.3s;
+    }
+    .score-board {
+      font-size: 1.5rem;
+      color: #4a2c2a;
+    }
+    .timer {
+      font-size: 1.2rem;
+      color: #8b5e3c;
+    }
+    .side-img {
+      width: 100%;
+      height: 60vh;
+      object-fit: contain;
+    }
+    .btn-custom {
+      width: 40%;
+    }
+    /* 倒數顯示 */
+    #countdownOverlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      padding-top: 25%;
+      background: rgba(0,0,0,0.5);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 8rem;
+      font-weight: bold;
+      color: white;
+      z-index: 10;
+      display: none;
+      animation: fadeIn 0.3s ease-in-out;
+    }
+    @keyframes pop {
+      0% { transform: scale(0.5); opacity: 0; }
+      50% { transform: scale(1.3); opacity: 1; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+    .pop-animation {
+      animation: pop 0.5s ease-in-out;
+    }
+    /* Modal 貓咪圖片 */
+    .modal-cat {
+      width: 120px;
+      height: auto;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container mt-4">
+    <div class="row text-center">
+      <h2>🌿 貓貓追逐 🌿</h2>
+      <p class="score-board">你抓到的小貓：<span id="score">0</span> 隻</p>
+      <p class="timer">剩餘時間：<span id="time">30</span> 秒</p>
+    </div>
+    <div class="row mb-3 text-center">
+      <div class="col">
+        <button id="startBtn" class="btn btn-success btn-custom me-3">開始遊戲</button>
+        <button id="stopBtn" class="btn btn-danger btn-custom">停止遊戲</button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-2 text-center">
+        <img src="https://i.pinimg.com/736x/e1/ad/38/e1ad38d83bd8a44093a279ccecacf888.jpg" alt="藥師少女左側" class="side-img">
+      </div>
+      <div class="col-8 game-area position-relative" id="gameArea">
+        <div id="countdownOverlay"></div>
+        <img src="https://i.pinimg.com/736x/25/c3/ad/25c3adeeb8c4480ea51caba1fb1badc8.jpg" alt="小貓" class="cat" id="cat" style="left:100px; top:100px;">
+      </div>
+      <div class="col-2 text-center">
+        <img src="https://i.pinimg.com/736x/4d/fa/fa/4dfafa291a265cf498c2bfe67df5700d.jpg" alt="藥師少女右側" class="side-img">
+      </div>
+    </div>
+  </div>
+
+  <!-- 遊戲結束 Modal -->
+  <div class="modal fade" id="gameOverModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content text-center">
+        <div class="modal-header">
+          <h5 class="modal-title">⏳ 遊戲結束</h5>
+        </div>
+        <div class="modal-body">
+          <img src="https://i.pinimg.com/1200x/e7/97/83/e79783b0064bdef2b021ad5010fd4e99.jpg" alt="可愛小貓" class="modal-cat">
+          <p id="finalScoreText">你抓到 0 隻小貓！</p>
+        </div>
+        <div class="modal-footer">
+          <button id="restartBtn" class="btn btn-primary">再玩一次</button>
+          <button id="backBtn" class="btn btn-secondary" data-bs-dismiss="modal">返回</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      let score = 0;
+      let moving = false;
+      let moveInterval;
+      let timeLeft = 30;
+      let timerInterval;
+      let speed = 1000;
+      let countdownOverlay = $("#countdownOverlay");
+      let modal = new bootstrap.Modal(document.getElementById('gameOverModal'));
+
+      function moveCat() {
+        const area = $("#gameArea");
+        const cat = $("#cat");
+        const maxLeft = area.width() - cat.width();
+        const maxTop = area.height() - cat.height();
+        const randomLeft = Math.floor(Math.random() * maxLeft);
+        const randomTop = Math.floor(Math.random() * maxTop);
+        cat.css({ left: randomLeft + "px", top: randomTop + "px" });
+      }
+
+      function startMoving() {
+        moveInterval = setInterval(moveCat, speed);
+      }
+
+      function increaseDifficulty() {
+        if (speed > 300) {
+          speed -= 100;
+          clearInterval(moveInterval);
+          startMoving();
+        }
+      }
+
+      function endGame() {
+        moving = false;
+        clearInterval(moveInterval);
+        clearInterval(timerInterval);
+        $("#finalScoreText").text(`你抓到 ${score} 隻小貓！`);
+        modal.show();
+      }
+
+      function resetGame() {
+        moving = false;
+        clearInterval(moveInterval);
+        clearInterval(timerInterval);
+        score = 0;
+        timeLeft = 30;
+        speed = 1000;
+        $("#score").text(score);
+        $("#time").text(timeLeft);
+        $("#cat").css({ left: "100px", top: "100px" });
+      }
+
+      function startCountdownAndGame() {
+        let count = 3;
+        countdownOverlay.text(count).show().addClass("pop-animation");
+        let cdInterval = setInterval(() => {
+          count--;
+          if (count > 0) {
+            countdownOverlay.text(count).removeClass("pop-animation").width();
+            countdownOverlay.addClass("pop-animation");
+          } else {
+            clearInterval(cdInterval);
+            countdownOverlay.hide();
+            moving = true;
+            startMoving();
+            timerInterval = setInterval(() => {
+              timeLeft--;
+              $("#time").text(timeLeft);
+              if (timeLeft <= 0) {
+                endGame();
+              }
+            }, 1000);
+          }
+        }, 1000);
+      }
+
+      $("#cat").on("click", function () {
+        if (moving) {
+          score++;
+          $("#score").text(score);
+          moveCat();
+          if (score % 5 === 0) {
+            increaseDifficulty();
+          }
+        }
+      });
+
+      $("#startBtn").on("click", function () {
+        if (!moving) {
+          resetGame();
+          startCountdownAndGame();
+        }
+      });
+
+      $("#stopBtn").on("click", function () {
+        endGame();
+      });
+
+      $("#restartBtn").on("click", function () {
+        modal.hide();
+        resetGame();
+        startCountdownAndGame();
+      });
+
+      $("#backBtn").on("click", function () {
+        resetGame();
+      });
+    });
+  </script>
+</body>
+</html>
