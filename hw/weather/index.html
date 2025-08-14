@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>天氣之子風格天氣預報</title>
+    <!-- 載入bs5 css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.7/css/bootstrap.min.css"
+        integrity="sha512-fw7f+TcMjTb7bpbLJZlP8g2Y4XcCyFZW8uy8HsRZsH/SwbMw0plKHFHr99DN3l04VsYNwvzicUX/6qurvIxbxw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(to bottom, #a0cfff, #e6f5ff);
+            background-attachment: fixed;
+            min-height: 100vh;
+            padding: 40px;
+            overflow-x: hidden;
+        }
+
+        /* 雲層 */
+        .cloud-layer {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 300%;
+            height: 100%;
+            background-repeat: repeat-x;
+            background-size: 800px auto;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .clouds-back {
+            background-image: url('https://pngimg.com/d/cloud_PNG112234.png');
+            opacity: 0.4;
+            animation: moveCloudsBack 120s linear infinite;
+        }
+
+        .clouds-mid {
+            background-image: url('https://pngimg.com/uploads/cloud/cloud_PNG6.png');
+            opacity: 0.6;
+            animation: moveCloudsMid 80s linear infinite;
+        }
+
+        .clouds-front {
+            background-image: url('https://pngimg.com/uploads/cloud/cloud_PNG4.png');
+            opacity: 0.9;
+            animation: moveCloudsFront 50s linear infinite;
+        }
+
+        @keyframes moveCloudsBack {
+            from {
+                transform: translateX(0);
+            }
+
+            to {
+                transform: translateX(-50%);
+            }
+        }
+
+        @keyframes moveCloudsMid {
+            from {
+                transform: translateX(0);
+            }
+
+            to {
+                transform: translateX(-50%);
+            }
+        }
+
+        @keyframes moveCloudsFront {
+            from {
+                transform: translateX(0);
+            }
+
+            to {
+                transform: translateX(-50%);
+            }
+        }
+
+        /* 標題 */
+        h3 {
+            text-align: center;
+            font-weight: bold;
+            color: #1a4f8b;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.9), 0 0 20px rgba(173, 216, 230, 0.6);
+            margin-bottom: 30px;
+            font-size: 2rem;
+        }
+
+        /* 天氣之子風格表格 */
+        table {
+            width: 90%;
+            margin: auto;
+            border-collapse: separate;
+            border-spacing: 0;
+            background: rgba(255, 255, 255, 0.25);
+            backdrop-filter: blur(15px);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        thead {
+            background: linear-gradient(to right, #6fb1fc, #1f78d1);
+            color: #fff;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        thead th {
+            padding: 15px 10px;
+            font-size: 1.1rem;
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+        }
+
+        tbody td {
+            padding: 14px 10px;
+            text-align: center;
+            color: #1a4f8b;
+            font-weight: 500;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        tbody tr:hover td {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(8px);
+            color: #e16b8c;
+            transform: scale(1.02);
+        }
+
+        /* 編號欄特殊樣式 */
+        tbody td:first-child {
+            font-weight: bold;
+            color: #ffb347;
+        }
+
+        /* 天氣現象欄加動態 Emoji */
+        tbody td:nth-child(3)::before {
+            content: attr(data-emoji) " ";
+            margin-right: 4px;
+        }
+
+        /* 降雨機率欄加水滴 Emoji */
+        tbody td:nth-child(4)::after {
+            content: " 💧";
+            margin-left: 4px;
+        }
+
+        /* 溫度欄加太陽 / 溫度 Emoji */
+        tbody td:nth-child(5)::after,
+        tbody td:nth-child(6)::after {
+            content: " 🌡️";
+            margin-left: 4px;
+        }
+
+        /* 舒適度欄加彩虹 */
+        tbody td:nth-child(7)::before {
+            content: "🌈 ";
+            margin-right: 4px;
+        }
+
+
+        /* 手機響應式 */
+        @media (max-width: 768px) {
+
+            table,
+            thead,
+            tbody,
+            th,
+            td,
+            tr {
+                display: block;
+            }
+
+            thead {
+                display: none;
+            }
+
+            tbody td {
+                text-align: right;
+                padding-left: 50%;
+                position: relative;
+            }
+
+            tbody td::before {
+                content: attr(data-label);
+                position: absolute;
+                left: 15px;
+                width: calc(50% - 30px);
+                white-space: nowrap;
+                font-weight: bold;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- 三層雲 -->
+    <div class="cloud-layer clouds-back"></div>
+    <div class="cloud-layer clouds-mid"></div>
+    <div class="cloud-layer clouds-front"></div>
+
+    <h3>☀️ 三十六小時天氣預報</h3>
+
+    <table id="myTable" class="display">
+        <thead>
+            <tr>
+                <th>編號</th>
+                <th>地點</th>
+                <th>天氣現象</th>
+                <th>降雨機率</th>
+                <th>最低溫度</th>
+                <th>最高溫度</th>
+                <th>舒適度</th>
+            </tr>
+        </thead>
+        <tbody class="tbody"></tbody>
+    </table>
+
+    <!-- 載入bs5 js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.7/js/bootstrap.bundle.min.js"
+        integrity="sha512-Tc0i+vRogmX4NN7tuLbQfBxa8JkfUSAxSFVzmU31nVdHyiHElPPy2cWfFacmCJKw0VqovrzKhdd2TSTMdAxp2g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" crossorigin="anonymous"
+        referrerpolicy="no-referrer"></script>
+
+    <!-- 載入pwd -->
+    <!-- .gitignore -->
+    <!-- /pw -->
+    <!-- /pw/pw.js -->
+    <!-- let pw = 'your password' -->
+    <script src="../../pw/pw.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            let pwd = pw;
+            // console.log('pwd', pwd);
+
+
+            let url = `https://opendata.cwa.gov.tw/api/v1/rest/datastore/F-C0032-001?Authorization=${pwd}`;
+            $.ajax({
+                type: "get",
+                url: url,
+                dataType: "json",
+                success: function (res) {
+                    console.log(res);
+
+                    const tbody = $('.tbody');
+                    const locations = res.records.location;
+
+                    locations.forEach(function (value, index) {
+                        let wxText = value.weatherElement[0].time[0].parameter.parameterName;
+                        let wxEmoji = "☁️"; // 預設
+                        if (wxText.includes("晴時多雲")) wxEmoji = "☀️ ⛅";
+                        else if (wxText.includes("多雲時晴")) wxEmoji = "⛅";
+                        // else if (wxText.includes("雨")) wxEmoji = "🌧️";
+                        else if (wxText.includes("晴午後短暫雷陣雨")) wxEmoji = "☀️ ⛈️";
+
+                        let pop = value.weatherElement[1].time[0].parameter.parameterName + '%';
+                        let mint = value.weatherElement[2].time[0].parameter.parameterName + '°C';
+                        let maxt = value.weatherElement[4].time[0].parameter.parameterName + '°C';
+                        let ci = value.weatherElement[3].time[0].parameter.parameterName;
+
+                        let tmpText = `
+                            <tr>
+                                <td data-label="編號">${index + 1}</td>
+                                <td data-label="城市">${value.locationName}</td>
+                                <td data-label="天氣" data-emoji="${wxEmoji}">${wxText}</td>
+                                <td data-label="降雨機率">${pop}</td>
+                                <td data-label="最低溫度">${mint}</td>
+                                <td data-label="最高溫度">${maxt}</td>
+                                <td data-label="">${ci}</td>
+                            </tr>
+                        `;
+                        tbody.append(tmpText);
+                    });
+                }
+            });
+        });
+
+    </script>
+</body>
+
+</html>
