@@ -139,14 +139,9 @@
             color: #ffb347;
         }
 
-        /* 天氣現象欄加動態 Emoji */
-        tbody td:nth-child(3)::before {
-            content: attr(data-emoji) " ";
-            margin-right: 4px;
-        }
 
         /* 降雨機率欄加水滴 Emoji */
-        tbody td:nth-child(4)::after {
+        tbody td:nth-child(3)::after {
             content: " 💧";
             margin-left: 4px;
         }
@@ -213,10 +208,11 @@
             <tr>
                 <th>編號</th>
                 <th>地點</th>
-                <th>天氣現象</th>
                 <th>降雨機率</th>
-                <th>最低溫度</th>
-                <th>最高溫度</th>
+                <!-- <th>天氣現象</th> -->
+                <th>0-12溫度</th>
+                <th>12-24溫度</th>
+                <th>24-36溫度</th>
                 <th>舒適度</th>
             </tr>
         </thead>
@@ -256,26 +252,37 @@
                     const locations = res.records.location;
 
                     locations.forEach(function (value, index) {
-                        let wxText = value.weatherElement[0].time[0].parameter.parameterName;
-                        let wxEmoji = "☁️"; // 預設
-                        if (wxText.includes("晴時多雲")) wxEmoji = "☀️ ⛅";
-                        else if (wxText.includes("多雲時晴")) wxEmoji = "⛅";
-                        // else if (wxText.includes("雨")) wxEmoji = "🌧️";
-                        else if (wxText.includes("晴午後短暫雷陣雨")) wxEmoji = "☀️ ⛈️";
+                        let wxText12 = value.weatherElement[0].time[0].parameter.parameterName;
+                        let wxText24 = value.weatherElement[0].time[1].parameter.parameterName;
+                        let wxText36 = value.weatherElement[0].time[2].parameter.parameterName;            
+
+                        // wxValue
+                        let wxValue12 = value.weatherElement[0].time[0].parameter.parameterValue;
+                        let wxValue24 = value.weatherElement[0].time[1].parameter.parameterValue;
+                        let wxValue36 = value.weatherElement[0].time[2].parameter.parameterValue;    
+
+
+                         // minT
+                        let minT12 = value.weatherElement[2].time[0].parameter.parameterName;
+                        let minT24 = value.weatherElement[2].time[1].parameter.parameterName;
+                        let minT36 = value.weatherElement[2].time[2].parameter.parameterName;
+
+                        // maxT
+                        let maxT12 = value.weatherElement[4].time[0].parameter.parameterName;
+                        let maxT24 = value.weatherElement[4].time[1].parameter.parameterName;
+                        let maxT36 = value.weatherElement[4].time[2].parameter.parameterName;
 
                         let pop = value.weatherElement[1].time[0].parameter.parameterName + '%';
-                        let mint = value.weatherElement[2].time[0].parameter.parameterName + '°C';
-                        let maxt = value.weatherElement[4].time[0].parameter.parameterName + '°C';
                         let ci = value.weatherElement[3].time[0].parameter.parameterName;
 
                         let tmpText = `
                             <tr>
                                 <td data-label="編號">${index + 1}</td>
                                 <td data-label="城市">${value.locationName}</td>
-                                <td data-label="天氣" data-emoji="${wxEmoji}">${wxText}</td>
                                 <td data-label="降雨機率">${pop}</td>
-                                <td data-label="最低溫度">${mint}</td>
-                                <td data-label="最高溫度">${maxt}</td>
+                                <td data-label="0-12溫度">${minT12} &deg;C - ${maxT12} &deg;C ${wxText12}  <img src="./day/${wxValue12}.svg" alt=""> </td>
+                                <td data-label="12-24溫度">${minT24} &deg;C - ${maxT24} &deg;C ${wxText24} <img src="./day/${wxValue24}.svg" alt=""> </td>
+                                <td data-label="24-36溫度">${minT36} &deg;C - ${maxT36} &deg;C ${wxText36} <img src="./day/${wxValue36}.svg" alt=""> </td>
                                 <td data-label="">${ci}</td>
                             </tr>
                         `;
