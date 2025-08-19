@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>台灣觀光工廠清單</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.7/css/bootstrap.min.css" />
+
+    <style>
+      
+    </style>
+</head>
+
+<body>
+    <div class="container mt-3 mb-5">
+        <h2>台灣觀光工廠清單</h2>
+
+        <!-- 篩選區 做下拉選單 地區別 跟 縣市 -->
+        <div class="filter-container">
+            
+        </div>
+
+        <!-- 桌面表格 -->
+        <table class="table table-bordered shadow-sm">
+            <colgroup>
+                <col style="width:10%">
+                <col style="width:10%">
+                <col style="width:20%">
+                <col style="width:40%">
+                <col style="width:10%">
+                <col style="width:10%">
+            </colgroup>
+            <thead>
+                <tr>
+                    <th>地區別</th>
+                    <th>縣市</th>
+                    <th>觀光工廠名稱</th>
+                    <th>地址</th>
+                    <th>預約電話</th>
+                    <th>網址</th>
+                </tr>
+            </thead>
+            <tbody id="myTbody"></tbody>
+        </table>
+
+        <!-- 手機卡片容器 -->
+        <div id="cardContainer" class="d-md-none"></div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            let url = './factory.json';
+            let allData = [];
+
+            // 先抓資料
+            $.ajax({
+                type: "get",
+                url: url,
+                dataType: "json",
+                success: function (res) {
+                    allData = res;
+                    renderHotels(allData);
+                },
+                error: function (err) {
+                    console.error(err);
+                    alert("讀取 JSON 檔案失敗");
+                }
+            });
+
+        });
+    </script>
+</body>
+
+</html>

@@ -1,88 +1,248 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-TW">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>旅遊景點介紹</title>
-    <!-- 載入bs5 css -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.7/css/bootstrap.min.css"
-        integrity="sha512-fw7f+TcMjTb7bpbLJZlP8g2Y4XcCyFZW8uy8HsRZsH/SwbMw0plKHFHr99DN3l04VsYNwvzicUX/6qurvIxbxw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>澎湖縣合法旅館清單</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.7/css/bootstrap.min.css" />
 
     <style>
         body {
-            font-family: 'Segoe UI', sans-serif;
-            background: linear-gradient(to bottom, #a0cfff, #e6f5ff);
-            background-attachment: fixed;
             min-height: 100vh;
-            padding: 40px;
-            overflow-x: hidden;
+            margin: 0;
+            background: linear-gradient(to bottom, #aee1f9, #fff8e7) no-repeat;
+            background-size: cover;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        h2 {
+            color: #1e618d;
+            text-align: center;
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 2px #fff;
+        }
+
+        .filter-container {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        table {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        th {
+            background-color: #1e618d;
+            color: #fff;
+            text-align: center;
+        }
+
+        td {
+            vertical-align: middle !important;
+        }
+
+        /* 第一欄置中 */
+        table td:first-child,
+        table th:first-child {
+            text-align: center;
+        }
+
+        tbody tr:hover {
+            background-color: #f0f8ff;
+        }
+
+        .category-badge {
+            display: inline-block;
+            padding: 0.25em 0.6em;
+            font-size: 0.75rem;
+            font-weight: 600;
+            border-radius: 5px;
+            color: #fff;
+        }
+
+        .一般觀光旅館 {
+            background-color: #FFA94D;
+        }
+
+        .國際觀光旅館 {
+            background-color: #fd65b1;
+        }
+
+        .旅館 {
+            background-color: #4aa96c;
+        }
+
+        /* RWD: 手機板卡片模式 */
+        @media (max-width: 768px) {
+            table {
+                display: none;
+            }
+
+            #cardContainer {
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .card-item {
+                background: rgba(255, 255, 255, 0.95);
+                border-radius: 10px;
+                padding: 15px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            }
+
+            .card-item h5 {
+                margin-bottom: 10px;
+                color: #1e618d;
+            }
+
+            .card-item p {
+                margin-bottom: 5px;
+            }
+
+            .card-item .category-badge {
+                display: block;
+                text-align: center;
+                margin: 0 auto 10px auto;
+                font-size: 0.8rem;
+            }
         }
     </style>
-
 </head>
 
 <body>
+    <div class="container mt-3 mb-5">
+        <h2>澎湖縣合法旅館清單</h2>
 
+        <!-- 篩選區 -->
+        <div class="filter-container">
+            <label class="me-2"><input type="checkbox" value="馬公市"> 馬公市</label>
+            <label class="me-2"><input type="checkbox" value="湖西鄉"> 湖西鄉</label>
+            <label class="me-2"><input type="checkbox" value="白沙鄉"> 白沙鄉</label>
+            <label class="me-2"><input type="checkbox" value="望安鄉"> 望安鄉</label>
+            <label class="me-2"><input type="checkbox" value="七美鄉"> 七美鄉</label>
+            <button id="filterBtn" class="btn btn-primary btn-sm">確認</button>
+        </div>
 
-    <h3>旅遊景點介紹</h3>
+        <!-- 桌面表格 -->
+        <table class="table table-bordered shadow-sm">
+            <colgroup>
+                <col style="width:10%">
+                <col style="width:20%">
+                <col style="width:30%">
+                <col style="width:20%">
+                <col style="width:20%">
+            </colgroup>
+            <thead>
+                <tr>
+                    <th>類別</th>
+                    <th>旅宿名稱</th>
+                    <th>地址</th>
+                    <th>電話</th>
+                    <th>備註</th>
+                </tr>
+            </thead>
+            <tbody id="myTbody"></tbody>
+        </table>
 
-    <table id="myTable" class="display">
-        <thead>
-            <tr>
-                <th>名稱</th>
-                <th>地點</th>
-                <th>分類</th>
-                <th>票價</th>
-                <th>簡介</th>
-                <th>備註</th>
-            </tr>
-        </thead>
-        <tbody class="tbody"></tbody>
-    </table>
+        <!-- 手機卡片容器 -->
+        <div id="cardContainer" class="d-md-none"></div>
+    </div>
 
-    <!-- 載入bs5 js -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.7/js/bootstrap.bundle.min.js"
-        integrity="sha512-Tc0i+vRogmX4NN7tuLbQfBxa8JkfUSAxSFVzmU31nVdHyiHElPPy2cWfFacmCJKw0VqovrzKhdd2TSTMdAxp2g=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" crossorigin="anonymous"
-        referrerpolicy="no-referrer"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script>
         $(document).ready(function () {
 
+            let url = './accommodation.json';
+            let allData = [];
 
-            let url = "./scenic.json";
-
+            // 先抓資料
             $.ajax({
                 type: "get",
                 url: url,
                 dataType: "json",
                 success: function (res) {
-                    console.log(res);
-                    const tbody = $('.tbody');
-                    const info = res.XML_Head.infos.info;
+                    allData = res;
+                    renderHotels(allData);
+                },
+                error: function (err) {
+                    console.error(err);
+                    alert("讀取 JSON 檔案失敗");
+                }
+            });
 
-                    info.forEach(function (value) {
-                        let tmpText = `
-                            <tr>
-                                <td>${value.Name || ''}</td>
-                                <td>${value.Add || ''}</td>
-                                <td>${value.Zone || ''}</td>
-                                <td>${value.Ticketinfo || ''}</td>
-                                <td>${value.Toldescribe || ''}</td>
-                                <td>${value.Remarks || ''}</td>
-                            </tr>
-                        `;
-                        tbody.append(tmpText);
-                    });
+            // 篩選按鈕事件
+            $("#filterBtn").click(function () {
+                let selectedTowns = [];
+                $(".filter-container input[type=checkbox]:checked").each(function () {
+                    selectedTowns.push($(this).val());
+                });
+
+                if (selectedTowns.length === 0) {
+                    renderHotels(allData); // 沒勾選則顯示全部
+                    return;
                 }
 
-            });
-        });
+                let filteredData = {};
+                $.each(allData, function (town, data) {
+                    if (selectedTowns.includes(town)) {
+                        filteredData[town] = data;
+                    }
+                });
 
+                renderHotels(filteredData);
+            });
+
+            function renderHotels(data) {
+                let tbody = $("#myTbody");
+                let cardContainer = $("#cardContainer");
+                tbody.empty();
+                cardContainer.empty();
+
+                $.each(data, function (town, item) {
+                    if (Array.isArray(item)) {
+                        $.each(item, function (_, hotel) {
+                            addHotelRow(hotel);
+                        });
+                    } else {
+                        $.each(item, function (type, hotels) {
+                            $.each(hotels, function (_, hotel) {
+                                addHotelRow(hotel);
+                            });
+                        });
+                    }
+                });
+            }
+
+            function addHotelRow(hotel) {
+                let categoryClass = hotel["類別"] || "旅館";
+                let mark = hotel["標章"] || "";
+
+                // 桌面表格
+                let tr = `<tr>
+                    <td><span class="category-badge ${categoryClass}">${categoryClass}</span></td>
+                    <td>${hotel["旅宿名稱"]}</td>
+                    <td>${hotel["地址"]}</td>
+                    <td>${hotel["電話"]}</td>
+                    <td>${mark}</td>
+                </tr>`;
+                $("#myTbody").append(tr);
+
+                // 手機卡片
+                let card = `<div class="card-item">
+                    <span class="category-badge ${categoryClass}">${categoryClass}</span>
+                    <h5>${hotel["旅宿名稱"]}</h5>
+                    <p><strong>地址：</strong>${hotel["地址"]}</p>
+                    <p><strong>電話：</strong>${hotel["電話"]}</p>
+                    <p><strong>備註：</strong>${mark}</p>
+                </div>`;
+                $("#cardContainer").append(card);
+            }
+
+        });
     </script>
 </body>
 
