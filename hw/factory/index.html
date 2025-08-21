@@ -6,17 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>台灣觀光工廠清單</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.7/css/bootstrap.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&display=swap" rel="stylesheet">
 
     <style>
         body {
-            background-color: #f9f9f9;
+            background-color: #FFF8F9;
+            font-family: 'ZCOOL KuaiLe', cursive, 'Noto Sans TC', sans-serif;
         }
 
         h2 {
             text-align: center;
             margin-bottom: 20px;
-            color: #e16b8c;
+            color: #ff91a4;
             font-weight: bold;
+            font-size: 2.2rem;
+            text-shadow: 1px 1px 2px #ffd6e0;
         }
 
         .filter-container {
@@ -24,38 +28,95 @@
             flex-wrap: wrap;
             gap: 15px;
             justify-content: center;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
+            background-color: #FFE4E1;
+            padding: 15px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(255, 182, 193, 0.3);
         }
 
         .filter-container label {
             margin-right: 5px;
             font-weight: bold;
+            color: #ff7b9c;
         }
 
-        th {
-            text-align: center;
+        select.form-select {
+            border: 2px solid #ffb6c1;
+            border-radius: 12px;
+            background-color: #fff0f5;
+            color: #ff6b81;
+            font-size: 16px;
+            padding: 5px 10px;
+            transition: 0.3s;
         }
 
-        td:nth-child(1),
-        td:nth-child(2) {
+        select.form-select:focus {
+            border-color: #ff91a4;
+            box-shadow: 0 0 10px #ffccd5;
+        }
+
+        /* 表格樣式 */
+        .table {
+            background-color: #fff;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(255, 182, 193, 0.2);
+        }
+
+        .table th {
+            background-color: #FFD6E0;
+            color: #ff4d6d;
             text-align: center;
+            font-size: 16px;
+        }
+
+        .table td {
+            vertical-align: middle;
+            font-size: 15px;
+            padding: 10px;
+        }
+
+        .table a {
+            color: #ff6f91;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .table a:hover {
+            color: #ff4d6d;
+            text-decoration: underline;
         }
 
         /* 手機卡片樣式 */
         .card {
             margin-bottom: 15px;
-            border-radius: 12px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(255, 182, 193, 0.3);
             background: #fff;
+            border: 2px solid #FFD6E0;
         }
 
         .card-body h5 {
-            color: #e16b8c;
-            font-size: 1.2rem;
+            color: #ff4d6d;
+            font-size: 1.3rem;
+            margin-bottom: 10px;
         }
 
-        .table th {
-            background-color: #f1f1f1;
+        .card-body p {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .btn-outline-primary {
+            border-color: #ff91a4;
+            color: #ff91a4;
+            border-radius: 20px;
+        }
+
+        .btn-outline-primary:hover {
+            background-color: #ff91a4;
+            color: #fff;
         }
     </style>
 </head>
@@ -83,14 +144,6 @@
         <!-- 桌面表格 -->
         <div class="table-responsive d-none d-md-block">
             <table class="table table-bordered shadow-sm">
-                <colgroup>
-                    <col style="width:5%">
-                    <col style="width:5%">
-                    <col style="width:25%">
-                    <col style="width:25%">
-                    <col style="width:20%">
-                    <col style="width:10%">
-                </colgroup>
                 <thead>
                     <tr>
                         <th>地區別</th>
@@ -112,10 +165,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script>
         $(document).ready(function () {
-            const url = './factory.json'; // JSON 檔路徑
+            const url = './factory.json';
             let allData = [];
 
-            // 取得資料
             $.ajax({
                 type: "get",
                 url: url,
@@ -133,7 +185,6 @@
                 }
             });
 
-            // 初始化地區下拉選單
             function initRegionFilter(data) {
                 const regions = [...new Set(data.map(item => item.地區別))];
                 regions.forEach(region => {
@@ -141,7 +192,6 @@
                 });
             }
 
-            // 初始化縣市下拉選單
             function initCityFilter(data) {
                 const cities = [...new Set(data.map(item => item.縣市))];
                 $('#citySelect').empty().append(`<option value="">全部縣市</option>`);
@@ -150,7 +200,6 @@
                 });
             }
 
-            // 當地區改變時，更新縣市選單
             $('#regionSelect').on('change', function () {
                 const selectedRegion = $(this).val();
                 const filteredCities = selectedRegion
@@ -165,10 +214,8 @@
                 applyFilter();
             });
 
-            // 當縣市改變時，重新篩選
             $('#citySelect').on('change', applyFilter);
 
-            // 篩選並渲染資料
             function applyFilter() {
                 const selectedRegion = $('#regionSelect').val();
                 const selectedCity = $('#citySelect').val();
@@ -182,7 +229,6 @@
                 renderCards(filteredData);
             }
 
-            // 渲染桌面表格
             function renderTable(data) {
                 let html = '';
                 data.forEach(item => {
@@ -200,7 +246,6 @@
                 $('#myTbody').html(html);
             }
 
-            // 渲染手機卡片
             function renderCards(data) {
                 let html = '';
                 data.forEach(item => {
