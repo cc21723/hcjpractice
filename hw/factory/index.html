@@ -8,7 +8,55 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.7/css/bootstrap.min.css" />
 
     <style>
-      
+        body {
+            background-color: #f9f9f9;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #e16b8c;
+            font-weight: bold;
+        }
+
+        .filter-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .filter-container label {
+            margin-right: 5px;
+            font-weight: bold;
+        }
+
+        th {
+            text-align: center;
+        }
+
+        td:nth-child(1),
+        td:nth-child(2) {
+            text-align: center;
+        }
+
+        /* 手機卡片樣式 */
+        .card {
+            margin-bottom: 15px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background: #fff;
+        }
+
+        .card-body h5 {
+            color: #e16b8c;
+            font-size: 1.2rem;
+        }
+
+        .table th {
+            background-color: #f1f1f1;
+        }
     </style>
 </head>
 
@@ -16,33 +64,46 @@
     <div class="container mt-3 mb-5">
         <h2>台灣觀光工廠清單</h2>
 
-        <!-- 篩選區 做下拉選單 地區別 跟 縣市 -->
+        <!-- 篩選區 -->
         <div class="filter-container">
-            
+            <div>
+                <label for="regionSelect">選擇地區：</label>
+                <select id="regionSelect" class="form-select" style="width:150px;">
+                    <option value="">全部地區</option>
+                </select>
+            </div>
+            <div>
+                <label for="citySelect">選擇縣市：</label>
+                <select id="citySelect" class="form-select" style="width:150px;">
+                    <option value="">全部縣市</option>
+                </select>
+            </div>
         </div>
 
         <!-- 桌面表格 -->
-        <table class="table table-bordered shadow-sm">
-            <colgroup>
-                <col style="width:10%">
-                <col style="width:10%">
-                <col style="width:20%">
-                <col style="width:40%">
-                <col style="width:10%">
-                <col style="width:10%">
-            </colgroup>
-            <thead>
-                <tr>
-                    <th>地區別</th>
-                    <th>縣市</th>
-                    <th>觀光工廠名稱</th>
-                    <th>地址</th>
-                    <th>預約電話</th>
-                    <th>網址</th>
-                </tr>
-            </thead>
-            <tbody id="myTbody"></tbody>
-        </table>
+        <div class="table-responsive d-none d-md-block">
+            <table class="table table-bordered shadow-sm">
+                <colgroup>
+                    <col style="width:5%">
+                    <col style="width:5%">
+                    <col style="width:25%">
+                    <col style="width:25%">
+                    <col style="width:20%">
+                    <col style="width:10%">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>地區別</th>
+                        <th>縣市</th>
+                        <th>觀光工廠名稱</th>
+                        <th>地址</th>
+                        <th>預約電話</th>
+                        <th>網址</th>
+                    </tr>
+                </thead>
+                <tbody id="myTbody"></tbody>
+            </table>
+        </div>
 
         <!-- 手機卡片容器 -->
         <div id="cardContainer" class="d-md-none"></div>
@@ -51,18 +112,20 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script>
         $(document).ready(function () {
-
-            let url = './factory.json';
+            const url = './factory.json'; // JSON 檔路徑
             let allData = [];
 
-            // 先抓資料
+            // 取得資料
             $.ajax({
                 type: "get",
                 url: url,
                 dataType: "json",
                 success: function (res) {
                     allData = res;
-                    renderHotels(allData);
+                    initRegionFilter(allData);
+                    initCityFilter(allData);
+                    renderTable(allData);
+                    renderCards(allData);
                 },
                 error: function (err) {
                     console.error(err);
@@ -70,6 +133,92 @@
                 }
             });
 
+            // 初始化地區下拉選單
+            function initRegionFilter(data) {
+                const regions = [...new Set(data.map(item => item.地區別))];
+                regions.forEach(region => {
+                    $('#regionSelect').append(`<option value="${region}">${region}</option>`);
+                });
+            }
+
+            // 初始化縣市下拉選單
+            function initCityFilter(data) {
+                const cities = [...new Set(data.map(item => item.縣市))];
+                $('#citySelect').empty().append(`<option value="">全部縣市</option>`);
+                cities.forEach(city => {
+                    $('#citySelect').append(`<option value="${city}">${city}</option>`);
+                });
+            }
+
+            // 當地區改變時，更新縣市選單
+            $('#regionSelect').on('change', function () {
+                const selectedRegion = $(this).val();
+                const filteredCities = selectedRegion
+                    ? [...new Set(allData.filter(item => item.地區別 === selectedRegion).map(item => item.縣市))]
+                    : [...new Set(allData.map(item => item.縣市))];
+
+                $('#citySelect').empty().append(`<option value="">全部縣市</option>`);
+                filteredCities.forEach(city => {
+                    $('#citySelect').append(`<option value="${city}">${city}</option>`);
+                });
+
+                applyFilter();
+            });
+
+            // 當縣市改變時，重新篩選
+            $('#citySelect').on('change', applyFilter);
+
+            // 篩選並渲染資料
+            function applyFilter() {
+                const selectedRegion = $('#regionSelect').val();
+                const selectedCity = $('#citySelect').val();
+
+                const filteredData = allData.filter(item => {
+                    return (selectedRegion === '' || item.地區別 === selectedRegion) &&
+                        (selectedCity === '' || item.縣市 === selectedCity);
+                });
+
+                renderTable(filteredData);
+                renderCards(filteredData);
+            }
+
+            // 渲染桌面表格
+            function renderTable(data) {
+                let html = '';
+                data.forEach(item => {
+                    html += `
+                        <tr>
+                            <td>${item.地區別}</td>
+                            <td>${item.縣市}</td>
+                            <td>${item.觀光工廠名稱}</td>
+                            <td>${item.地址}</td>
+                            <td>${item.觀光工廠預約電話}</td>
+                            <td><a href="${item.網址}" target="_blank">連結</a></td>
+                        </tr>
+                    `;
+                });
+                $('#myTbody').html(html);
+            }
+
+            // 渲染手機卡片
+            function renderCards(data) {
+                let html = '';
+                data.forEach(item => {
+                    html += `
+                        <div class="card">
+                            <div class="card-body">
+                                <h5>${item.觀光工廠名稱}</h5>
+                                <p><strong>地區別：</strong>${item.地區別}</p>
+                                <p><strong>縣市：</strong>${item.縣市}</p>
+                                <p><strong>地址：</strong>${item.地址}</p>
+                                <p><strong>電話：</strong>${item.觀光工廠預約電話}</p>
+                                <p><a href="${item.網址}" target="_blank" class="btn btn-sm btn-outline-primary">查看官網</a></p>
+                            </div>
+                        </div>
+                    `;
+                });
+                $('#cardContainer').html(html);
+            }
         });
     </script>
 </body>
