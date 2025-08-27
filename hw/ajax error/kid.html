@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>台北市兒童樂園資料</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.7/css/bootstrap.min.css" />
+</head>
+
+<body>
+    <div class="container mt-3">
+        <h2>台北市兒童樂園資料</h2>
+        <ul id="dataList" class="list-group mt-3"></ul>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $.getJSON('proxy.php', function (res) {
+                // res.result.records 才是實際資料
+                const records = res.result.records;
+                const $list = $('#dataList');
+                
+                records.forEach(item => {
+                    $list.append(`<li class="list-group-item">
+                        <strong>${item.設施名稱}</strong> - ${item.地址}
+                    </li>`);
+                });
+            }).fail(function() {
+                alert('資料載入失敗');
+            });
+        });
+    </script>
+</body>
+
+</html>
