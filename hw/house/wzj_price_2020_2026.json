@@ -1,0 +1,57 @@
+{
+  "title": "新莊塭仔圳重劃區 房價（2020–2026，含2025–2026預估）",
+  "unit": "萬元/坪",
+  "note": "投資一定有風險，資料僅供參考與練習。2025–2026為估算值。",
+  "average_roi": "7.34%",
+  "data": [
+    {
+      "year": 2020,
+      "date": "2020-12-31",
+      "price": 52.3,
+      "estimated": false,
+      "return_price": "—"
+    },
+    {
+      "year": 2021,
+      "date": "2021-12-31",
+      "price": 58.7,
+      "estimated": false,
+      "return_price": "12.24%"
+    },
+    {
+      "year": 2022,
+      "date": "2022-12-31",
+      "price": 63.2,
+      "estimated": false,
+      "return_price": "7.67%"
+    },
+    {
+      "year": 2023,
+      "date": "2023-12-31",
+      "price": 69.8,
+      "estimated": false,
+      "return_price": "10.44%"
+    },
+    {
+      "year": 2024,
+      "date": "2024-12-31",
+      "price": 74.5,
+      "estimated": false,
+      "return_price": "6.73%"
+    },
+    {
+      "year": 2025,
+      "date": "2025-12-31",
+      "price": 77.0,
+      "estimated": true,
+      "return_price": "3.36%"
+    },
+    {
+      "year": 2026,
+      "date": "2026-12-31",
+      "price": 80.0,
+      "estimated": true,
+      "return_price": "3.90%"
+    }
+  ]
+}

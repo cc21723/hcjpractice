@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>0050 歷年年末收盤（含 2025/2026 預測）</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/css/bootstrap.min.css" integrity="sha512-2bBQCjcnw658Lho4nlXJcc6WkV/UxpE/sAokbXPxQNGqmNdQrWqtw26Ns9kFF/yG792pKR1Sx8/Y1Lf1XN4GKA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body{padding-top:20px}
+        .proj { background:#fff3cd } /* 標示預測年 */
+        .small-muted{font-size:.9rem;color:#6c757d}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>投資一定有風險 — 資料僅供練習與示範</h2>
+        <p class="small-muted">資料來源：示範用合成資料（非正式投資建議）。下方表格包含 2003–2024 實際（示範）數據與 2025、2026 以歷史年化報酬率（CAGR）投影的數值。</p>
+
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <p>檔案：<code>tw0050_last_trading_day_30y.json</code></p>
+            </div>
+            <div class="col-md-6 text-end">
+                <p>歷史年化複合成長率 (CAGR)：<strong id="cagr">-</strong></p>
+                <p>歷史平均年報酬 (Arithmetic Mean)：<strong id="avgReturn">-</strong></p>
+            </div>
+        </div>
+
+        <table class="table table-bordered table-sm">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>年分</th>
+                    <th>年末收盤價</th>
+                    <th>年度漲幅</th>
+                </tr>
+            </thead>
+            <tbody id="myTbody"></tbody>
+        </table>
+
+        <p class="small-muted">說明：年度漲幅以當年年末收盤價與前一年年末收盤價比較；2025/2026 為依歷史 CAGR 投影之估計值。</p>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="app.js"></script>
+</body>
+</html>

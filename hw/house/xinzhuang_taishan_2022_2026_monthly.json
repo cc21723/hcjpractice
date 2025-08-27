@@ -1,0 +1,978 @@
+{
+  "title": "新莊區與泰山區每月平均房價（2022–2026，含2025–2026預估）",
+  "unit": "萬元/坪",
+  "note": "投資有風險，資料為模擬示範，2025–2026 為估算。若需真實資料請使用實價登錄資料來源。",
+  "generated_at": "2025-08-27",
+  "districts": {
+    "新莊區": {
+      "average_cagr": "5.29%",
+      "data": [
+        {
+          "year": 2022,
+          "month": 1,
+          "date": "2022-01-01",
+          "price": 65.41,
+          "estimated": false,
+          "mom_return": "—"
+        },
+        {
+          "year": 2022,
+          "month": 2,
+          "date": "2022-02-01",
+          "price": 65.74,
+          "estimated": false,
+          "mom_return": "0.50%"
+        },
+        {
+          "year": 2022,
+          "month": 3,
+          "date": "2022-03-01",
+          "price": 66.49,
+          "estimated": false,
+          "mom_return": "1.14%"
+        },
+        {
+          "year": 2022,
+          "month": 4,
+          "date": "2022-04-01",
+          "price": 67.29,
+          "estimated": false,
+          "mom_return": "1.20%"
+        },
+        {
+          "year": 2022,
+          "month": 5,
+          "date": "2022-05-01",
+          "price": 68.37,
+          "estimated": false,
+          "mom_return": "1.60%"
+        },
+        {
+          "year": 2022,
+          "month": 6,
+          "date": "2022-06-01",
+          "price": 69.16,
+          "estimated": false,
+          "mom_return": "1.16%"
+        },
+        {
+          "year": 2022,
+          "month": 7,
+          "date": "2022-07-01",
+          "price": 69.77,
+          "estimated": false,
+          "mom_return": "0.88%"
+        },
+        {
+          "year": 2022,
+          "month": 8,
+          "date": "2022-08-01",
+          "price": 69.47,
+          "estimated": false,
+          "mom_return": "-0.43%"
+        },
+        {
+          "year": 2022,
+          "month": 9,
+          "date": "2022-09-01",
+          "price": 69.15,
+          "estimated": false,
+          "mom_return": "-0.46%"
+        },
+        {
+          "year": 2022,
+          "month": 10,
+          "date": "2022-10-01",
+          "price": 68.47,
+          "estimated": false,
+          "mom_return": "-0.98%"
+        },
+        {
+          "year": 2022,
+          "month": 11,
+          "date": "2022-11-01",
+          "price": 68.01,
+          "estimated": false,
+          "mom_return": "-0.67%"
+        },
+        {
+          "year": 2022,
+          "month": 12,
+          "date": "2022-12-01",
+          "price": 68.0,
+          "estimated": false,
+          "mom_return": "-0.01%"
+        },
+        {
+          "year": 2023,
+          "month": 1,
+          "date": "2023-01-01",
+          "price": 68.01,
+          "estimated": false,
+          "mom_return": "0.01%"
+        },
+        {
+          "year": 2023,
+          "month": 2,
+          "date": "2023-02-01",
+          "price": 68.48,
+          "estimated": false,
+          "mom_return": "0.69%"
+        },
+        {
+          "year": 2023,
+          "month": 3,
+          "date": "2023-03-01",
+          "price": 69.51,
+          "estimated": false,
+          "mom_return": "1.50%"
+        },
+        {
+          "year": 2023,
+          "month": 4,
+          "date": "2023-04-01",
+          "price": 70.58,
+          "estimated": false,
+          "mom_return": "1.54%"
+        },
+        {
+          "year": 2023,
+          "month": 5,
+          "date": "2023-05-01",
+          "price": 71.34,
+          "estimated": false,
+          "mom_return": "1.08%"
+        },
+        {
+          "year": 2023,
+          "month": 6,
+          "date": "2023-06-01",
+          "price": 72.11,
+          "estimated": false,
+          "mom_return": "1.08%"
+        },
+        {
+          "year": 2023,
+          "month": 7,
+          "date": "2023-07-01",
+          "price": 72.68,
+          "estimated": false,
+          "mom_return": "0.79%"
+        },
+        {
+          "year": 2023,
+          "month": 8,
+          "date": "2023-08-01",
+          "price": 72.31,
+          "estimated": false,
+          "mom_return": "-0.51%"
+        },
+        {
+          "year": 2023,
+          "month": 9,
+          "date": "2023-09-01",
+          "price": 72.26,
+          "estimated": false,
+          "mom_return": "-0.07%"
+        },
+        {
+          "year": 2023,
+          "month": 10,
+          "date": "2023-10-01",
+          "price": 72.02,
+          "estimated": false,
+          "mom_return": "-0.33%"
+        },
+        {
+          "year": 2023,
+          "month": 11,
+          "date": "2023-11-01",
+          "price": 71.63,
+          "estimated": false,
+          "mom_return": "-0.54%"
+        },
+        {
+          "year": 2023,
+          "month": 12,
+          "date": "2023-12-01",
+          "price": 71.37,
+          "estimated": false,
+          "mom_return": "-0.36%"
+        },
+        {
+          "year": 2024,
+          "month": 1,
+          "date": "2024-01-01",
+          "price": 72.05,
+          "estimated": false,
+          "mom_return": "0.95%"
+        },
+        {
+          "year": 2024,
+          "month": 2,
+          "date": "2024-02-01",
+          "price": 72.64,
+          "estimated": false,
+          "mom_return": "0.82%"
+        },
+        {
+          "year": 2024,
+          "month": 3,
+          "date": "2024-03-01",
+          "price": 73.33,
+          "estimated": false,
+          "mom_return": "0.95%"
+        },
+        {
+          "year": 2024,
+          "month": 4,
+          "date": "2024-04-01",
+          "price": 74.13,
+          "estimated": false,
+          "mom_return": "1.09%"
+        },
+        {
+          "year": 2024,
+          "month": 5,
+          "date": "2024-05-01",
+          "price": 75.39,
+          "estimated": false,
+          "mom_return": "1.70%"
+        },
+        {
+          "year": 2024,
+          "month": 6,
+          "date": "2024-06-01",
+          "price": 76.22,
+          "estimated": false,
+          "mom_return": "1.10%"
+        },
+        {
+          "year": 2024,
+          "month": 7,
+          "date": "2024-07-01",
+          "price": 76.82,
+          "estimated": false,
+          "mom_return": "0.79%"
+        },
+        {
+          "year": 2024,
+          "month": 8,
+          "date": "2024-08-01",
+          "price": 76.99,
+          "estimated": false,
+          "mom_return": "0.22%"
+        },
+        {
+          "year": 2024,
+          "month": 9,
+          "date": "2024-09-01",
+          "price": 76.72,
+          "estimated": false,
+          "mom_return": "-0.35%"
+        },
+        {
+          "year": 2024,
+          "month": 10,
+          "date": "2024-10-01",
+          "price": 76.69,
+          "estimated": false,
+          "mom_return": "-0.04%"
+        },
+        {
+          "year": 2024,
+          "month": 11,
+          "date": "2024-11-01",
+          "price": 76.3,
+          "estimated": false,
+          "mom_return": "-0.51%"
+        },
+        {
+          "year": 2024,
+          "month": 12,
+          "date": "2024-12-01",
+          "price": 76.33,
+          "estimated": false,
+          "mom_return": "0.04%"
+        },
+        {
+          "year": 2025,
+          "month": 1,
+          "date": "2025-01-01",
+          "price": 76.95,
+          "estimated": true,
+          "mom_return": "0.81%"
+        },
+        {
+          "year": 2025,
+          "month": 2,
+          "date": "2025-02-01",
+          "price": 77.81,
+          "estimated": true,
+          "mom_return": "1.12%"
+        },
+        {
+          "year": 2025,
+          "month": 3,
+          "date": "2025-03-01",
+          "price": 79.15,
+          "estimated": true,
+          "mom_return": "1.72%"
+        },
+        {
+          "year": 2025,
+          "month": 4,
+          "date": "2025-04-01",
+          "price": 80.39,
+          "estimated": true,
+          "mom_return": "1.57%"
+        },
+        {
+          "year": 2025,
+          "month": 5,
+          "date": "2025-05-01",
+          "price": 81.64,
+          "estimated": true,
+          "mom_return": "1.55%"
+        },
+        {
+          "year": 2025,
+          "month": 6,
+          "date": "2025-06-01",
+          "price": 82.08,
+          "estimated": true,
+          "mom_return": "0.54%"
+        },
+        {
+          "year": 2025,
+          "month": 7,
+          "date": "2025-07-01",
+          "price": 82.25,
+          "estimated": true,
+          "mom_return": "0.21%"
+        },
+        {
+          "year": 2025,
+          "month": 8,
+          "date": "2025-08-01",
+          "price": 82.07,
+          "estimated": true,
+          "mom_return": "-0.22%"
+        },
+        {
+          "year": 2025,
+          "month": 9,
+          "date": "2025-09-01",
+          "price": 81.41,
+          "estimated": true,
+          "mom_return": "-0.80%"
+        },
+        {
+          "year": 2025,
+          "month": 10,
+          "date": "2025-10-01",
+          "price": 80.76,
+          "estimated": true,
+          "mom_return": "-0.80%"
+        },
+        {
+          "year": 2025,
+          "month": 11,
+          "date": "2025-11-01",
+          "price": 80.13,
+          "estimated": true,
+          "mom_return": "-0.78%"
+        },
+        {
+          "year": 2025,
+          "month": 12,
+          "date": "2025-12-01",
+          "price": 79.94,
+          "estimated": true,
+          "mom_return": "-0.24%"
+        },
+        {
+          "year": 2026,
+          "month": 1,
+          "date": "2026-01-01",
+          "price": 80.44,
+          "estimated": true,
+          "mom_return": "0.63%"
+        },
+        {
+          "year": 2026,
+          "month": 2,
+          "date": "2026-02-01",
+          "price": 81.12,
+          "estimated": true,
+          "mom_return": "0.85%"
+        },
+        {
+          "year": 2026,
+          "month": 3,
+          "date": "2026-03-01",
+          "price": 82.12,
+          "estimated": true,
+          "mom_return": "1.23%"
+        },
+        {
+          "year": 2026,
+          "month": 4,
+          "date": "2026-04-01",
+          "price": 83.1,
+          "estimated": true,
+          "mom_return": "1.19%"
+        },
+        {
+          "year": 2026,
+          "month": 5,
+          "date": "2026-05-01",
+          "price": 84.04,
+          "estimated": true,
+          "mom_return": "1.13%"
+        },
+        {
+          "year": 2026,
+          "month": 6,
+          "date": "2026-06-01",
+          "price": 85.24,
+          "estimated": true,
+          "mom_return": "1.43%"
+        },
+        {
+          "year": 2026,
+          "month": 7,
+          "date": "2026-07-01",
+          "price": 85.78,
+          "estimated": true,
+          "mom_return": "0.63%"
+        },
+        {
+          "year": 2026,
+          "month": 8,
+          "date": "2026-08-01",
+          "price": 85.86,
+          "estimated": true,
+          "mom_return": "0.09%"
+        },
+        {
+          "year": 2026,
+          "month": 9,
+          "date": "2026-09-01",
+          "price": 85.25,
+          "estimated": true,
+          "mom_return": "-0.71%"
+        },
+        {
+          "year": 2026,
+          "month": 10,
+          "date": "2026-10-01",
+          "price": 85.0,
+          "estimated": true,
+          "mom_return": "-0.29%"
+        },
+        {
+          "year": 2026,
+          "month": 11,
+          "date": "2026-11-01",
+          "price": 84.39,
+          "estimated": true,
+          "mom_return": "-0.72%"
+        },
+        {
+          "year": 2026,
+          "month": 12,
+          "date": "2026-12-01",
+          "price": 84.27,
+          "estimated": true,
+          "mom_return": "-0.14%"
+        }
+      ]
+    },
+    "泰山區": {
+      "average_cagr": "4.58%",
+      "data": [
+        {
+          "year": 2022,
+          "month": 1,
+          "date": "2022-01-01",
+          "price": 55.47,
+          "estimated": false,
+          "mom_return": "—"
+        },
+        {
+          "year": 2022,
+          "month": 2,
+          "date": "2022-02-01",
+          "price": 56.03,
+          "estimated": false,
+          "mom_return": "1.01%"
+        },
+        {
+          "year": 2022,
+          "month": 3,
+          "date": "2022-03-01",
+          "price": 56.76,
+          "estimated": false,
+          "mom_return": "1.30%"
+        },
+        {
+          "year": 2022,
+          "month": 4,
+          "date": "2022-04-01",
+          "price": 57.64,
+          "estimated": false,
+          "mom_return": "1.55%"
+        },
+        {
+          "year": 2022,
+          "month": 5,
+          "date": "2022-05-01",
+          "price": 58.55,
+          "estimated": false,
+          "mom_return": "1.58%"
+        },
+        {
+          "year": 2022,
+          "month": 6,
+          "date": "2022-06-01",
+          "price": 59.22,
+          "estimated": false,
+          "mom_return": "1.14%"
+        },
+        {
+          "year": 2022,
+          "month": 7,
+          "date": "2022-07-01",
+          "price": 59.28,
+          "estimated": false,
+          "mom_return": "0.10%"
+        },
+        {
+          "year": 2022,
+          "month": 8,
+          "date": "2022-08-01",
+          "price": 58.92,
+          "estimated": false,
+          "mom_return": "-0.61%"
+        },
+        {
+          "year": 2022,
+          "month": 9,
+          "date": "2022-09-01",
+          "price": 58.52,
+          "estimated": false,
+          "mom_return": "-0.68%"
+        },
+        {
+          "year": 2022,
+          "month": 10,
+          "date": "2022-10-01",
+          "price": 58.01,
+          "estimated": false,
+          "mom_return": "-0.87%"
+        },
+        {
+          "year": 2022,
+          "month": 11,
+          "date": "2022-11-01",
+          "price": 57.55,
+          "estimated": false,
+          "mom_return": "-0.79%"
+        },
+        {
+          "year": 2022,
+          "month": 12,
+          "date": "2022-12-01",
+          "price": 57.73,
+          "estimated": false,
+          "mom_return": "0.31%"
+        },
+        {
+          "year": 2023,
+          "month": 1,
+          "date": "2023-01-01",
+          "price": 58.16,
+          "estimated": false,
+          "mom_return": "0.74%"
+        },
+        {
+          "year": 2023,
+          "month": 2,
+          "date": "2023-02-01",
+          "price": 58.56,
+          "estimated": false,
+          "mom_return": "0.69%"
+        },
+        {
+          "year": 2023,
+          "month": 3,
+          "date": "2023-03-01",
+          "price": 59.37,
+          "estimated": false,
+          "mom_return": "1.38%"
+        },
+        {
+          "year": 2023,
+          "month": 4,
+          "date": "2023-04-01",
+          "price": 60.12,
+          "estimated": false,
+          "mom_return": "1.26%"
+        },
+        {
+          "year": 2023,
+          "month": 5,
+          "date": "2023-05-01",
+          "price": 61.12,
+          "estimated": false,
+          "mom_return": "1.66%"
+        },
+        {
+          "year": 2023,
+          "month": 6,
+          "date": "2023-06-01",
+          "price": 61.62,
+          "estimated": false,
+          "mom_return": "0.82%"
+        },
+        {
+          "year": 2023,
+          "month": 7,
+          "date": "2023-07-01",
+          "price": 61.7,
+          "estimated": false,
+          "mom_return": "0.13%"
+        },
+        {
+          "year": 2023,
+          "month": 8,
+          "date": "2023-08-01",
+          "price": 61.46,
+          "estimated": false,
+          "mom_return": "-0.39%"
+        },
+        {
+          "year": 2023,
+          "month": 9,
+          "date": "2023-09-01",
+          "price": 61.19,
+          "estimated": false,
+          "mom_return": "-0.44%"
+        },
+        {
+          "year": 2023,
+          "month": 10,
+          "date": "2023-10-01",
+          "price": 60.66,
+          "estimated": false,
+          "mom_return": "-0.87%"
+        },
+        {
+          "year": 2023,
+          "month": 11,
+          "date": "2023-11-01",
+          "price": 60.41,
+          "estimated": false,
+          "mom_return": "-0.41%"
+        },
+        {
+          "year": 2023,
+          "month": 12,
+          "date": "2023-12-01",
+          "price": 60.57,
+          "estimated": false,
+          "mom_return": "0.26%"
+        },
+        {
+          "year": 2024,
+          "month": 1,
+          "date": "2024-01-01",
+          "price": 60.73,
+          "estimated": false,
+          "mom_return": "0.26%"
+        },
+        {
+          "year": 2024,
+          "month": 2,
+          "date": "2024-02-01",
+          "price": 61.08,
+          "estimated": false,
+          "mom_return": "0.58%"
+        },
+        {
+          "year": 2024,
+          "month": 3,
+          "date": "2024-03-01",
+          "price": 62.14,
+          "estimated": false,
+          "mom_return": "1.74%"
+        },
+        {
+          "year": 2024,
+          "month": 4,
+          "date": "2024-04-01",
+          "price": 63.0,
+          "estimated": false,
+          "mom_return": "1.38%"
+        },
+        {
+          "year": 2024,
+          "month": 5,
+          "date": "2024-05-01",
+          "price": 63.52,
+          "estimated": false,
+          "mom_return": "0.83%"
+        },
+        {
+          "year": 2024,
+          "month": 6,
+          "date": "2024-06-01",
+          "price": 63.79,
+          "estimated": false,
+          "mom_return": "0.43%"
+        },
+        {
+          "year": 2024,
+          "month": 7,
+          "date": "2024-07-01",
+          "price": 63.77,
+          "estimated": false,
+          "mom_return": "-0.03%"
+        },
+        {
+          "year": 2024,
+          "month": 8,
+          "date": "2024-08-01",
+          "price": 63.77,
+          "estimated": false,
+          "mom_return": "0.00%"
+        },
+        {
+          "year": 2024,
+          "month": 9,
+          "date": "2024-09-01",
+          "price": 63.63,
+          "estimated": false,
+          "mom_return": "-0.22%"
+        },
+        {
+          "year": 2024,
+          "month": 10,
+          "date": "2024-10-01",
+          "price": 63.18,
+          "estimated": false,
+          "mom_return": "-0.71%"
+        },
+        {
+          "year": 2024,
+          "month": 11,
+          "date": "2024-11-01",
+          "price": 62.58,
+          "estimated": false,
+          "mom_return": "-0.95%"
+        },
+        {
+          "year": 2024,
+          "month": 12,
+          "date": "2024-12-01",
+          "price": 62.43,
+          "estimated": false,
+          "mom_return": "-0.24%"
+        },
+        {
+          "year": 2025,
+          "month": 1,
+          "date": "2025-01-01",
+          "price": 62.97,
+          "estimated": true,
+          "mom_return": "0.86%"
+        },
+        {
+          "year": 2025,
+          "month": 2,
+          "date": "2025-02-01",
+          "price": 63.53,
+          "estimated": true,
+          "mom_return": "0.89%"
+        },
+        {
+          "year": 2025,
+          "month": 3,
+          "date": "2025-03-01",
+          "price": 64.62,
+          "estimated": true,
+          "mom_return": "1.72%"
+        },
+        {
+          "year": 2025,
+          "month": 4,
+          "date": "2025-04-01",
+          "price": 65.74,
+          "estimated": true,
+          "mom_return": "1.73%"
+        },
+        {
+          "year": 2025,
+          "month": 5,
+          "date": "2025-05-01",
+          "price": 66.23,
+          "estimated": true,
+          "mom_return": "0.75%"
+        },
+        {
+          "year": 2025,
+          "month": 6,
+          "date": "2025-06-01",
+          "price": 66.95,
+          "estimated": true,
+          "mom_return": "1.09%"
+        },
+        {
+          "year": 2025,
+          "month": 7,
+          "date": "2025-07-01",
+          "price": 67.32,
+          "estimated": true,
+          "mom_return": "0.55%"
+        },
+        {
+          "year": 2025,
+          "month": 8,
+          "date": "2025-08-01",
+          "price": 67.25,
+          "estimated": true,
+          "mom_return": "-0.10%"
+        },
+        {
+          "year": 2025,
+          "month": 9,
+          "date": "2025-09-01",
+          "price": 66.76,
+          "estimated": true,
+          "mom_return": "-0.73%"
+        },
+        {
+          "year": 2025,
+          "month": 10,
+          "date": "2025-10-01",
+          "price": 66.43,
+          "estimated": true,
+          "mom_return": "-0.49%"
+        },
+        {
+          "year": 2025,
+          "month": 11,
+          "date": "2025-11-01",
+          "price": 65.84,
+          "estimated": true,
+          "mom_return": "-0.89%"
+        },
+        {
+          "year": 2025,
+          "month": 12,
+          "date": "2025-12-01",
+          "price": 65.71,
+          "estimated": true,
+          "mom_return": "-0.20%"
+        },
+        {
+          "year": 2026,
+          "month": 1,
+          "date": "2026-01-01",
+          "price": 65.92,
+          "estimated": true,
+          "mom_return": "0.32%"
+        },
+        {
+          "year": 2026,
+          "month": 2,
+          "date": "2026-02-01",
+          "price": 66.79,
+          "estimated": true,
+          "mom_return": "1.32%"
+        },
+        {
+          "year": 2026,
+          "month": 3,
+          "date": "2026-03-01",
+          "price": 67.87,
+          "estimated": true,
+          "mom_return": "1.62%"
+        },
+        {
+          "year": 2026,
+          "month": 4,
+          "date": "2026-04-01",
+          "price": 68.64,
+          "estimated": true,
+          "mom_return": "1.13%"
+        },
+        {
+          "year": 2026,
+          "month": 5,
+          "date": "2026-05-01",
+          "price": 69.49,
+          "estimated": true,
+          "mom_return": "1.24%"
+        },
+        {
+          "year": 2026,
+          "month": 6,
+          "date": "2026-06-01",
+          "price": 69.87,
+          "estimated": true,
+          "mom_return": "0.55%"
+        },
+        {
+          "year": 2026,
+          "month": 7,
+          "date": "2026-07-01",
+          "price": 70.41,
+          "estimated": true,
+          "mom_return": "0.77%"
+        },
+        {
+          "year": 2026,
+          "month": 8,
+          "date": "2026-08-01",
+          "price": 70.58,
+          "estimated": true,
+          "mom_return": "0.24%"
+        },
+        {
+          "year": 2026,
+          "month": 9,
+          "date": "2026-09-01",
+          "price": 70.08,
+          "estimated": true,
+          "mom_return": "-0.71%"
+        },
+        {
+          "year": 2026,
+          "month": 10,
+          "date": "2026-10-01",
+          "price": 69.73,
+          "estimated": true,
+          "mom_return": "-0.50%"
+        },
+        {
+          "year": 2026,
+          "month": 11,
+          "date": "2026-11-01",
+          "price": 69.46,
+          "estimated": true,
+          "mom_return": "-0.39%"
+        },
+        {
+          "year": 2026,
+          "month": 12,
+          "date": "2026-12-01",
+          "price": 69.13,
+          "estimated": true,
+          "mom_return": "-0.48%"
+        }
+      ]
+    }
+  }
+}

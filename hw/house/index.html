@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>新莊區 & 泰山區 每月平均房價（2022–2026）</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/css/bootstrap.min.css"
+    integrity="sha512-2bBQCjcnw658Lho4nlXJcc6WkV/UxpE/sAokbXPxQNGqmNdQrWqtw26Ns9kFF/yG792pKR1Sx8/Y1Lf1XN4GKA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    body { background:#fff; padding-bottom:40px; }
+    .muted { color:#6c757d; }
+    .badge-est { font-size:.76rem; }
+    .controls { gap:12px; display:flex; align-items:center; margin-bottom:12px; }
+    .chart-wrap { height:320px; }
+  </style>
+</head>
+<body>
+  <div class="container mt-4">
+    <h3>新莊區 & 泰山區 — 每月平均房價（2022–2026，含預估）</h3>
+    <p class="muted">資料為範例模擬，2025–2026 為估算值。將 JSON、JS、HTML 放同一目錄後直接開啟 index.html。</p>
+
+    <div class="controls">
+      <label for="districtSelect" class="form-label mb-0">選擇行政區：</label>
+      <select id="districtSelect" class="form-select w-auto">
+        <option value="新莊區" selected>新莊區</option>
+        <option value="泰山區">泰山區</option>
+      </select>
+
+      <label for="yearFilter" class="form-label mb-0">年份：</label>
+      <select id="yearFilter" class="form-select w-auto">
+        <option value="all" selected>全部 (2022–2026)</option>
+        <option value="2022">2022</option>
+        <option value="2023">2023</option>
+        <option value="2024">2024</option>
+        <option value="2025">2025</option>
+        <option value="2026">2026</option>
+      </select>
+      <div class="ms-auto">
+        <small>區域 CAGR：<span id="cagr" class="fw-bold">—</span></small>
+      </div>
+    </div>
+
+    <div class="table-responsive">
+      <table class="table table-bordered align-middle">
+        <thead class="table-light">
+          <tr>
+            <th>#</th>
+            <th>年份</th>
+            <th>月份</th>
+            <th>日期</th>
+            <th>平均單價（萬元/坪）</th>
+            <th>月成長</th>
+            <th>備註</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody"></tbody>
+      </table>
+    </div>
+
+    <p class="muted">下載檔案：
+      <a id="linkJson" href="#">JSON</a> |
+      <a id="linkHtml" href="#">HTML</a> |
+      <a id="linkJs" href="#">JS</a>
+    </p>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+    integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="./app.js"></script>
+</body>
+</html>
